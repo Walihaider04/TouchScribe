@@ -489,25 +489,25 @@ export default function Home() {
             </motion.div>
 
             {/* ── Desktop: Wave timeline ── */}
-            <div className="hidden md:block relative max-w-6xl mx-auto" style={{ height: '480px' }}>
+            <div className="hidden md:block relative w-full mx-auto" style={{ height: '500px' }}>
 
               {/* SVG curved dashed connector */}
               <svg
                 className="absolute inset-0 w-full h-full pointer-events-none"
-                viewBox="0 0 1200 480"
+                viewBox="0 0 1200 500"
                 preserveAspectRatio="none"
               >
                 {/* Soft glow behind the path */}
                 <path
-                  d="M 150 200 C 300 200 300 320 450 320 C 600 320 600 200 750 200 C 900 200 900 320 1050 320"
+                  d="M 192 240 C 330 240 330 350 468 350 C 606 350 606 240 732 240 C 870 240 870 350 1008 350"
                   fill="none"
                   stroke="#10b981"
-                  strokeWidth="10"
+                  strokeWidth="12"
                   opacity="0.06"
                 />
                 {/* Dashed primary path */}
                 <path
-                  d="M 150 200 C 300 200 300 320 450 320 C 600 320 600 200 750 200 C 900 200 900 320 1050 320"
+                  d="M 192 240 C 330 240 330 350 468 350 C 606 350 606 240 732 240 C 870 240 870 350 1008 350"
                   fill="none"
                   stroke="#10b981"
                   strokeWidth="2"
@@ -530,32 +530,32 @@ export default function Home() {
                     title: "Workflow Setup",
                     desc: "We analyze your specialty, EHR system, and workflow needs.",
                     step: "01",
-                    left: "12.5%",
-                    top: "41.7%",
+                    left: "16%",
+                    top: "48%",
                   },
                   {
                     icon: Users,
                     title: "Team Integration",
                     desc: "Our trained team integrates securely into your systems.",
                     step: "02",
-                    left: "37.5%",
-                    top: "66.7%",
+                    left: "39%",
+                    top: "70%",
                   },
                   {
                     icon: Zap,
                     title: "Execution",
                     desc: "We handle documentation, billing, and authorization with AI + human QA.",
                     step: "03",
-                    left: "62.5%",
-                    top: "41.7%",
+                    left: "61%",
+                    top: "48%",
                   },
                   {
                     icon: BarChart2,
                     title: "Optimization & Delivery",
                     desc: "We ensure quality, compliance, and continuous improvement.",
                     step: "04",
-                    left: "87.5%",
-                    top: "66.7%",
+                    left: "84%",
+                    top: "70%",
                   },
                 ].map((item, i) => {
                   const isTop = i % 2 === 0;
