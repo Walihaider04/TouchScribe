@@ -190,54 +190,80 @@ export default function Home() {
         </section>
 
         {/* 3. Problem Section */}
-        <section id="problem" className="py-24 bg-white">
+        <section id="problem" className="py-24 bg-slate-50">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={fadeInUp}
-              >
-                <img 
-                  src={problemImg} 
-                  alt="Exhausted doctor doing paperwork" 
-                  className="rounded-[2rem] shadow-lg object-cover w-full aspect-square md:aspect-[4/3] grayscale-[0.2]"
-                />
-              </motion.div>
-              
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={staggerContainer}
-              >
-                <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                  Does this sound familiar?
-                </motion.h2>
-                <motion.p variants={fadeInUp} className="text-lg text-slate-600 mb-8">
-                  You went to medical school to treat patients, but you spend half your day treating the computer. The endless clicking, the after-hours charting, the "pajama time" — it's leading to unprecedented burnout.
-                </motion.p>
-                
-                <div className="space-y-6">
-                  {[
-                    { icon: Clock, title: "2+ hours daily on notes", desc: "Clinicians spend almost as much time on documentation as patient care." },
-                    { icon: Activity, title: "Increased cognitive load", desc: "Trying to listen, synthesize, and type simultaneously degrades care quality." },
-                    { icon: FileText, title: "Incomplete documentation", desc: "Rushed notes lead to lower billing accuracy and lost context." }
-                  ].map((item, i) => (
-                    <motion.div key={i} variants={fadeInUp} className="flex gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-50 flex items-center justify-center">
-                        <item.icon className="w-6 h-6 text-red-500" />
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={staggerContainer}
+              className="text-center max-w-2xl mx-auto mb-14"
+            >
+              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+                Common Pain Points
+              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">
+                Does this sound familiar?
+              </motion.h2>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-2 gap-6"
+            >
+              {[
+                {
+                  icon: FileText,
+                  problem: "Are you overwhelmed by charting and errors in clinic notes?",
+                  solution: "Our AI scribes and QA experts ensure accurate, compliant records and help restore your focus on patient care.",
+                },
+                {
+                  icon: Activity,
+                  problem: "Is your EHR slowing down clinical performance?",
+                  solution: "We optimize your EHR workflows, fix inefficient configurations, and integrate seamlessly so your system works for you — not against you.",
+                },
+                {
+                  icon: Clock,
+                  problem: "Are prior authorization delays costing you time and revenue?",
+                  solution: "Our team handles prior auth submissions end-to-end, reducing wait times and getting approvals faster so patient care is never held up.",
+                },
+                {
+                  icon: TrendingDown,
+                  problem: "Are claim denials and billing errors draining your revenue?",
+                  solution: "Our certified billing specialists identify denial patterns, appeal claims, and close revenue leakage — recovering dollars you've already earned.",
+                },
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeInUp}>
+                  <Card className="h-full border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white overflow-hidden">
+                    <CardContent className="p-0">
+                      {/* Problem row */}
+                      <div className="px-7 pt-7 pb-5 border-b border-slate-100">
+                        <div className="flex items-start gap-4">
+                          <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center shrink-0 mt-0.5">
+                            <item.icon className="w-5 h-5 text-red-500" />
+                          </div>
+                          <p className="text-base font-bold text-slate-900 leading-snug">
+                            {item.problem}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-slate-900 text-lg">{item.title}</h3>
-                        <p className="text-slate-600">{item.desc}</p>
+                      {/* Solution row */}
+                      <div className="px-7 py-5 flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <CheckCircle2 className="w-5 h-5 text-primary" />
+                        </div>
+                        <p className="text-sm text-slate-600 leading-relaxed">
+                          {item.solution}
+                        </p>
                       </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
