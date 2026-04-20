@@ -12,7 +12,9 @@ import {
   Activity,
   HeartPulse,
   Lock,
-  PlayCircle
+  PlayCircle,
+  TrendingDown,
+  Zap
 } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImg from "../assets/images/hero.png";
@@ -166,12 +168,22 @@ export default function Home() {
         </section>
 
         {/* 2. Trust Bar */}
-        <section className="py-10 border-y border-slate-100 bg-slate-50/50">
+        <section className="py-10 border-y border-slate-100 bg-white">
           <div className="container mx-auto px-4">
-            <p className="text-center text-sm font-semibold text-slate-400 mb-8 uppercase tracking-wider">Trusted by innovative healthcare teams</p>
-            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-50">
-              {["Cleveland Clinic", "Mayo Clinic", "Kaiser Permanente", "Sutter Health", "Mass General"].map((name) => (
-                <span key={name} className="text-slate-700 font-semibold text-sm md:text-base tracking-wide uppercase">{name}</span>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4">
+              {[
+                { icon: <ShieldCheck className="w-5 h-5 text-primary" />, label: "HIPAA-Compliant Operations" },
+                { icon: <CheckCircle2 className="w-5 h-5 text-primary" />, label: "99%+ Documentation Accuracy" },
+                { icon: <Zap className="w-5 h-5 text-primary" />, label: "Real-Time EHR Integration" },
+                { icon: <Clock className="w-5 h-5 text-primary" />, label: "24–48 Hour Turnaround" },
+                { icon: <TrendingDown className="w-5 h-5 text-primary" />, label: "Cost Savings up to 70%" },
+              ].map(({ icon, label }) => (
+                <div key={label} className="flex flex-col items-center text-center gap-2 px-2">
+                  <div className="w-10 h-10 rounded-full bg-primary/8 flex items-center justify-center shrink-0">
+                    {icon}
+                  </div>
+                  <span className="text-sm font-medium text-slate-700 leading-snug">{label}</span>
+                </div>
               ))}
             </div>
           </div>
