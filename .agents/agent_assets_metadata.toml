@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "hCQwNKw00PMdNLY3nnCaC"
+uri = "file://artifacts/touchscribe/src/assets/images/hero.png"
+type = "image"
+title = "physician at computer with AI"
+
+[[generated]]
+id = "4opuykXCRam-lRJVkRFVC"
+uri = "file://artifacts/touchscribe/src/assets/images/problem.png"
+type = "image"
+title = "doctor exhausted by paperwork"
