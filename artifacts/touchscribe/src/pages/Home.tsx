@@ -61,10 +61,13 @@ export default function Home() {
       <main className="flex-1">
         {/* 1. Hero Section */}
         <section className="relative pt-20 pb-32 overflow-hidden">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-50 via-white to-white"></div>
+          {/* Soft green/blue gradient background */}
+          <div className="absolute inset-0 -z-10" style={{background: "linear-gradient(135deg, #f0fdf4 0%, #eff6ff 50%, #f0fdf4 100%)"}}></div>
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] -z-10 rounded-full opacity-30 blur-3xl" style={{background: "radial-gradient(circle, #bbf7d0 0%, #bfdbfe 100%)"}}></div>
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-              <motion.div 
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left: Text Content */}
+              <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={staggerContainer}
@@ -73,59 +76,89 @@ export default function Home() {
                 <motion.div variants={fadeInUp}>
                   <Badge variant="outline" className="mb-6 px-3 py-1 rounded-full border-primary/20 text-primary bg-primary/5">
                     <span className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-primary"></span>
+                      <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                       {"HIPAA Compliant & EHR Ready"}
                     </span>
                   </Badge>
                 </motion.div>
-                <motion.h1 variants={fadeInUp} className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
-                  Speak naturally.<br/>
-                  <span className="text-primary">We'll write the note.</span>
+
+                <motion.h1
+                  variants={fadeInUp}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6"
+                >
+                  Cut Physician Burnout.{" "}
+                  <span className="text-primary">Reclaim Patient Time.</span>{" "}
+                  <span className="text-secondary">AI + Experts</span>{" "}
+                  Power Your Documentation and Revenue Growth.
                 </motion.h1>
-                <motion.p variants={fadeInUp} className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-xl">
-                  AI-powered clinical transcription that eliminates the documentation burden. Spend less time typing and more time caring for patients.
+
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl"
+                >
+                  Eliminate documentation burden, save hours on charting, and improve accuracy—backed by AI-powered scribing, EHR optimization, billing, and compliance.
                 </motion.p>
+
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="rounded-full text-base h-14 px-8 shadow-lg shadow-primary/20">
-                    Start 14-Day Free Trial
+                  <Button
+                    size="lg"
+                    className="rounded-full text-base h-14 px-8 shadow-lg shadow-primary/20 font-semibold"
+                  >
+                    Schedule a Free Consultation
+                    <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
-                  <Button size="lg" variant="outline" className="rounded-full text-base h-14 px-8 bg-white hover:bg-slate-50 group">
-                    <PlayCircle className="mr-2 w-5 h-5 text-secondary group-hover:scale-110 transition-transform" />
-                    See it in action
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full text-base h-14 px-8 bg-white/80 hover:bg-white border-slate-200 text-slate-700 hover:text-primary group"
+                  >
+                    <PlayCircle className="mr-2 w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                    Learn How It Works
                   </Button>
                 </motion.div>
-                <motion.div variants={fadeInUp} className="mt-8 flex items-center gap-4 text-sm text-slate-500 font-medium">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3, 4].map(i => (
-                      <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-slate-200" />
-                    ))}
-                  </div>
-                  <p>Trusted by 10,000+ clinicians</p>
+
+                <motion.div variants={fadeInUp} className="mt-10 flex flex-wrap items-center gap-6 text-sm text-slate-500">
+                  {[
+                    { icon: <ShieldCheck className="w-4 h-4 text-primary" />, label: "HIPAA Certified" },
+                    { icon: <CheckCircle2 className="w-4 h-4 text-primary" />, label: "No Long-Term Contracts" },
+                    { icon: <Activity className="w-4 h-4 text-primary" />, label: "Live in 48 Hours" },
+                  ].map(({ icon, label }) => (
+                    <span key={label} className="flex items-center gap-1.5 font-medium">
+                      {icon} {label}
+                    </span>
+                  ))}
                 </motion.div>
               </motion.div>
 
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
+              {/* Right: Healthcare Illustration */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, x: 20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative lg:ml-auto"
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-[2.5rem] transform rotate-3 scale-105 -z-10 blur-xl"></div>
-                <img 
-                  src={heroImg} 
-                  alt="Physician using TouchScribe" 
-                  className="rounded-[2rem] shadow-2xl object-cover w-full max-w-lg aspect-[4/5] lg:aspect-square"
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-[2.5rem] transform rotate-2 scale-105 -z-10 blur-2xl"></div>
+                <img
+                  src={heroImg}
+                  alt="Physician using TouchScribe AI scribing"
+                  className="rounded-[2rem] shadow-2xl object-cover w-full max-w-lg aspect-[4/5] lg:aspect-[3/4]"
                 />
-                
-                {/* Floating UI Element */}
-                <div className="absolute bottom-8 -left-8 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-4 animate-in slide-in-from-bottom-4 fade-in duration-700 delay-500">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Mic className="text-primary w-6 h-6 animate-pulse" />
+
+                {/* Floating badge: AI note */}
+                <div className="absolute bottom-8 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-slate-100">
+                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <Mic className="text-primary w-5 h-5 animate-pulse" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">Listening to patient...</p>
-                    <p className="text-xs text-slate-500">Structuring SOAP note</p>
+                    <p className="text-sm font-semibold text-slate-900">Generating SOAP note...</p>
+                    <p className="text-xs text-slate-500 mt-0.5">Saved 22 min of charting today</p>
                   </div>
+                </div>
+
+                {/* Floating badge: accuracy */}
+                <div className="absolute top-8 -right-4 bg-white rounded-xl shadow-lg px-4 py-2.5 border border-slate-100">
+                  <p className="text-xs text-slate-500 font-medium">Accuracy Rate</p>
+                  <p className="text-2xl font-bold text-primary">98.7%</p>
                 </div>
               </motion.div>
             </div>
