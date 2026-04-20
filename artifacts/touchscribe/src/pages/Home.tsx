@@ -74,7 +74,7 @@ export default function Home() {
                   <Badge variant="outline" className="mb-6 px-3 py-1 rounded-full border-primary/20 text-primary bg-primary/5">
                     <span className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-primary"></span>
-                      HIPAA Compliant & EHR Ready
+                      {"HIPAA Compliant & EHR Ready"}
                     </span>
                   </Badge>
                 </motion.div>
@@ -263,13 +263,13 @@ export default function Home() {
                     <div className="text-slate-400 mb-2">// AI structuring in progress...</div>
                     <div className="text-primary font-semibold mb-1">SUBJECTIVE:</div>
                     <p className="text-slate-700 mb-4 pl-4 border-l-2 border-primary/30">
-                      Patient is a 64 y/o male presenting for f/u of CAD and recent exertional angina. Reports tightening in chest when walking &gt; 2 blocks...
+                      {"Patient is a 64 y/o male presenting for f/u of CAD and recent exertional angina. Reports tightening in chest when walking > 2 blocks..."}
                     </p>
                     <div className="text-primary font-semibold mb-1">OBJECTIVE:</div>
                     <p className="text-slate-700 mb-4 pl-4 border-l-2 border-primary/30">
                       BP 132/82. HR 72 regular. Heart: RRR, normal S1/S2, no m/r/g. Lungs: CTA bilaterally...
                     </p>
-                    <div className="text-primary font-semibold mb-1">ASSESSMENT & PLAN:</div>
+                    <div className="text-primary font-semibold mb-1">{"ASSESSMENT & PLAN:"}</div>
                     <p className="text-slate-700 pl-4 border-l-2 border-primary/30">
                       1. Stable Angina: Increase Metoprolol to 50mg BID. Order stress echo.<br/>
                       2. HTN: Well controlled on current regimen.
