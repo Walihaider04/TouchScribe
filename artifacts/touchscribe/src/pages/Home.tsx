@@ -466,8 +466,10 @@ export default function Home() {
         </section>
 
         {/* 6. How It Works */}
-        <section id="how-it-works" className="py-24 bg-white">
+        <section id="how-it-works" className="py-24 bg-slate-50">
           <div className="container mx-auto px-4">
+
+            {/* Header */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -478,17 +480,21 @@ export default function Home() {
               <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
                 Our Process
               </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 How TouchScribe Works
               </motion.h2>
+              <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
+                From setup to optimization — a simple, structured workflow that integrates into your practice.
+              </motion.p>
             </motion.div>
 
+            {/* Steps flow */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={staggerContainer}
-              className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+              className="flex flex-col md:flex-row items-stretch gap-0 max-w-6xl mx-auto"
             >
               {[
                 {
@@ -496,54 +502,93 @@ export default function Home() {
                   icon: ClipboardList,
                   iconColor: "text-emerald-600",
                   iconBg: "bg-emerald-50",
+                  borderAccent: "border-t-emerald-500",
                   stepColor: "text-emerald-600",
                   title: "Workflow Setup",
-                  desc: "We start with a discovery call to map your practice's workflows, specialties, EHR system, and documentation preferences — so everything is configured before day one.",
+                  desc: "We analyze your specialty, EHR system, and workflow needs to design a customized plan.",
                 },
                 {
                   step: "02",
                   icon: Users,
                   iconColor: "text-blue-600",
                   iconBg: "bg-blue-50",
+                  borderAccent: "border-t-blue-500",
                   stepColor: "text-blue-600",
                   title: "Team Assignment + Integration",
-                  desc: "A dedicated scribe and QA specialist are assigned to your practice. We integrate directly with your EHR and run a full connectivity test to ensure seamless data flow.",
+                  desc: "Our trained team integrates into your system with secure, HIPAA-compliant access.",
                 },
                 {
                   step: "03",
                   icon: Zap,
                   iconColor: "text-violet-600",
                   iconBg: "bg-violet-50",
+                  borderAccent: "border-t-violet-500",
                   stepColor: "text-violet-600",
                   title: "Execution",
-                  desc: "Your scribe joins live visits or reviews recordings in real time. Notes are drafted, QA-reviewed, and pushed to your EHR — fully finalized within hours.",
+                  desc: "We handle documentation, authorizations, and billing with AI + human QA precision.",
                 },
                 {
                   step: "04",
                   icon: BarChart2,
                   iconColor: "text-rose-600",
                   iconBg: "bg-rose-50",
+                  borderAccent: "border-t-rose-500",
                   stepColor: "text-rose-600",
                   title: "Optimization",
-                  desc: "We continuously monitor accuracy, turnaround time, and provider satisfaction — refining templates and workflows monthly so performance only improves over time.",
+                  desc: "We continuously improve accuracy, reduce errors, and optimize your workflow performance.",
                 },
-              ].map((item, i) => (
-                <motion.div key={i} variants={fadeInUp} className="flex items-start gap-6 p-8 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
-                  {/* Step number + icon column */}
-                  <div className="flex flex-col items-center gap-3 shrink-0">
-                    <span className={`text-xs font-bold uppercase tracking-widest ${item.stepColor}`}>{item.step}</span>
-                    <div className={`w-12 h-12 rounded-2xl ${item.iconBg} flex items-center justify-center`}>
-                      <item.icon className={`w-6 h-6 ${item.iconColor}`} />
+              ].map((item, i, arr) => (
+                <div key={i} className="flex flex-col md:flex-row items-stretch flex-1 min-w-0">
+
+                  {/* Step card */}
+                  <motion.div
+                    variants={fadeInUp}
+                    className={`group flex-1 bg-white rounded-2xl border border-slate-200 border-t-4 ${item.borderAccent} shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-7 flex flex-col gap-5`}
+                  >
+                    {/* Step number + icon row */}
+                    <div className="flex items-center justify-between">
+                      <span className={`text-xs font-bold tracking-[0.2em] uppercase ${item.stepColor}`}>{item.step}</span>
+                      <div className={`w-11 h-11 rounded-xl ${item.iconBg} flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
+                        <item.icon className={`w-5 h-5 ${item.iconColor}`} />
+                      </div>
                     </div>
-                  </div>
-                  {/* Text */}
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                </motion.div>
+                    {/* Text */}
+                    <div>
+                      <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
+                      <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </motion.div>
+
+                  {/* Connector — hidden after last item */}
+                  {i < arr.length - 1 && (
+                    <div className="flex items-center justify-center md:mx-0 my-0">
+                      {/* Desktop: horizontal arrow */}
+                      <div className="hidden md:flex items-center px-2">
+                        <div className="w-6 h-px bg-slate-300"></div>
+                        <ArrowRight className="w-4 h-4 text-slate-400 shrink-0 -ml-1" />
+                      </div>
+                      {/* Mobile: vertical line */}
+                      <div className="md:hidden flex flex-col items-center py-1">
+                        <div className="w-px h-6 bg-slate-300"></div>
+                        <div className="w-2 h-2 rounded-full bg-slate-300"></div>
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
             </motion.div>
+
+            {/* Footer tagline */}
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="text-center text-slate-500 text-sm mt-12 italic"
+            >
+              TouchScribe works as an extension of your practice — not just a service provider.
+            </motion.p>
+
           </div>
         </section>
 
