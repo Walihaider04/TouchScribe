@@ -14,7 +14,8 @@ import {
   Lock,
   PlayCircle,
   TrendingDown,
-  Zap
+  Zap,
+  Receipt
 } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImg from "../assets/images/hero.png";
@@ -268,30 +269,85 @@ export default function Home() {
         </section>
 
         {/* 4. Services Overview */}
-        <section id="services" className="py-24 bg-slate-50">
+        <section id="services" className="py-24 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">A complete clinical intelligence platform</h2>
-              <p className="text-lg text-slate-600">More than just dictation. TouchScribe understands medical context, structures data, and syncs seamlessly.</p>
-            </div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={staggerContainer}
+              className="text-center max-w-2xl mx-auto mb-16"
+            >
+              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+                Our Services
+              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Everything your practice needs, in one platform
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-lg text-slate-500">
+                From documentation to billing, we handle the operational side so you can focus on what matters.
+              </motion.p>
+            </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-3 gap-8"
+            >
               {[
-                { icon: Mic, title: "Ambient Scribe", desc: "Listens to natural conversation between you and the patient, capturing clinical nuances without specific voice commands." },
-                { icon: FileText, title: "Smart Structuring", desc: "Automatically formats transcripts into perfect SOAP notes, H&P, or custom templates based on your specialty." },
-                { icon: ShieldCheck, title: "EHR Integration", desc: "Pushes completed notes directly to Epic, Cerner, Athena, and 50+ other systems with a single click." }
+                {
+                  icon: Mic,
+                  color: "bg-emerald-50",
+                  iconColor: "text-emerald-600",
+                  title: "Virtual Medical Scribing",
+                  desc: "Real-time EHR documentation support that reduces physician workload and improves patient care.",
+                  highlights: ["Ambient AI listening", "SOAP note generation", "Multi-specialty support"],
+                },
+                {
+                  icon: FileText,
+                  color: "bg-blue-50",
+                  iconColor: "text-blue-600",
+                  title: "EHR Documentation",
+                  desc: "Structured, accurate, and fully integrated clinical documentation.",
+                  highlights: ["Epic, Cerner & 50+ EHRs", "QA-reviewed records", "Real-time sync"],
+                },
+                {
+                  icon: Receipt,
+                  color: "bg-violet-50",
+                  iconColor: "text-violet-600",
+                  title: "Medical Billing & Invoicing",
+                  desc: "Streamlined billing and invoicing to reduce denials and improve revenue flow.",
+                  highlights: ["Denial management", "Claims automation", "Revenue recovery"],
+                },
               ].map((item, i) => (
-                <Card key={i} className="border-none shadow-md hover:shadow-xl transition-shadow duration-300">
-                  <CardContent className="p-8">
-                    <div className="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center mb-6">
-                      <item.icon className="w-7 h-7 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                    <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-                  </CardContent>
-                </Card>
+                <motion.div key={i} variants={fadeInUp} className="group">
+                  <Card className="h-full border border-slate-200 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300 bg-white">
+                    <CardContent className="p-8 flex flex-col h-full">
+                      {/* Icon */}
+                      <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center mb-6`}>
+                        <item.icon className={`w-7 h-7 ${item.iconColor}`} />
+                      </div>
+
+                      {/* Title + desc */}
+                      <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                      <p className="text-slate-500 leading-relaxed mb-6">{item.desc}</p>
+
+                      {/* Feature list */}
+                      <ul className="mt-auto space-y-2">
+                        {item.highlights.map((h) => (
+                          <li key={h} className="flex items-center gap-2 text-sm text-slate-600">
+                            <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                            {h}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
