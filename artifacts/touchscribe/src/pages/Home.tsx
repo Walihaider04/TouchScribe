@@ -15,7 +15,10 @@ import {
   PlayCircle,
   TrendingDown,
   Zap,
-  Receipt
+  Receipt,
+  ClipboardList,
+  Users,
+  BarChart2
 } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImg from "../assets/images/hero.png";
@@ -463,31 +466,84 @@ export default function Home() {
         </section>
 
         {/* 6. How It Works */}
-        <section id="how-it-works" className="py-24 bg-slate-900 text-white">
+        <section id="how-it-works" className="py-24 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Three steps to freedom</h2>
-              <p className="text-lg text-slate-400">A workflow so simple, it requires zero training.</p>
-            </div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={staggerContainer}
+              className="text-center max-w-2xl mx-auto mb-16"
+            >
+              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+                Our Process
+              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">
+                How TouchScribe Works
+              </motion.h2>
+            </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-12 relative">
-              <div className="hidden md:block absolute top-12 left-1/6 right-1/6 h-0.5 bg-gradient-to-r from-primary/50 to-secondary/50"></div>
-              
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+            >
               {[
-                { step: "01", title: "Press Record", desc: "Open the mobile app or web extension when you enter the room." },
-                { step: "02", title: "Talk Normally", desc: "Have a natural conversation with your patient. The AI listens ambiently." },
-                { step: "03", title: "Review & Sync", desc: "A perfect structured note is ready before the patient leaves the room." }
+                {
+                  step: "01",
+                  icon: ClipboardList,
+                  iconColor: "text-emerald-600",
+                  iconBg: "bg-emerald-50",
+                  stepColor: "text-emerald-600",
+                  title: "Workflow Setup",
+                  desc: "We start with a discovery call to map your practice's workflows, specialties, EHR system, and documentation preferences — so everything is configured before day one.",
+                },
+                {
+                  step: "02",
+                  icon: Users,
+                  iconColor: "text-blue-600",
+                  iconBg: "bg-blue-50",
+                  stepColor: "text-blue-600",
+                  title: "Team Assignment + Integration",
+                  desc: "A dedicated scribe and QA specialist are assigned to your practice. We integrate directly with your EHR and run a full connectivity test to ensure seamless data flow.",
+                },
+                {
+                  step: "03",
+                  icon: Zap,
+                  iconColor: "text-violet-600",
+                  iconBg: "bg-violet-50",
+                  stepColor: "text-violet-600",
+                  title: "Execution",
+                  desc: "Your scribe joins live visits or reviews recordings in real time. Notes are drafted, QA-reviewed, and pushed to your EHR — fully finalized within hours.",
+                },
+                {
+                  step: "04",
+                  icon: BarChart2,
+                  iconColor: "text-rose-600",
+                  iconBg: "bg-rose-50",
+                  stepColor: "text-rose-600",
+                  title: "Optimization",
+                  desc: "We continuously monitor accuracy, turnaround time, and provider satisfaction — refining templates and workflows monthly so performance only improves over time.",
+                },
               ].map((item, i) => (
-                <div key={i} className="relative z-10 text-center">
-                  <div className="w-24 h-24 mx-auto bg-slate-800 rounded-full border-4 border-slate-900 shadow-xl flex items-center justify-center mb-6 relative">
-                    <div className="absolute inset-0 rounded-full border-2 border-primary/30"></div>
-                    <span className="text-2xl font-bold text-primary">{item.step}</span>
+                <motion.div key={i} variants={fadeInUp} className="flex items-start gap-6 p-8 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                  {/* Step number + icon column */}
+                  <div className="flex flex-col items-center gap-3 shrink-0">
+                    <span className={`text-xs font-bold uppercase tracking-widest ${item.stepColor}`}>{item.step}</span>
+                    <div className={`w-12 h-12 rounded-2xl ${item.iconBg} flex items-center justify-center`}>
+                      <item.icon className={`w-6 h-6 ${item.iconColor}`} />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-slate-400 leading-relaxed">{item.desc}</p>
-                </div>
+                  {/* Text */}
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                    <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
