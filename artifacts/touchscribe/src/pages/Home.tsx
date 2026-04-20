@@ -466,7 +466,7 @@ export default function Home() {
         </section>
 
         {/* 6. How It Works */}
-        <section id="how-it-works" className="py-24 bg-slate-50">
+        <section id="how-it-works" className="py-24 bg-white overflow-hidden">
           <div className="container mx-auto px-4">
 
             {/* Header */}
@@ -484,107 +484,161 @@ export default function Home() {
                 How TouchScribe Works
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
-                From setup to optimization — a simple, structured workflow that integrates into your practice.
+                A seamless workflow from documentation to delivery — powered by AI and experts.
               </motion.p>
             </motion.div>
 
-            {/* Steps flow */}
+            {/* ── Desktop: Wave timeline ── */}
+            <div className="hidden md:block relative max-w-6xl mx-auto" style={{ height: '480px' }}>
+
+              {/* SVG curved dashed connector */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                viewBox="0 0 1200 480"
+                preserveAspectRatio="none"
+              >
+                {/* Soft glow behind the path */}
+                <path
+                  d="M 150 200 C 300 200 300 320 450 320 C 600 320 600 200 750 200 C 900 200 900 320 1050 320"
+                  fill="none"
+                  stroke="#10b981"
+                  strokeWidth="10"
+                  opacity="0.06"
+                />
+                {/* Dashed primary path */}
+                <path
+                  d="M 150 200 C 300 200 300 320 450 320 C 600 320 600 200 750 200 C 900 200 900 320 1050 320"
+                  fill="none"
+                  stroke="#10b981"
+                  strokeWidth="2"
+                  strokeDasharray="10 7"
+                  opacity="0.45"
+                />
+              </svg>
+
+              {/* Step nodes — absolutely positioned at wave points */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-60px" }}
+                variants={staggerContainer}
+                className="absolute inset-0"
+              >
+                {[
+                  {
+                    icon: ClipboardList,
+                    title: "Workflow Setup",
+                    desc: "We analyze your specialty, EHR system, and workflow needs.",
+                    step: "01",
+                    left: "12.5%",
+                    top: "41.7%",
+                  },
+                  {
+                    icon: Users,
+                    title: "Team Integration",
+                    desc: "Our trained team integrates securely into your systems.",
+                    step: "02",
+                    left: "37.5%",
+                    top: "66.7%",
+                  },
+                  {
+                    icon: Zap,
+                    title: "Execution",
+                    desc: "We handle documentation, billing, and authorization with AI + human QA.",
+                    step: "03",
+                    left: "62.5%",
+                    top: "41.7%",
+                  },
+                  {
+                    icon: BarChart2,
+                    title: "Optimization & Delivery",
+                    desc: "We ensure quality, compliance, and continuous improvement.",
+                    step: "04",
+                    left: "87.5%",
+                    top: "66.7%",
+                  },
+                ].map((item, i) => {
+                  const isTop = i % 2 === 0;
+                  return (
+                    <motion.div
+                      key={i}
+                      variants={fadeInUp}
+                      style={{
+                        position: "absolute",
+                        left: item.left,
+                        top: item.top,
+                        transform: "translate(-50%, -50%)",
+                      }}
+                      className="flex flex-col items-center"
+                    >
+                      {/* Content above (top steps only) */}
+                      {isTop && (
+                        <div className="text-center w-48 mb-5">
+                          <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
+                          <h3 className="text-sm font-bold text-slate-900 mt-2 mb-1.5 leading-snug">{item.title}</h3>
+                          <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+                        </div>
+                      )}
+
+                      {/* Node circle */}
+                      <div className="group relative w-16 h-16 rounded-full bg-white border-2 border-primary/50 shadow-lg shadow-primary/10 flex items-center justify-center hover:border-primary hover:shadow-primary/25 hover:scale-110 transition-all duration-300 cursor-default">
+                        <div className="absolute inset-0 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300" />
+                        <item.icon className="w-6 h-6 text-primary relative z-10" />
+                      </div>
+
+                      {/* Content below (bottom steps only) */}
+                      {!isTop && (
+                        <div className="text-center w-48 mt-5">
+                          <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
+                          <h3 className="text-sm font-bold text-slate-900 mt-2 mb-1.5 leading-snug">{item.title}</h3>
+                          <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+                        </div>
+                      )}
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            </div>
+
+            {/* ── Mobile: vertical timeline ── */}
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
+              viewport={{ once: true }}
               variants={staggerContainer}
-              className="flex flex-col md:flex-row items-stretch gap-0 max-w-6xl mx-auto"
+              className="md:hidden relative pl-14"
             >
+              {/* Dashed vertical line */}
+              <div className="absolute left-5 top-2 bottom-2 w-px border-l-2 border-dashed border-primary/30" />
+
               {[
-                {
-                  step: "01",
-                  icon: ClipboardList,
-                  iconColor: "text-emerald-600",
-                  iconBg: "bg-emerald-50",
-                  borderAccent: "border-t-emerald-500",
-                  stepColor: "text-emerald-600",
-                  title: "Workflow Setup",
-                  desc: "We analyze your specialty, EHR system, and workflow needs to design a customized plan.",
-                },
-                {
-                  step: "02",
-                  icon: Users,
-                  iconColor: "text-blue-600",
-                  iconBg: "bg-blue-50",
-                  borderAccent: "border-t-blue-500",
-                  stepColor: "text-blue-600",
-                  title: "Team Assignment + Integration",
-                  desc: "Our trained team integrates into your system with secure, HIPAA-compliant access.",
-                },
-                {
-                  step: "03",
-                  icon: Zap,
-                  iconColor: "text-violet-600",
-                  iconBg: "bg-violet-50",
-                  borderAccent: "border-t-violet-500",
-                  stepColor: "text-violet-600",
-                  title: "Execution",
-                  desc: "We handle documentation, authorizations, and billing with AI + human QA precision.",
-                },
-                {
-                  step: "04",
-                  icon: BarChart2,
-                  iconColor: "text-rose-600",
-                  iconBg: "bg-rose-50",
-                  borderAccent: "border-t-rose-500",
-                  stepColor: "text-rose-600",
-                  title: "Optimization",
-                  desc: "We continuously improve accuracy, reduce errors, and optimize your workflow performance.",
-                },
-              ].map((item, i, arr) => (
-                <div key={i} className="flex flex-col md:flex-row items-stretch flex-1 min-w-0">
-
-                  {/* Step card */}
-                  <motion.div
-                    variants={fadeInUp}
-                    className={`group flex-1 bg-white rounded-2xl border border-slate-200 border-t-4 ${item.borderAccent} shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-7 flex flex-col gap-5`}
-                  >
-                    {/* Step number + icon row */}
-                    <div className="flex items-center justify-between">
-                      <span className={`text-xs font-bold tracking-[0.2em] uppercase ${item.stepColor}`}>{item.step}</span>
-                      <div className={`w-11 h-11 rounded-xl ${item.iconBg} flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
-                        <item.icon className={`w-5 h-5 ${item.iconColor}`} />
-                      </div>
-                    </div>
-                    {/* Text */}
-                    <div>
-                      <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
-                    </div>
-                  </motion.div>
-
-                  {/* Connector — hidden after last item */}
-                  {i < arr.length - 1 && (
-                    <div className="flex items-center justify-center md:mx-0 my-0">
-                      {/* Desktop: horizontal arrow */}
-                      <div className="hidden md:flex items-center px-2">
-                        <div className="w-6 h-px bg-slate-300"></div>
-                        <ArrowRight className="w-4 h-4 text-slate-400 shrink-0 -ml-1" />
-                      </div>
-                      {/* Mobile: vertical line */}
-                      <div className="md:hidden flex flex-col items-center py-1">
-                        <div className="w-px h-6 bg-slate-300"></div>
-                        <div className="w-2 h-2 rounded-full bg-slate-300"></div>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                { icon: ClipboardList, step: "01", title: "Workflow Setup", desc: "We analyze your specialty, EHR system, and workflow needs." },
+                { icon: Users,         step: "02", title: "Team Integration",         desc: "Our trained team integrates securely into your systems." },
+                { icon: Zap,           step: "03", title: "Execution",                desc: "We handle documentation, billing, and authorization with AI + human QA." },
+                { icon: BarChart2,     step: "04", title: "Optimization & Delivery",  desc: "We ensure quality, compliance, and continuous improvement." },
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeInUp} className="relative flex items-start gap-5 mb-10 last:mb-0">
+                  {/* Node */}
+                  <div className="absolute -left-9 top-0 w-11 h-11 rounded-full bg-white border-2 border-primary/50 shadow-md flex items-center justify-center shrink-0">
+                    <item.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  {/* Text */}
+                  <div>
+                    <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
+                    <h3 className="text-base font-bold text-slate-900 mt-1 mb-1">{item.title}</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                  </div>
+                </motion.div>
               ))}
             </motion.div>
 
-            {/* Footer tagline */}
+            {/* Tagline */}
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-center text-slate-500 text-sm mt-12 italic"
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="text-center text-slate-400 text-sm mt-16 italic tracking-wide"
             >
               TouchScribe works as an extension of your practice — not just a service provider.
             </motion.p>
