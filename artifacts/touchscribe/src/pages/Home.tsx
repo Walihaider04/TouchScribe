@@ -352,59 +352,113 @@ export default function Home() {
         </section>
 
         {/* 5. Why Choose TouchScribe */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Built for precision.<br/>Designed for doctors.</h2>
-                <p className="text-lg text-slate-600 mb-8">
-                  Generic AI tools hallucinate. TouchScribe is trained exclusively on clinical dialogues across 30+ medical specialties to ensure 99.9% medical accuracy.
-                </p>
-                <ul className="space-y-4 mb-8">
-                  {[
-                    "Understands complex medical terminology & acronyms",
-                    "Filters out background noise and non-clinical chatter",
-                    "Learns your specific formatting preferences over time",
-                    "Supports multiple speakers in complex family visits"
-                  ].map((text, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-                      <span className="text-slate-700">{text}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button variant="outline" className="rounded-full group">
-                  Explore Specialties <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </div>
-              <div className="relative">
-                <div className="absolute -inset-4 bg-secondary/5 rounded-[3rem] -z-10"></div>
-                <Card className="border-slate-200 shadow-2xl overflow-hidden">
-                  <div className="bg-slate-900 px-4 py-3 flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span className="text-slate-400 text-xs font-mono ml-4">Cardiology_Consult_Template.txt</span>
-                  </div>
-                  <div className="p-6 bg-slate-50 font-mono text-sm leading-relaxed">
-                    <div className="text-slate-400 mb-2">// AI structuring in progress...</div>
-                    <div className="text-primary font-semibold mb-1">SUBJECTIVE:</div>
-                    <p className="text-slate-700 mb-4 pl-4 border-l-2 border-primary/30">
-                      {"Patient is a 64 y/o male presenting for f/u of CAD and recent exertional angina. Reports tightening in chest when walking > 2 blocks..."}
-                    </p>
-                    <div className="text-primary font-semibold mb-1">OBJECTIVE:</div>
-                    <p className="text-slate-700 mb-4 pl-4 border-l-2 border-primary/30">
-                      BP 132/82. HR 72 regular. Heart: RRR, normal S1/S2, no m/r/g. Lungs: CTA bilaterally...
-                    </p>
-                    <div className="text-primary font-semibold mb-1">{"ASSESSMENT & PLAN:"}</div>
-                    <p className="text-slate-700 pl-4 border-l-2 border-primary/30">
-                      1. Stable Angina: Increase Metoprolol to 50mg BID. Order stress echo.<br/>
-                      2. HTN: Well controlled on current regimen.
-                    </p>
-                  </div>
-                </Card>
-              </div>
-            </div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={staggerContainer}
+              className="text-center max-w-2xl mx-auto mb-16"
+            >
+              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+                Why Choose Us
+              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">
+                Why Healthcare Providers Trust TouchScribe
+              </motion.h2>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-2 gap-8"
+            >
+              {[
+                {
+                  icon: Mic,
+                  accent: "text-emerald-600",
+                  accentBg: "bg-emerald-50",
+                  title: "AI Scribing + Human QA",
+                  bullets: [
+                    "AI listens in real-time during visits, generating complete SOAP notes instantly",
+                    "Human QA specialists review every note for accuracy, completeness, and compliance",
+                    "Finalized notes are synced directly to your EHR within hours — not days",
+                  ],
+                  outcome: "Physicians reclaim 2+ hours daily, reducing burnout and increasing patient throughput.",
+                },
+                {
+                  icon: Zap,
+                  accent: "text-blue-600",
+                  accentBg: "bg-blue-50",
+                  title: "EHR Expertise",
+                  bullets: [
+                    "Deep configuration and optimization of Epic, Cerner, Athena, and 50+ EHR platforms",
+                    "Workflow customization tailored to your specialty, templates, and preferences",
+                    "Ongoing support, training, and performance monitoring to keep your system running smoothly",
+                  ],
+                  outcome: "Reduced click burden, faster charting, and a system that actually works the way you do.",
+                },
+                {
+                  icon: ShieldCheck,
+                  accent: "text-violet-600",
+                  accentBg: "bg-violet-50",
+                  title: "Prior Authorization",
+                  bullets: [
+                    "End-to-end prior auth submissions handled by certified specialists — no more staff burden",
+                    "Real-time status tracking and proactive payer follow-ups to prevent delays",
+                    "Appeals support to reverse denials quickly and keep care on schedule",
+                  ],
+                  outcome: "Faster approvals, fewer care delays, and more time for your team to focus on patients.",
+                },
+                {
+                  icon: Receipt,
+                  accent: "text-rose-600",
+                  accentBg: "bg-rose-50",
+                  title: "Revenue Cycle Optimization",
+                  bullets: [
+                    "Certified coders and billers ensure clean, accurate claim submissions from day one",
+                    "Systematic denial analysis with root-cause resolution to stop recurring leakage",
+                    "Transparent reporting dashboards so you always know where your revenue stands",
+                  ],
+                  outcome: "Up to 70% reduction in claim denials and measurable improvement in net collections.",
+                },
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeInUp}>
+                  <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-8 flex flex-col h-full">
+                      {/* Header */}
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className={`w-12 h-12 rounded-2xl ${item.accentBg} flex items-center justify-center shrink-0`}>
+                          <item.icon className={`w-6 h-6 ${item.accent}`} />
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
+                      </div>
+
+                      {/* Bullets */}
+                      <ul className="space-y-3 mb-6">
+                        {item.bullets.map((b, j) => (
+                          <li key={j} className="flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                            <span className="text-slate-600 text-sm leading-relaxed">{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Outcome */}
+                      <div className="mt-auto pt-5 border-t border-slate-100">
+                        <p className="text-sm text-slate-700">
+                          <span className="font-semibold text-primary">Outcome: </span>
+                          {item.outcome}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
