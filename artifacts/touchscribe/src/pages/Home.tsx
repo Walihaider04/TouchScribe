@@ -14,6 +14,7 @@ import {
   Lock,
   PlayCircle,
   TrendingDown,
+  TrendingUp,
   Zap,
   Receipt,
   ClipboardList,
@@ -906,7 +907,77 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 9 & 10. Risk Reversal & Final CTA */}
+        {/* 9. Risk Reversal */}
+        <section className="py-24 bg-slate-50">
+          <div className="container mx-auto px-4">
+
+            {/* Header */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={staggerContainer}
+              className="text-center max-w-2xl mx-auto mb-16"
+            >
+              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+                Our Commitment
+              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
+                Zero Risk. Full Flexibility.
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
+                We earn your business every month. No lock-ins, no surprises — just results you can measure.
+              </motion.p>
+            </motion.div>
+
+            {/* 4-up grid */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+            >
+              {[
+                {
+                  icon: FileText,
+                  title: "No Long-Term Contracts",
+                  desc: "Month-to-month engagements. Stay because it works — not because you're stuck.",
+                },
+                {
+                  icon: Users,
+                  title: "Flexible Engagement Models",
+                  desc: "Scale up or down based on patient volume, specialty needs, or seasonal demand.",
+                },
+                {
+                  icon: ClipboardList,
+                  title: "Guided Onboarding",
+                  desc: "Dedicated success team gets you live in 48 hours with hands-on training and support.",
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Performance-Driven Approach",
+                  desc: "Transparent KPIs and monthly reviews. We measure what matters, then improve it.",
+                },
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeInUp}>
+                  <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <CardContent className="p-7 text-center">
+                      <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-5">
+                        <item.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
+                      <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+
+          </div>
+        </section>
+
+        {/* 10. Final CTA */}
         <section className="py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-primary/5 -z-10"></div>
           <div className="container mx-auto px-4 text-center max-w-4xl">
