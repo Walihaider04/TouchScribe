@@ -102,15 +102,15 @@ export default function Home() {
                 >
                   Cut Physician Burnout.{" "}
                   <span className="text-primary">Reclaim Patient Time.</span>{" "}
-                  <span className="text-secondary">AI + Experts</span>{" "}
-                  Power Your Documentation and Revenue Growth.
+                  Accurate Documentation & Revenue Growth — Powered by{" "}
+                  <span className="text-secondary">AI + Human Experts.</span>
                 </motion.h1>
 
                 <motion.p
                   variants={fadeInUp}
                   className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl"
                 >
-                  Eliminate documentation burden, save hours on charting, and improve accuracy—backed by AI-powered scribing, EHR optimization, billing, and compliance.
+                  Eliminate documentation burden, reduce charting time, and improve accuracy with AI-powered scribing, EHR optimization, billing, and compliance support.
                 </motion.p>
 
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
@@ -212,10 +212,10 @@ export default function Home() {
               className="text-center max-w-2xl mx-auto mb-14"
             >
               <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
-                Common Pain Points
+                Problem → Solution
               </motion.p>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">
-                Does this sound familiar?
+                Where Practices Lose Time & Revenue — And How We Fix It
               </motion.h2>
             </motion.div>
 
@@ -229,23 +229,27 @@ export default function Home() {
               {[
                 {
                   icon: FileText,
-                  problem: "Are you overwhelmed by charting and errors in clinic notes?",
-                  solution: "Our AI scribes and QA experts ensure accurate, compliant records and help restore your focus on patient care.",
+                  problem: "Overwhelmed by charting and documentation errors?",
+                  solutionTitle: "AI-Assisted Virtual Scribing + Human QA",
+                  desc: "Accurate, compliant notes completed in real-time — so physicians focus on patients, not paperwork.",
                 },
                 {
                   icon: Activity,
-                  problem: "Is your EHR slowing down clinical performance?",
-                  solution: "We optimize your EHR workflows, fix inefficient configurations, and integrate seamlessly so your system works for you — not against you.",
+                  problem: "Is your EHR slowing down your team?",
+                  solutionTitle: "Structured EHR Documentation Optimization",
+                  desc: "Clean, efficient workflows that reduce clicks, save time, and improve consistency.",
                 },
                 {
                   icon: Clock,
-                  problem: "Are prior authorization delays costing you time and revenue?",
-                  solution: "Our team handles prior auth submissions end-to-end, reducing wait times and getting approvals faster so patient care is never held up.",
+                  problem: "Delays in prior authorizations?",
+                  solutionTitle: "Prior Authorization (RFA) Management",
+                  desc: "Complete, compliant submissions that accelerate approvals and reduce delays.",
                 },
                 {
                   icon: TrendingDown,
-                  problem: "Are claim denials and billing errors draining your revenue?",
-                  solution: "Our certified billing specialists identify denial patterns, appeal claims, and close revenue leakage — recovering dollars you've already earned.",
+                  problem: "Losing revenue due to billing errors?",
+                  solutionTitle: "Medical Billing & Revenue Cycle Management",
+                  desc: "End-to-end billing support that minimizes denials and improves cash flow.",
                 },
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeInUp}>
@@ -267,9 +271,14 @@ export default function Home() {
                         <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                           <CheckCircle2 className="w-5 h-5 text-primary" />
                         </div>
-                        <p className="text-sm text-slate-600 leading-relaxed">
-                          {item.solution}
-                        </p>
+                        <div>
+                          <p className="text-sm font-bold text-primary mb-1.5 leading-snug">
+                            {item.solutionTitle}
+                          </p>
+                          <p className="text-sm text-slate-600 leading-relaxed">
+                            {item.desc}
+                          </p>
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
@@ -305,7 +314,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={staggerContainer}
-              className="grid md:grid-cols-3 gap-8"
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
             >
               {[
                 {
@@ -313,7 +322,7 @@ export default function Home() {
                   color: "bg-emerald-50",
                   iconColor: "text-emerald-600",
                   title: "Virtual Medical Scribing",
-                  desc: "Real-time EHR documentation support that reduces physician workload and improves patient care.",
+                  desc: "Real-time EHR documentation support that reduces physician workload.",
                   highlights: ["Ambient AI listening", "SOAP note generation", "Multi-specialty support"],
                 },
                 {
@@ -325,11 +334,19 @@ export default function Home() {
                   highlights: ["Epic, Cerner & 50+ EHRs", "QA-reviewed records", "Real-time sync"],
                 },
                 {
+                  icon: ShieldCheck,
+                  color: "bg-amber-50",
+                  iconColor: "text-amber-600",
+                  title: "Prior Authorization",
+                  desc: "Faster approvals with complete and compliant submissions.",
+                  highlights: ["End-to-end submissions", "Real-time tracking", "Appeals support"],
+                },
+                {
                   icon: Receipt,
                   color: "bg-violet-50",
                   iconColor: "text-violet-600",
-                  title: "Medical Billing & Invoicing",
-                  desc: "Streamlined billing and invoicing to reduce denials and improve revenue flow.",
+                  title: "Medical Billing",
+                  desc: "Streamlined billing to reduce denials and improve revenue.",
                   highlights: ["Denial management", "Claims automation", "Revenue recovery"],
                 },
               ].map((item, i) => (
@@ -394,23 +411,23 @@ export default function Home() {
                   accentBg: "bg-emerald-50",
                   title: "AI Scribing + Human QA",
                   bullets: [
-                    "AI listens in real-time during visits, generating complete SOAP notes instantly",
-                    "Human QA specialists review every note for accuracy, completeness, and compliance",
-                    "Finalized notes are synced directly to your EHR within hours — not days",
+                    "Real-Time Scribing",
+                    "Human QA",
+                    "Reduced Burnout",
                   ],
-                  outcome: "Physicians reclaim 2+ hours daily, reducing burnout and increasing patient throughput.",
+                  outcome: "Faster notes, fewer errors",
                 },
                 {
-                  icon: Zap,
+                  icon: FileText,
                   accent: "text-blue-600",
                   accentBg: "bg-blue-50",
-                  title: "EHR Expertise",
+                  title: "EHR Documentation",
                   bullets: [
-                    "Deep configuration and optimization of Epic, Cerner, Athena, and 50+ EHR platforms",
-                    "Workflow customization tailored to your specialty, templates, and preferences",
-                    "Ongoing support, training, and performance monitoring to keep your system running smoothly",
+                    "Multi-system expertise",
+                    "Structured notes",
+                    "Audit-ready",
                   ],
-                  outcome: "Reduced click burden, faster charting, and a system that actually works the way you do.",
+                  outcome: "Consistent documentation",
                 },
                 {
                   icon: ShieldCheck,
@@ -418,23 +435,23 @@ export default function Home() {
                   accentBg: "bg-violet-50",
                   title: "Prior Authorization",
                   bullets: [
-                    "End-to-end prior auth submissions handled by certified specialists — no more staff burden",
-                    "Real-time status tracking and proactive payer follow-ups to prevent delays",
-                    "Appeals support to reverse denials quickly and keep care on schedule",
+                    "Accurate submissions",
+                    "End-to-end handling",
+                    "Reduced denials",
                   ],
-                  outcome: "Faster approvals, fewer care delays, and more time for your team to focus on patients.",
+                  outcome: "Faster approvals",
                 },
                 {
                   icon: Receipt,
                   accent: "text-rose-600",
                   accentBg: "bg-rose-50",
-                  title: "Revenue Cycle Optimization",
+                  title: "Billing / RCM",
                   bullets: [
-                    "Certified coders and billers ensure clean, accurate claim submissions from day one",
-                    "Systematic denial analysis with root-cause resolution to stop recurring leakage",
-                    "Transparent reporting dashboards so you always know where your revenue stands",
+                    "Clean claims",
+                    "Denial management",
+                    "Compliance-driven",
                   ],
-                  outcome: "Up to 70% reduction in claim denials and measurable improvement in net collections.",
+                  outcome: "Faster reimbursements",
                 },
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeInUp}>
@@ -469,6 +486,29 @@ export default function Home() {
                   </Card>
                 </motion.div>
               ))}
+            </motion.div>
+
+            {/* Bottom Highlight */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-12 max-w-5xl mx-auto"
+            >
+              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 px-6 py-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                {[
+                  "HIPAA-Compliant",
+                  "Scalable",
+                  "Multi-specialty",
+                  "50–70% workload reduction",
+                ].map((label) => (
+                  <div key={label} className="flex items-center gap-2 text-sm font-semibold text-slate-700">
+                    <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                    {label}
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
@@ -536,15 +576,15 @@ export default function Home() {
                   {
                     icon: ClipboardList,
                     title: "Workflow Setup",
-                    desc: "We analyze your specialty, EHR system, and workflow needs.",
+                    desc: "Analyze EHR, workflow gaps, and needs.",
                     step: "01",
                     left: "16%",
                     top: "48%",
                   },
                   {
                     icon: Users,
-                    title: "Team Integration",
-                    desc: "Our trained team integrates securely into your systems.",
+                    title: "Team Assignment",
+                    desc: "Assign experts and integrate securely.",
                     step: "02",
                     left: "39%",
                     top: "70%",
@@ -552,15 +592,15 @@ export default function Home() {
                   {
                     icon: Zap,
                     title: "Execution",
-                    desc: "We handle documentation, billing, and authorization with AI + human QA.",
+                    desc: "Run scribing, EHR, billing, and authorization.",
                     step: "03",
                     left: "61%",
                     top: "48%",
                   },
                   {
                     icon: BarChart2,
-                    title: "Optimization & Delivery",
-                    desc: "We ensure quality, compliance, and continuous improvement.",
+                    title: "Optimization",
+                    desc: "Continuous QA, improvement, and scaling.",
                     step: "04",
                     left: "84%",
                     top: "70%",
@@ -620,10 +660,10 @@ export default function Home() {
               <div className="absolute left-5 top-2 bottom-2 w-px border-l-2 border-dashed border-primary/30" />
 
               {[
-                { icon: ClipboardList, step: "01", title: "Workflow Setup", desc: "We analyze your specialty, EHR system, and workflow needs." },
-                { icon: Users,         step: "02", title: "Team Integration",         desc: "Our trained team integrates securely into your systems." },
-                { icon: Zap,           step: "03", title: "Execution",                desc: "We handle documentation, billing, and authorization with AI + human QA." },
-                { icon: BarChart2,     step: "04", title: "Optimization & Delivery",  desc: "We ensure quality, compliance, and continuous improvement." },
+                { icon: ClipboardList, step: "01", title: "Workflow Setup",  desc: "Analyze EHR, workflow gaps, and needs." },
+                { icon: Users,         step: "02", title: "Team Assignment", desc: "Assign experts and integrate securely." },
+                { icon: Zap,           step: "03", title: "Execution",       desc: "Run scribing, EHR, billing, and authorization." },
+                { icon: BarChart2,     step: "04", title: "Optimization",    desc: "Continuous QA, improvement, and scaling." },
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeInUp} className="relative flex items-start gap-5 mb-10 last:mb-0">
                   {/* Node */}
@@ -670,7 +710,7 @@ export default function Home() {
                 Proven Results
               </motion.p>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Real outcomes for real practices
+                Real Impact. Measurable Results.
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
                 Measurable improvements across documentation, throughput, and revenue — backed by data from practices we serve.
@@ -928,7 +968,7 @@ export default function Home() {
                 Built on Trust
               </motion.p>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Enterprise-grade trust at every layer
+                Built for Healthcare. Designed for Trust.
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
                 From data security to clinical accuracy, every part of TouchScribe is built to meet the standards healthcare demands.
@@ -967,7 +1007,7 @@ export default function Home() {
                 },
                 {
                   icon: CheckCircle2,
-                  title: "Multi-Layer QA",
+                  title: "AI + Human QA",
                   desc: "Every note passes AI checks plus human review before reaching your EHR — zero shortcuts.",
                   accent: "text-rose-600",
                   accentBg: "bg-rose-50",
@@ -978,13 +1018,6 @@ export default function Home() {
                   desc: "Native integrations with Epic, Cerner, Athena, eClinicalWorks, and 50+ other platforms.",
                   accent: "text-amber-600",
                   accentBg: "bg-amber-50",
-                },
-                {
-                  icon: HeartPulse,
-                  title: "Built for Clinicians",
-                  desc: "Purpose-built for medical workflows by a team that understands the realities of patient care.",
-                  accent: "text-teal-600",
-                  accentBg: "bg-teal-50",
                 },
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeInUp}>
