@@ -647,54 +647,168 @@ export default function Home() {
         </section>
 
         {/* 7. Proof / Results */}
-        <section id="proof" className="py-24 bg-white">
+        <section id="proof" className="py-24 bg-slate-50">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8 mb-16 border-b border-slate-100 pb-16">
-              {[
-                { metric: "1.8 hrs", label: "Saved per shift" },
-                { metric: "99.9%", label: "Medical accuracy" },
-                { metric: "15+", label: "Extra patients per week" }
-              ].map((stat, i) => (
-                <div key={i} className="text-center px-4">
-                  <div className="text-5xl font-bold text-secondary mb-2">{stat.metric}</div>
-                  <div className="text-slate-500 font-medium uppercase tracking-wide">{stat.label}</div>
-                </div>
-              ))}
-            </div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card className="bg-slate-50 border-none">
-                <CardContent className="p-8">
-                  <div className="flex gap-1 text-yellow-400 mb-6">
-                    {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
+            {/* Header */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={staggerContainer}
+              className="text-center max-w-2xl mx-auto mb-16"
+            >
+              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+                Proven Results
+              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Real outcomes for real practices
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
+                Measurable improvements across documentation, throughput, and revenue — backed by data from practices we serve.
+              </motion.p>
+            </motion.div>
+
+            {/* Metrics grid */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+            >
+              {[
+                {
+                  icon: Clock,
+                  metric: "50–70%",
+                  label: "Reduction in Documentation Time",
+                  desc: "Hours of charting reclaimed every week.",
+                  accent: "text-emerald-600",
+                  accentBg: "bg-emerald-50",
+                },
+                {
+                  icon: Users,
+                  metric: "+30%",
+                  label: "Increased Patient Throughput",
+                  desc: "More appointments without longer hours.",
+                  accent: "text-blue-600",
+                  accentBg: "bg-blue-50",
+                },
+                {
+                  icon: Receipt,
+                  metric: "2× Faster",
+                  label: "Reimbursements",
+                  desc: "Cleaner claims and quicker payer turnaround.",
+                  accent: "text-violet-600",
+                  accentBg: "bg-violet-50",
+                },
+                {
+                  icon: TrendingDown,
+                  metric: "−65%",
+                  label: "Reduced Admin Burden",
+                  desc: "Less paperwork, more focus on patients.",
+                  accent: "text-rose-600",
+                  accentBg: "bg-rose-50",
+                },
+              ].map((m, i) => (
+                <motion.div key={i} variants={fadeInUp}>
+                  <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <CardContent className="p-7">
+                      <div className={`w-11 h-11 rounded-xl ${m.accentBg} flex items-center justify-center mb-5`}>
+                        <m.icon className={`w-5 h-5 ${m.accent}`} />
+                      </div>
+                      <div className={`text-4xl md:text-5xl font-extrabold ${m.accent} mb-2 tracking-tight`}>
+                        {m.metric}
+                      </div>
+                      <div className="text-sm font-bold text-slate-900 mb-1.5 leading-snug">{m.label}</div>
+                      <p className="text-xs text-slate-500 leading-relaxed">{m.desc}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Case study — Before vs After */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6 }}
+              className="max-w-5xl mx-auto"
+            >
+              <Card className="bg-white border border-slate-200 shadow-md overflow-hidden">
+                <CardContent className="p-8 md:p-12">
+
+                  {/* Case study label */}
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Case Study</span>
+                    <span className="h-px flex-1 bg-slate-200" />
                   </div>
-                  <p className="text-lg text-slate-700 mb-6 italic">"I finally had dinner with my family on a Tuesday. TouchScribe is the most impactful technology I've adopted in 15 years of practice. It's accurate, fast, and understands exactly how I want my notes formatted."</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-slate-200 rounded-full"></div>
-                    <div>
-                      <h4 className="font-bold text-slate-900">Dr. Sarah Jenkins</h4>
-                      <p className="text-sm text-slate-500">Internal Medicine, Mayo Clinic</p>
+
+                  <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+                    Documentation time, slashed.
+                  </h3>
+                  <p className="text-slate-500 mb-10 max-w-2xl">
+                    A 12-physician multi-specialty clinic measured charting time before and after onboarding TouchScribe. The result was immediate and dramatic.
+                  </p>
+
+                  {/* Before vs After comparison */}
+                  <div className="grid md:grid-cols-[1fr_auto_1fr] items-center gap-6 md:gap-8">
+
+                    {/* Before */}
+                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-7 text-center">
+                      <span className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-3">Before</span>
+                      <div className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-2 tracking-tight">3.2 hrs</div>
+                      <div className="text-sm text-slate-500">spent on documentation per day</div>
+                      {/* Bar */}
+                      <div className="mt-6 h-2 bg-slate-200 rounded-full overflow-hidden">
+                        <div className="h-full bg-slate-400 rounded-full" style={{ width: '100%' }} />
+                      </div>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="flex md:flex-col items-center justify-center text-primary">
+                      <ArrowRight className="w-8 h-8 md:rotate-0 rotate-90" />
+                    </div>
+
+                    {/* After */}
+                    <div className="rounded-2xl border-2 border-primary/30 bg-primary/5 p-7 text-center relative">
+                      <span className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3">After</span>
+                      <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 tracking-tight">1.0 hr</div>
+                      <div className="text-sm text-slate-600">spent on documentation per day</div>
+                      {/* Bar */}
+                      <div className="mt-6 h-2 bg-primary/20 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: '31%' }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+                          className="h-full bg-primary rounded-full"
+                        />
+                      </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-slate-50 border-none">
-                <CardContent className="p-8">
-                  <div className="flex gap-1 text-yellow-400 mb-6">
-                    {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
-                  </div>
-                  <p className="text-lg text-slate-700 mb-6 italic">"The ambient listening is incredible. Patients appreciate that I'm looking at them instead of my monitor. And my billing department is thrilled because the notes are more comprehensive than ever."</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-slate-200 rounded-full"></div>
+
+                  {/* Footer summary */}
+                  <div className="mt-10 pt-8 border-t border-slate-100 grid sm:grid-cols-3 gap-6 text-center">
                     <div>
-                      <h4 className="font-bold text-slate-900">Dr. Marcus Chen</h4>
-                      <p className="text-sm text-slate-500">Orthopedic Surgery</p>
+                      <div className="text-3xl font-extrabold text-primary tracking-tight">−69%</div>
+                      <div className="text-xs text-slate-500 mt-1 uppercase tracking-wide">Charting Time</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-extrabold text-primary tracking-tight">+18 hrs</div>
+                      <div className="text-xs text-slate-500 mt-1 uppercase tracking-wide">Reclaimed Per Week</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-extrabold text-primary tracking-tight">2 weeks</div>
+                      <div className="text-xs text-slate-500 mt-1 uppercase tracking-wide">To Full Adoption</div>
                     </div>
                   </div>
+
                 </CardContent>
               </Card>
-            </div>
+            </motion.div>
+
           </div>
         </section>
 
