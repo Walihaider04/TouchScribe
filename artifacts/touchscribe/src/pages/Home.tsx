@@ -813,33 +813,96 @@ export default function Home() {
         </section>
 
         {/* 8. Trust / Credibility */}
-        <section className="py-16 bg-slate-50 border-y border-slate-200">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-              <div className="flex items-center gap-3">
-                <Lock className="w-8 h-8 text-primary" />
-                <div>
-                  <div className="font-bold text-slate-900">HIPAA Compliant</div>
-                  <div className="text-xs text-slate-500">Enterprise-grade security</div>
-                </div>
-              </div>
-              <div className="w-px h-12 bg-slate-200 hidden md:block"></div>
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="w-8 h-8 text-primary" />
-                <div>
-                  <div className="font-bold text-slate-900">SOC 2 Type II</div>
-                  <div className="text-xs text-slate-500">Certified infrastructure</div>
-                </div>
-              </div>
-              <div className="w-px h-12 bg-slate-200 hidden md:block"></div>
-              <div className="flex items-center gap-3">
-                <HeartPulse className="w-8 h-8 text-primary" />
-                <div>
-                  <div className="font-bold text-slate-900">BAA Included</div>
-                  <div className="text-xs text-slate-500">Standard for all plans</div>
-                </div>
-              </div>
-            </div>
+
+            {/* Header */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={staggerContainer}
+              className="text-center max-w-2xl mx-auto mb-16"
+            >
+              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+                Built on Trust
+              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Enterprise-grade trust at every layer
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
+                From data security to clinical accuracy, every part of TouchScribe is built to meet the standards healthcare demands.
+              </motion.p>
+            </motion.div>
+
+            {/* Trust grid */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+            >
+              {[
+                {
+                  icon: ShieldCheck,
+                  title: "HIPAA-Aligned Workflows",
+                  desc: "Every workflow, from intake to delivery, is designed to meet HIPAA standards end-to-end.",
+                  accent: "text-emerald-600",
+                  accentBg: "bg-emerald-50",
+                },
+                {
+                  icon: Lock,
+                  title: "Secure Data Handling",
+                  desc: "Encrypted in transit and at rest, with strict access controls and full audit logging.",
+                  accent: "text-blue-600",
+                  accentBg: "bg-blue-50",
+                },
+                {
+                  icon: Users,
+                  title: "Trained Specialists",
+                  desc: "Certified medical scribes, coders, and QA reviewers — vetted, trained, and US-based oversight.",
+                  accent: "text-violet-600",
+                  accentBg: "bg-violet-50",
+                },
+                {
+                  icon: CheckCircle2,
+                  title: "Multi-Layer QA",
+                  desc: "Every note passes AI checks plus human review before reaching your EHR — zero shortcuts.",
+                  accent: "text-rose-600",
+                  accentBg: "bg-rose-50",
+                },
+                {
+                  icon: FileText,
+                  title: "EHR Compatibility",
+                  desc: "Native integrations with Epic, Cerner, Athena, eClinicalWorks, and 50+ other platforms.",
+                  accent: "text-amber-600",
+                  accentBg: "bg-amber-50",
+                },
+                {
+                  icon: HeartPulse,
+                  title: "Built for Clinicians",
+                  desc: "Purpose-built for medical workflows by a team that understands the realities of patient care.",
+                  accent: "text-teal-600",
+                  accentBg: "bg-teal-50",
+                },
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeInUp}>
+                  <Card className="group h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <CardContent className="p-7 flex items-start gap-5">
+                      <div className={`w-12 h-12 rounded-2xl ${item.accentBg} flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110`}>
+                        <item.icon className={`w-6 h-6 ${item.accent}`} />
+                      </div>
+                      <div>
+                        <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
+                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+
           </div>
         </section>
 
