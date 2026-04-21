@@ -1,0 +1,215 @@
+Apply the following structured content into my existing website UI. Do NOT rebuild the project. Only update sections, content, layout, and styling.
+
+Use a clean, modern healthcare SaaS design:
+- Colors: White background, soft light grey sections, blue/green accents
+- Typography: Clean sans-serif, strong headings, readable spacing
+- Layout: Spacious, premium, not crowded
+- Buttons: Rounded, soft shadow, primary = green/blue
+
+-----------------------------------
+SECTION 1 — HERO
+-----------------------------------
+Heading:
+Cut Physician Burnout. Reclaim Patient Time.
+Accurate Documentation & Revenue Growth — Powered by AI + Human Experts.
+
+Subheading:
+Eliminate documentation burden, reduce charting time, and improve accuracy with AI-powered scribing, EHR optimization, billing, and compliance support.
+
+Buttons:
+Primary: Schedule a Free Consultation
+Secondary: Learn How It Works
+
+-----------------------------------
+SECTION 2 — PROBLEM → SOLUTION (GRID OR STACKED)
+-----------------------------------
+Title:
+Where Practices Lose Time & Revenue — And How We Fix It
+
+4 blocks:
+
+1.
+Problem: Overwhelmed by charting and documentation errors?
+Solution: AI-Assisted Virtual Scribing + Human QA
+Desc: Accurate, compliant notes completed in real-time — so physicians focus on patients, not paperwork.
+
+2.
+Problem: Is your EHR slowing down your team?
+Solution: Structured EHR Documentation Optimization
+Desc: Clean, efficient workflows that reduce clicks, save time, and improve consistency.
+
+3.
+Problem: Delays in prior authorizations?
+Solution: Prior Authorization (RFA) Management
+Desc: Complete, compliant submissions that accelerate approvals and reduce delays.
+
+4.
+Problem: Losing revenue due to billing errors?
+Solution: Medical Billing & Revenue Cycle Management
+Desc: End-to-end billing support that minimizes denials and improves cash flow.
+
+-----------------------------------
+SECTION 3 — SERVICES OVERVIEW (CARDS)
+-----------------------------------
+Show 4 cards:
+
+Virtual Medical Scribing:
+Real-time EHR documentation support that reduces physician workload.
+
+EHR Documentation:
+Structured, accurate, and fully integrated clinical documentation.
+
+Prior Authorization:
+Faster approvals with complete and compliant submissions.
+
+Medical Billing:
+Streamlined billing to reduce denials and improve revenue.
+
+-----------------------------------
+SECTION 4 — WHY CHOOSE TOUCHSCRIBE (2x2 GRID)
+-----------------------------------
+Title:
+Why Healthcare Providers Trust TouchScribe
+
+Blocks:
+
+1. AI Scribing + Human QA
+✔ Real-Time Scribing
+✔ Human QA
+✔ Reduced Burnout
+Outcome: Faster notes, fewer errors
+
+2. EHR Documentation
+✔ Multi-system expertise
+✔ Structured notes
+✔ Audit-ready
+Outcome: Consistent documentation
+
+3. Prior Authorization
+✔ Accurate submissions
+✔ End-to-end handling
+✔ Reduced denials
+Outcome: Faster approvals
+
+4. Billing / RCM
+✔ Clean claims
+✔ Denial management
+✔ Compliance-driven
+Outcome: Faster reimbursements
+
+Bottom Highlight:
+✔ HIPAA-Compliant
+✔ Scalable
+✔ Multi-specialty
+✔ 50–70% workload reduction
+
+-----------------------------------
+SECTION 5 — HOW IT WORKS (LINEAR FLOW — IMPORTANT)
+-----------------------------------
+Create a horizontal workflow (like a connected timeline with icons and subtle animation):
+
+Workflow Setup → Team Assignment → Execution → Optimization
+
+Each step includes:
+
+01 Workflow Setup:
+Analyze EHR, workflow gaps, and needs
+
+02 Team Assignment:
+Assign experts and integrate securely
+
+03 Execution:
+Run scribing, EHR, billing, and authorization
+
+04 Optimization:
+Continuous QA, improvement, scaling
+
+Design:
+- Connected line or curve
+- Icons above each step
+- Hover animation
+- Mobile: stack vertically
+
+-----------------------------------
+SECTION 6 — INDUSTRIES
+-----------------------------------
+4 blocks:
+
+Clinics:
+Streamline documentation and reduce staff burden
+
+Hospitals:
+Structured workflows and scalable support
+
+Telehealth:
+Real-time documentation and seamless backend
+
+Private Practices:
+Reduce admin load and improve revenue
+
+CTA:
+Get Started Today
+
+-----------------------------------
+SECTION 7 — TRUST / CREDIBILITY
+-----------------------------------
+Headline:
+Built for Healthcare. Designed for Trust.
+
+Points:
+- HIPAA-Aligned Workflows
+- Secure Data Handling
+- Trained Specialists
+- AI + Human QA
+- EHR Compatibility
+
+-----------------------------------
+SECTION 8 — PROOF (RESULTS)
+-----------------------------------
+Headline:
+Real Impact. Measurable Results.
+
+Show metrics:
+- 50–70% reduction in documentation time
+- 20–30% increase in patient throughput
+- Faster reimbursements
+- Reduced admin burden
+
+Mini Case:
+Before: 3–4 hours charting
+After: <1.5 hours
+Result: Faster charts + less burnout
+
+-----------------------------------
+SECTION 9 — RISK REVERSAL
+-----------------------------------
+Headline:
+Zero Risk. Full Flexibility.
+
+Points:
+- No long-term contracts
+- Flexible plans
+- Guided onboarding
+- Performance-driven
+
+-----------------------------------
+SECTION 10 — FINAL CTA
+-----------------------------------
+Headline:
+Ready to Reduce Burnout and Improve Efficiency?
+
+Buttons:
+Book a Free Demo
+Get a Custom Workflow Plan
+
+Support line:
+No obligation. No pressure.
+
+-----------------------------------
+SECTION 11 — FOOTER CTA STRIP
+-----------------------------------
+Quick trust:
+25+ Years Experience
+20+ Specialties
+US Healthcare Expertise
+End-to-End Support

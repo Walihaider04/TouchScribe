@@ -19,7 +19,14 @@ import {
   Receipt,
   ClipboardList,
   Users,
-  BarChart2
+  BarChart2,
+  Building2,
+  Video,
+  Briefcase,
+  Award,
+  Layers,
+  Globe,
+  LifeBuoy
 } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImg from "../assets/images/hero.png";
@@ -813,8 +820,100 @@ export default function Home() {
           </div>
         </section>
 
+        {/* 7b. Industries */}
+        <section className="py-24 bg-white border-t border-slate-100">
+          <div className="container mx-auto px-4">
+
+            {/* Header */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={staggerContainer}
+              className="text-center max-w-2xl mx-auto mb-16"
+            >
+              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+                Who We Serve
+              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Built for every kind of healthcare practice
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
+                From single-provider clinics to multi-site hospital systems — we adapt to your workflow, not the other way around.
+              </motion.p>
+            </motion.div>
+
+            {/* Industries grid */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12"
+            >
+              {[
+                {
+                  icon: Stethoscope,
+                  title: "Clinics",
+                  desc: "Streamline documentation and reduce staff burden across your team.",
+                  accent: "text-emerald-600",
+                  accentBg: "bg-emerald-50",
+                },
+                {
+                  icon: Building2,
+                  title: "Hospitals",
+                  desc: "Structured workflows and scalable support across departments and locations.",
+                  accent: "text-blue-600",
+                  accentBg: "bg-blue-50",
+                },
+                {
+                  icon: Video,
+                  title: "Telehealth",
+                  desc: "Real-time documentation and seamless backend for virtual care delivery.",
+                  accent: "text-violet-600",
+                  accentBg: "bg-violet-50",
+                },
+                {
+                  icon: Briefcase,
+                  title: "Private Practices",
+                  desc: "Reduce admin load and improve revenue with end-to-end operational support.",
+                  accent: "text-rose-600",
+                  accentBg: "bg-rose-50",
+                },
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeInUp}>
+                  <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <CardContent className="p-7">
+                      <div className={`w-12 h-12 rounded-2xl ${item.accentBg} flex items-center justify-center mb-5`}>
+                        <item.icon className={`w-6 h-6 ${item.accent}`} />
+                      </div>
+                      <h3 className="text-lg font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
+                      <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <Button size="lg" className="rounded-full text-base h-14 px-8 shadow-lg shadow-primary/20 group">
+                Get Started Today
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </motion.div>
+
+          </div>
+        </section>
+
         {/* 8. Trust / Credibility */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4">
 
             {/* Header */}
@@ -908,7 +1007,7 @@ export default function Home() {
         </section>
 
         {/* 9. Risk Reversal */}
-        <section className="py-24 bg-slate-50">
+        <section className="py-24 bg-white border-t border-slate-100">
           <div className="container mx-auto px-4">
 
             {/* Header */}
@@ -1018,6 +1117,40 @@ export default function Home() {
           </motion.div>
         </section>
       </main>
+
+      {/* 11. Footer CTA Strip — quick trust */}
+      <section className="bg-slate-900 text-white py-12">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            variants={staggerContainer}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 max-w-5xl mx-auto"
+          >
+            {[
+              { icon: Award, title: "25+ Years", subtitle: "Experience" },
+              { icon: Layers, title: "20+", subtitle: "Specialties" },
+              { icon: Globe, title: "US Healthcare", subtitle: "Expertise" },
+              { icon: LifeBuoy, title: "End-to-End", subtitle: "Support" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                className="flex items-center justify-center gap-4 text-center md:text-left"
+              >
+                <div className="w-11 h-11 shrink-0 rounded-xl bg-primary/15 flex items-center justify-center">
+                  <item.icon className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-base md:text-lg font-bold text-white leading-tight">{item.title}</div>
+                  <div className="text-xs md:text-sm text-slate-400 uppercase tracking-wide">{item.subtitle}</div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
