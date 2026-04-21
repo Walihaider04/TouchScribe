@@ -980,23 +980,42 @@ export default function Home() {
         {/* 10. Final CTA */}
         <section className="py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-primary/5 -z-10"></div>
-          <div className="container mx-auto px-4 text-center max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Take your evenings back.</h2>
-            <p className="text-xl text-slate-600 mb-10">
-              Join thousands of providers who have eliminated their documentation backlog. Try TouchScribe free for 14 days. No credit card required.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-              <Button size="lg" className="rounded-full text-lg h-16 px-10 shadow-xl shadow-primary/25">
-                Start Free Trial
+          {/* Decorative gradient blobs */}
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl -z-10" />
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={staggerContainer}
+            className="container mx-auto px-4 text-center max-w-3xl relative"
+          >
+            <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
+              Get Started Today
+            </motion.p>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight leading-tight"
+            >
+              Ready to Reduce Burnout and Improve Efficiency?
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-xl text-slate-600 mb-10 leading-relaxed">
+              Let's streamline your documentation and revenue workflows.
+            </motion.p>
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+              <Button size="lg" className="rounded-full text-base md:text-lg h-14 md:h-16 px-8 md:px-10 shadow-xl shadow-primary/25 group">
+                Book a Free Demo
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full text-lg h-16 px-10 bg-white">
-                Request Enterprise Demo
+              <Button size="lg" variant="outline" className="rounded-full text-base md:text-lg h-14 md:h-16 px-8 md:px-10 bg-white border-slate-300 hover:border-primary hover:text-primary">
+                Get a Custom Workflow Plan
               </Button>
-            </div>
-            <p className="text-sm text-slate-500 font-medium">
-              100% Satisfaction Guarantee. Cancel anytime.
-            </p>
-          </div>
+            </motion.div>
+            <motion.p variants={fadeInUp} className="text-sm text-slate-500 font-medium">
+              No obligation. No pressure.
+            </motion.p>
+          </motion.div>
         </section>
       </main>
 
