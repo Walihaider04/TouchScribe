@@ -1080,7 +1080,7 @@ export default function Home() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 max-w-5xl mx-auto"
           >
             {[
-              { icon: Award, title: "25+ Years", subtitle: "Experience" },
+              { icon: Award, title: "20+", subtitle: "Experience" },
               { icon: Layers, title: "20+", subtitle: "Specialties" },
               { icon: Globe, title: "US Healthcare", subtitle: "Expertise" },
               { icon: LifeBuoy, title: "End-to-End", subtitle: "Support" },
