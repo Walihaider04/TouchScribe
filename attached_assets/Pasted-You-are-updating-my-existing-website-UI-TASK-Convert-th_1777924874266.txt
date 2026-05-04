@@ -1,0 +1,83 @@
+You are updating my existing website UI.
+
+TASK:
+Convert the current multi-row card section into a HORIZONTAL SLIDER (carousel) to reduce vertical space and improve UX.
+
+IMPORTANT:
+- DO NOT change any text inside the cards
+- DO NOT rewrite content
+- DO NOT remove any cards
+- ONLY change layout/behavior
+
+--------------------------------------------------
+
+SECTION TARGET:
+Locate the section that currently displays cards in 2 rows (grid layout).
+Convert this into a single-row horizontal slider.
+
+--------------------------------------------------
+
+REQUIREMENTS:
+
+1. LAYOUT:
+- Display cards in a horizontal row
+- Show:
+  - Desktop: 3 cards visible
+  - Tablet: 2 cards visible
+  - Mobile: 1 card visible
+- Maintain equal spacing between cards
+
+2. SLIDER FUNCTIONALITY:
+- Add left and right navigation arrows
+- Enable smooth horizontal scrolling
+- Optional: autoplay (slow, 4–5 seconds per slide)
+- Pause autoplay on hover
+
+3. RESPONSIVENESS:
+- Fully responsive across all screen sizes
+- No overflow or broken layout
+- Cards must remain same size and style
+
+4. DESIGN CONSISTENCY:
+- Keep existing card styling:
+  - Colors
+  - Fonts
+  - Shadows
+  - Icons
+- DO NOT redesign cards
+
+5. UX IMPROVEMENTS:
+- Add slight hover effect (scale or shadow)
+- Smooth transition animation
+- Ensure touch swipe works on mobile
+
+6. ACCESSIBILITY:
+- Buttons must be clickable and visible
+- Ensure keyboard navigation works (optional but preferred)
+
+--------------------------------------------------
+
+TECH IMPLEMENTATION (IMPORTANT):
+
+Use ONE of the following:
+- CSS scroll-snap (lightweight, preferred)
+OR
+- A simple JavaScript slider (no heavy libraries)
+
+DO NOT use large external libraries unless already installed.
+
+--------------------------------------------------
+
+FINAL CHECK:
+
+- No text is changed
+- No cards are missing
+- Slider works smoothly
+- No extra vertical space
+- Section looks clean and compact
+
+--------------------------------------------------
+
+OUTPUT:
+Apply changes directly to the existing section.
+Do not explain—just implement.
