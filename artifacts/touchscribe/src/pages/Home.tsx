@@ -154,17 +154,6 @@ export default function Home() {
                   className="rounded-[2rem] shadow-2xl object-cover w-full max-w-lg aspect-[4/5] lg:aspect-[3/4]"
                 />
 
-                {/* Floating badge: AI note */}
-                <div className="absolute bottom-8 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-slate-100">
-                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <Mic className="text-primary w-5 h-5 animate-pulse" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">Generating SOAP note...</p>
-                    <p className="text-xs text-slate-500 mt-0.5">Saved 22 min of charting today</p>
-                  </div>
-                </div>
-
                 {/* Floating badge: accuracy */}
                 <div className="absolute top-8 -right-4 bg-white rounded-xl shadow-lg px-4 py-2.5 border border-slate-100">
                   <p className="text-xs text-slate-500 font-medium">Accuracy Rate</p>
