@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -59,8 +60,10 @@ const NAV_LINKS = [
 
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [, navigate] = useLocation();
 
   const handleNavClick = () => setMobileOpen(false);
+  const goToDemo = () => navigate("/book-demo");
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -82,7 +85,7 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Button className="rounded-full px-6 hidden md:inline-flex">Book a Demo</Button>
+            <Button className="rounded-full px-6 hidden md:inline-flex" onClick={goToDemo}>Book a Demo</Button>
             {/* Mobile hamburger */}
             <button
               className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition-colors"
@@ -116,7 +119,7 @@ export default function Home() {
                   </a>
                 ))}
                 <div className="pt-3 mt-1 border-t border-slate-100">
-                  <Button className="rounded-full w-full" onClick={handleNavClick}>Book a Demo</Button>
+                  <Button className="rounded-full w-full" onClick={() => { handleNavClick(); goToDemo(); }}>Book a Demo</Button>
                 </div>
               </nav>
             </motion.div>
@@ -172,6 +175,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     className="rounded-full text-base h-14 px-8 shadow-lg shadow-primary/20 font-semibold"
+                    onClick={goToDemo}
                   >
                     Book a Free Demo
                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -1114,7 +1118,7 @@ export default function Home() {
               See how TouchScribe fits into your workflow—before making any commitment.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-              <Button size="lg" className="rounded-full text-base md:text-lg h-14 md:h-16 px-8 md:px-10 shadow-xl shadow-primary/25 group">
+              <Button size="lg" className="rounded-full text-base md:text-lg h-14 md:h-16 px-8 md:px-10 shadow-xl shadow-primary/25 group" onClick={goToDemo}>
                 Book a Free Demo
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
