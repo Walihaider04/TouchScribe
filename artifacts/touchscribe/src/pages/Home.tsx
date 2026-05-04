@@ -109,13 +109,6 @@ export default function Home() {
                   Accurate documentation and stronger revenue — handled by experts who work alongside your team.
                 </motion.p>
 
-                <motion.p
-                  variants={fadeInUp}
-                  className="text-base text-slate-500 mb-10 leading-relaxed max-w-xl"
-                >
-                  We take EHR documentation off your plate, so you spend less time on charting and focus on patient care. From accurate scribing to billing and compliance, everything works together to keep your practice running smoothly.
-                </motion.p>
-
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
                   <Button
                     size="lg"
