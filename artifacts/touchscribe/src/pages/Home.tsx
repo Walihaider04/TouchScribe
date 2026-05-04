@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -30,7 +30,9 @@ import {
   Globe,
   LifeBuoy,
   Menu,
-  X
+  X,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroImg from "../assets/images/hero.png";
@@ -50,6 +52,42 @@ const staggerContainer = {
     }
   }
 };
+
+function CardSlider({ children, ariaLabel }: { children: React.ReactNode; ariaLabel: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const scroll = (dir: "left" | "right") => {
+    const el = ref.current;
+    if (!el) return;
+    const amount = el.clientWidth * 0.9 * (dir === "left" ? -1 : 1);
+    el.scrollBy({ left: amount, behavior: "smooth" });
+  };
+  return (
+    <div className="relative" role="region" aria-label={ariaLabel}>
+      <div
+        ref={ref}
+        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2 -mx-4 px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {children}
+      </div>
+      <button
+        type="button"
+        onClick={() => scroll("left")}
+        aria-label="Previous"
+        className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-md items-center justify-center text-slate-600 hover:text-primary hover:border-primary hover:scale-105 transition z-10"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        type="button"
+        onClick={() => scroll("right")}
+        aria-label="Next"
+        className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-md items-center justify-center text-slate-600 hover:text-primary hover:border-primary hover:scale-105 transition z-10"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+    </div>
+  );
+}
 
 const NAV_LINKS = [
   { href: "#problem",     label: "The Problem" },
@@ -521,8 +559,8 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={staggerContainer}
-              className="grid md:grid-cols-2 gap-8"
             >
+              <CardSlider ariaLabel="Why Choose TouchScribe">
               {[
                 {
                   icon: Mic,
@@ -573,7 +611,11 @@ export default function Home() {
                   outcome: "Faster reimbursements and stable cash flow",
                 },
               ].map((item, i) => (
-                <motion.div key={i} variants={fadeInUp}>
+                <motion.div
+                  key={i}
+                  variants={fadeInUp}
+                  className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] hover:scale-[1.02] transition-transform duration-300"
+                >
                   <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
                     <CardContent className="p-8 flex flex-col h-full">
                       {/* Header */}
@@ -605,6 +647,7 @@ export default function Home() {
                   </Card>
                 </motion.div>
               ))}
+              </CardSlider>
             </motion.div>
 
             {/* Bottom Highlight */}
@@ -773,8 +816,9 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={staggerContainer}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+              className="mb-16"
             >
+              <CardSlider ariaLabel="Proven Results">
               {[
                 {
                   icon: Clock,
@@ -809,8 +853,12 @@ export default function Home() {
                   accentBg: "bg-rose-50",
                 },
               ].map((m, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <motion.div
+                  key={i}
+                  variants={fadeInUp}
+                  className="snap-start shrink-0 w-[80%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] hover:scale-[1.02] transition-transform duration-300"
+                >
+                  <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
                     <CardContent className="p-7">
                       <div className={`w-11 h-11 rounded-xl ${m.accentBg} flex items-center justify-center mb-5`}>
                         <m.icon className={`w-5 h-5 ${m.accent}`} />
@@ -824,6 +872,7 @@ export default function Home() {
                   </Card>
                 </motion.div>
               ))}
+              </CardSlider>
             </motion.div>
 
             {/* Case study — Before vs After */}
