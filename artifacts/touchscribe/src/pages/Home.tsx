@@ -184,6 +184,7 @@ export default function Home() {
                     size="lg"
                     variant="outline"
                     className="rounded-full text-base h-14 px-8 bg-white/80 hover:bg-white border-slate-200 text-slate-700 hover:text-primary group"
+                    onClick={() => navigate("/how-it-works")}
                   >
                     <PlayCircle className="mr-2 w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                     See How It Works
