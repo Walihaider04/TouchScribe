@@ -514,7 +514,7 @@ export default function Home() {
         </section>
 
         {/* 6. How It Works */}
-        <section id="how-it-works" className="py-24 bg-white overflow-hidden">
+        <section id="how-it-works" className="py-14 bg-white overflow-hidden">
           <div className="container mx-auto px-4">
 
             {/* Header */}
@@ -523,7 +523,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={staggerContainer}
-              className="text-center max-w-2xl mx-auto mb-16"
+              className="text-center max-w-2xl mx-auto mb-8"
             >
               <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
                 Our Process
@@ -537,17 +537,17 @@ export default function Home() {
             </motion.div>
 
             {/* ── Desktop: Wave timeline ── */}
-            <div className="hidden md:block relative w-full mx-auto" style={{ height: '500px' }}>
+            <div className="hidden md:block relative w-full mx-auto" style={{ height: '360px' }}>
 
               {/* SVG curved dashed connector */}
               <svg
                 className="absolute inset-0 w-full h-full pointer-events-none"
-                viewBox="0 0 1200 500"
+                viewBox="0 0 1200 360"
                 preserveAspectRatio="none"
               >
                 {/* Soft glow behind the path */}
                 <path
-                  d="M 192 240 C 330 240 330 350 468 350 C 606 350 606 240 732 240 C 870 240 870 350 1008 350"
+                  d="M 192 160 C 330 160 330 260 468 260 C 606 260 606 160 732 160 C 870 160 870 260 1008 260"
                   fill="none"
                   stroke="#10b981"
                   strokeWidth="12"
@@ -555,7 +555,7 @@ export default function Home() {
                 />
                 {/* Dashed primary path */}
                 <path
-                  d="M 192 240 C 330 240 330 350 468 350 C 606 350 606 240 732 240 C 870 240 870 350 1008 350"
+                  d="M 192 160 C 330 160 330 260 468 260 C 606 260 606 160 732 160 C 870 160 870 260 1008 260"
                   fill="none"
                   stroke="#10b981"
                   strokeWidth="2"
@@ -579,7 +579,7 @@ export default function Home() {
                     desc: "Analyze EHR, workflow gaps, and needs.",
                     step: "01",
                     left: "16%",
-                    top: "48%",
+                    top: "44%",
                   },
                   {
                     icon: Users,
@@ -587,7 +587,7 @@ export default function Home() {
                     desc: "Assign experts and integrate securely.",
                     step: "02",
                     left: "39%",
-                    top: "70%",
+                    top: "72%",
                   },
                   {
                     icon: Zap,
@@ -595,7 +595,7 @@ export default function Home() {
                     desc: "Run scribing, EHR, billing, and authorization.",
                     step: "03",
                     left: "61%",
-                    top: "48%",
+                    top: "44%",
                   },
                   {
                     icon: BarChart2,
@@ -603,7 +603,7 @@ export default function Home() {
                     desc: "Continuous QA, improvement, and scaling.",
                     step: "04",
                     left: "84%",
-                    top: "70%",
+                    top: "72%",
                   },
                 ].map((item, i) => {
                   const isTop = i % 2 === 0;
