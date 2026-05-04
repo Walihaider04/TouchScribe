@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -26,9 +27,11 @@ import {
   Award,
   Layers,
   Globe,
-  LifeBuoy
+  LifeBuoy,
+  Menu,
+  X
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import heroImg from "../assets/images/hero.png";
 import problemImg from "../assets/images/problem.png";
 
@@ -47,7 +50,18 @@ const staggerContainer = {
   }
 };
 
+const NAV_LINKS = [
+  { href: "#problem",     label: "The Problem" },
+  { href: "#services",    label: "Platform" },
+  { href: "#how-it-works",label: "How It Works" },
+  { href: "#proof",       label: "Results" },
+];
+
 export default function Home() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleNavClick = () => setMobileOpen(false);
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Navigation */}
@@ -59,17 +73,59 @@ export default function Home() {
             </div>
             <span className="font-semibold text-lg tracking-tight text-foreground">TouchScribe</span>
           </div>
+
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <a href="#problem" className="hover:text-primary transition-colors">The Problem</a>
-            <a href="#services" className="hover:text-primary transition-colors">Platform</a>
-            <a href="#how-it-works" className="hover:text-primary transition-colors">How It Works</a>
-            <a href="#proof" className="hover:text-primary transition-colors">Results</a>
+            {NAV_LINKS.map(({ href, label }) => (
+              <a key={href} href={href} className="hover:text-primary transition-colors">{label}</a>
+            ))}
           </nav>
-          <div className="flex items-center gap-4">
+
+          <div className="flex items-center gap-3">
             <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors hidden md:block">Log in</a>
-            <Button className="rounded-full px-6">Book a Demo</Button>
+            <Button className="rounded-full px-6 hidden md:inline-flex">Book a Demo</Button>
+            {/* Mobile hamburger */}
+            <button
+              className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition-colors"
+              onClick={() => setMobileOpen(prev => !prev)}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X className="w-5 h-5 text-slate-700" /> : <Menu className="w-5 h-5 text-slate-700" />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile drawer */}
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="md:hidden overflow-hidden bg-white border-t border-slate-100 shadow-lg"
+            >
+              <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
+                {NAV_LINKS.map(({ href, label }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    onClick={handleNavClick}
+                    className="text-base font-medium text-slate-700 hover:text-primary hover:bg-primary/5 rounded-lg px-3 py-3 transition-colors"
+                  >
+                    {label}
+                  </a>
+                ))}
+                <div className="pt-3 mt-1 border-t border-slate-100 flex flex-col gap-2">
+                  <a href="#" onClick={handleNavClick} className="text-sm font-medium text-slate-600 hover:text-primary px-3 py-2 transition-colors">
+                    Log in
+                  </a>
+                  <Button className="rounded-full w-full" onClick={handleNavClick}>Book a Demo</Button>
+                </div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
       <main className="flex-1">
         {/* 1. Hero Section */}
