@@ -62,6 +62,7 @@ export default function Home() {
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             <a href="#problem" className="hover:text-primary transition-colors">The Problem</a>
             <a href="#services" className="hover:text-primary transition-colors">Platform</a>
+            <a href="#how-it-works" className="hover:text-primary transition-colors">How It Works</a>
             <a href="#proof" className="hover:text-primary transition-colors">Results</a>
           </nav>
           <div className="flex items-center gap-4">
@@ -509,6 +510,177 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* 6. How It Works */}
+        <section id="how-it-works" className="py-20 bg-white overflow-hidden">
+          <div className="container mx-auto px-4">
+
+            {/* Header */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={staggerContainer}
+              className="text-center max-w-2xl mx-auto mb-12"
+            >
+              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+                Our Process
+              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                How TouchScribe Works
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
+                A seamless workflow from documentation to delivery — powered by AI and experts.
+              </motion.p>
+            </motion.div>
+
+            {/* ── Desktop: Wave timeline ── */}
+            <div className="hidden md:block relative w-full" style={{ height: '420px' }}>
+
+              {/* SVG wave connector */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                viewBox="0 0 1200 420"
+                preserveAspectRatio="none"
+              >
+                {/* Glow */}
+                <path
+                  d="M 150 180 C 290 180 290 300 450 300 C 610 300 610 180 750 180 C 910 180 910 300 1050 300"
+                  fill="none" stroke="#10b981" strokeWidth="14" opacity="0.07"
+                />
+                {/* Dashed path */}
+                <path
+                  d="M 150 180 C 290 180 290 300 450 300 C 610 300 610 180 750 180 C 910 180 910 300 1050 300"
+                  fill="none" stroke="#10b981" strokeWidth="2.5" strokeDasharray="12 8" opacity="0.5"
+                />
+              </svg>
+
+              {/* Step nodes */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-60px" }}
+                variants={staggerContainer}
+                className="absolute inset-0"
+              >
+                {[
+                  {
+                    icon: ClipboardList,
+                    title: "Workflow Setup",
+                    desc: "We analyze your specialty, EHR system, and workflow needs.",
+                    step: "01",
+                    left: "12.5%",
+                    top: "43%",
+                    isTop: true,
+                  },
+                  {
+                    icon: Users,
+                    title: "Team Integration",
+                    desc: "Our trained team integrates securely into your systems.",
+                    step: "02",
+                    left: "37.5%",
+                    top: "71%",
+                    isTop: false,
+                  },
+                  {
+                    icon: Zap,
+                    title: "Execution",
+                    desc: "We handle documentation, billing, and authorization with AI + human QA.",
+                    step: "03",
+                    left: "62.5%",
+                    top: "43%",
+                    isTop: true,
+                  },
+                  {
+                    icon: BarChart2,
+                    title: "Optimization & Delivery",
+                    desc: "We ensure quality, compliance, and continuous improvement.",
+                    step: "04",
+                    left: "87.5%",
+                    top: "71%",
+                    isTop: false,
+                  },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    variants={fadeInUp}
+                    style={{
+                      position: "absolute",
+                      left: item.left,
+                      top: item.top,
+                      transform: "translate(-50%, -50%)",
+                    }}
+                    className="flex flex-col items-center"
+                  >
+                    {/* Label above node */}
+                    {item.isTop && (
+                      <div className="text-center w-52 mb-5">
+                        <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
+                        <h3 className="text-sm font-bold text-slate-900 mt-1.5 mb-1 leading-snug">{item.title}</h3>
+                        <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+                      </div>
+                    )}
+
+                    {/* Node */}
+                    <div className="group relative w-16 h-16 rounded-full bg-white border-2 border-primary/40 shadow-lg shadow-primary/10 flex items-center justify-center hover:border-primary hover:shadow-primary/30 hover:scale-110 transition-all duration-300 cursor-default z-10">
+                      <div className="absolute inset-0 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300" />
+                      <item.icon className="w-6 h-6 text-primary relative z-10" />
+                    </div>
+
+                    {/* Label below node */}
+                    {!item.isTop && (
+                      <div className="text-center w-52 mt-5">
+                        <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
+                        <h3 className="text-sm font-bold text-slate-900 mt-1.5 mb-1 leading-snug">{item.title}</h3>
+                        <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* ── Mobile: vertical timeline ── */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="md:hidden relative pl-14"
+            >
+              <div className="absolute left-5 top-2 bottom-2 w-px border-l-2 border-dashed border-primary/30" />
+              {[
+                { icon: ClipboardList, step: "01", title: "Workflow Setup",         desc: "We analyze your specialty, EHR system, and workflow needs." },
+                { icon: Users,         step: "02", title: "Team Integration",        desc: "Our trained team integrates securely into your systems." },
+                { icon: Zap,           step: "03", title: "Execution",               desc: "We handle documentation, billing, and authorization with AI + human QA." },
+                { icon: BarChart2,     step: "04", title: "Optimization & Delivery", desc: "We ensure quality, compliance, and continuous improvement." },
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeInUp} className="relative flex items-start gap-5 mb-10 last:mb-0">
+                  <div className="absolute -left-9 top-0 w-11 h-11 rounded-full bg-white border-2 border-primary/50 shadow-md flex items-center justify-center shrink-0">
+                    <item.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
+                    <h3 className="text-base font-bold text-slate-900 mt-1 mb-1">{item.title}</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Tagline */}
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="text-center text-slate-400 text-sm mt-10 italic tracking-wide"
+            >
+              TouchScribe works as an extension of your practice — not just a service provider.
+            </motion.p>
+
           </div>
         </section>
 

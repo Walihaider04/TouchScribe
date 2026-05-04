@@ -1,0 +1,80 @@
+Create a premium "How TouchScribe Works" section using a curved timeline (wave-style workflow), similar to a modern SaaS process illustration.
+
+Section Title:
+"How TouchScribe Works"
+
+Subheading:
+"A seamless workflow from documentation to delivery — powered by AI and experts."
+
+-------------------------------------
+
+LAYOUT:
+
+- Create a horizontal curved/dotted path (wave or zig-zag line)
+- Place 4 steps along the curve
+- Each step should alternate slightly up and down (wave pattern)
+- Add circular markers (dots) on each step point
+
+-------------------------------------
+
+STEPS CONTENT:
+
+Step 1:
+Title: Workflow Setup
+Text: "We analyze your specialty, EHR system, and workflow needs."
+
+Step 2:
+Title: Team Integration
+Text: "Our trained team integrates securely into your systems."
+
+Step 3:
+Title: Execution
+Text: "We handle documentation, billing, and authorization with AI + human QA."
+
+Step 4:
+Title: Optimization & Delivery
+Text: "We ensure quality, compliance, and continuous improvement."
+
+-------------------------------------
+
+DESIGN:
+
+- Each step includes:
+  - Icon (medical/document style)
+  - Title
+  - Small description
+  - Highlight circle/dot
+
+- Use:
+  - Dotted or dashed curved connecting line
+  - Circular nodes in accent color (green or red accent)
+  - Icons in minimal line style
+
+- Background: very light grey or white
+- Maintain lots of whitespace (premium feel)
+
+-------------------------------------
+
+ANIMATION:
+
+- On scroll: steps fade in one by one from left to right
+- Dotted line appears progressively (optional)
+- Hover effect: slightly scale icons or highlight node
+
+-------------------------------------
+
+RESPONSIVENESS:
+
+- Desktop: full curved horizontal workflow
+- Tablet: simplified curve
+- Mobile:
+  - Convert into vertical timeline
+  - Keep icons + text stacked
+
+-------------------------------------
+
+FINAL TOUCH:
+
+Add a line below:
+
+"TouchScribe works as an extension of your practice — not just a service provider."
