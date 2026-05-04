@@ -97,19 +97,16 @@ export default function Home() {
 
                 <motion.h1
                   variants={fadeInUp}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6"
+                  className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-4 whitespace-nowrap"
                 >
-                  Cut Physician Burnout.{" "}
-                  <span className="text-primary">Reclaim Patient Time.</span>{" "}
-                  Accurate Documentation & Revenue Growth — Powered by{" "}
-                  <span className="text-secondary">AI + Human Experts.</span>
+                  Less burnout. Give time back to your patients.
                 </motion.h1>
 
                 <motion.p
                   variants={fadeInUp}
-                  className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl"
+                  className="text-[20px] text-slate-600 mb-10 leading-relaxed max-w-xl"
                 >
-                  Eliminate documentation burden, reduce charting time, and improve accuracy with AI-powered scribing, EHR optimization, billing, and compliance support.
+                  Accurate documentation and stronger revenue — handled by experts who work alongside your team.
                 </motion.p>
 
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
