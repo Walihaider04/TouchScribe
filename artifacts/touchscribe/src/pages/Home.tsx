@@ -536,42 +536,58 @@ export default function Home() {
             </motion.div>
 
             {/* ── Desktop: Wave timeline ── */}
-            <div className="hidden md:block relative w-full" style={{ height: '420px' }}>
+            {/*
+              Coordinate system: viewBox="0 0 100 100" + preserveAspectRatio="none"
+              means SVG x/y values ARE the CSS percentages — perfect 1-to-1 alignment.
+              Node centers: (12.5, 38), (37.5, 68), (62.5, 38), (87.5, 68)
+            */}
+            <div className="hidden md:block relative w-full" style={{ height: '380px' }}>
 
-              {/* SVG wave connector */}
+              {/* SVG — path + node circles all in one coordinate space */}
               <svg
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                viewBox="0 0 1200 420"
+                className="absolute inset-0 w-full h-full"
+                viewBox="0 0 100 100"
                 preserveAspectRatio="none"
               >
-                {/* Glow */}
+                {/* Soft glow behind the wave */}
                 <path
-                  d="M 150 180 C 300 180 300 300 450 300 C 600 300 600 180 750 180 C 900 180 900 300 1050 300"
-                  fill="none" stroke="#10b981" strokeWidth="14" opacity="0.07"
+                  d="M 12.5 38 C 25 38 25 68 37.5 68 C 50 68 50 38 62.5 38 C 75 38 75 68 87.5 68"
+                  fill="none" stroke="#10b981" strokeWidth="3" opacity="0.08"
                 />
-                {/* Dashed path */}
+                {/* Dashed wave path — endpoints sit exactly at node centres */}
                 <path
-                  d="M 150 180 C 300 180 300 300 450 300 C 600 300 600 180 750 180 C 900 180 900 300 1050 300"
-                  fill="none" stroke="#10b981" strokeWidth="2.5" strokeDasharray="12 8" opacity="0.5"
+                  d="M 12.5 38 C 25 38 25 68 37.5 68 C 50 68 50 38 62.5 38 C 75 38 75 68 87.5 68"
+                  fill="none" stroke="#10b981" strokeWidth="0.6"
+                  strokeDasharray="2.2 1.4" opacity="0.55"
                 />
+                {/* Node halos (drawn in SVG so they sit exactly on path points) */}
+                {([
+                  [12.5, 38],
+                  [37.5, 68],
+                  [62.5, 38],
+                  [87.5, 68],
+                ] as [number, number][]).map(([cx, cy], i) => (
+                  <circle key={i} cx={cx} cy={cy} r="4.2"
+                    fill="white" stroke="#10b981" strokeWidth="0.7" opacity="0.35" />
+                ))}
               </svg>
 
-              {/* Step nodes */}
+              {/* Step cards — positioned with the same percentages as SVG node centres */}
               <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-60px" }}
                 variants={staggerContainer}
-                className="absolute inset-0"
+                className="absolute inset-0 pointer-events-none"
               >
-                {[
+                {([
                   {
                     icon: ClipboardList,
                     title: "Workflow Setup",
                     desc: "We analyze your specialty, EHR system, and workflow needs.",
                     step: "01",
-                    left: "2.5%",
-                    top: "43%",
+                    cx: 12.5,
+                    cy: 38,
                     isTop: true,
                   },
                   {
@@ -579,8 +595,8 @@ export default function Home() {
                     title: "Team Integration",
                     desc: "Our trained team integrates securely into your systems.",
                     step: "02",
-                    left: "27.5%",
-                    top: "71%",
+                    cx: 37.5,
+                    cy: 68,
                     isTop: false,
                   },
                   {
@@ -588,8 +604,8 @@ export default function Home() {
                     title: "Execution",
                     desc: "We handle documentation, billing, and authorization with AI + human QA.",
                     step: "03",
-                    left: "52.5%",
-                    top: "43%",
+                    cx: 62.5,
+                    cy: 38,
                     isTop: true,
                   },
                   {
@@ -597,40 +613,40 @@ export default function Home() {
                     title: "Optimization & Delivery",
                     desc: "We ensure quality, compliance, and continuous improvement.",
                     step: "04",
-                    left: "77.5%",
-                    top: "71%",
+                    cx: 87.5,
+                    cy: 68,
                     isTop: false,
                   },
-                ].map((item, i) => (
+                ] as { icon: React.ElementType; title: string; desc: string; step: string; cx: number; cy: number; isTop: boolean }[]).map((item, i) => (
                   <motion.div
                     key={i}
                     variants={fadeInUp}
                     style={{
                       position: "absolute",
-                      left: item.left,
-                      top: item.top,
+                      left: `${item.cx}%`,
+                      top: `${item.cy}%`,
                       transform: "translate(-50%, -50%)",
                     }}
-                    className="flex flex-col items-center"
+                    className="flex flex-col items-center pointer-events-auto"
                   >
-                    {/* Label above node */}
+                    {/* Label above (odd steps) */}
                     {item.isTop && (
-                      <div className="text-center w-52 mb-5">
+                      <div className="text-center w-48 mb-4">
                         <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
                         <h3 className="text-sm font-bold text-slate-900 mt-1.5 mb-1 leading-snug">{item.title}</h3>
                         <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
                       </div>
                     )}
 
-                    {/* Node */}
-                    <div className="group relative w-16 h-16 rounded-full bg-white border-2 border-primary/40 shadow-lg shadow-primary/10 flex items-center justify-center hover:border-primary hover:shadow-primary/30 hover:scale-110 transition-all duration-300 cursor-default z-10">
-                      <div className="absolute inset-0 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300" />
-                      <item.icon className="w-6 h-6 text-primary relative z-10" />
+                    {/* Node circle */}
+                    <div className="group relative w-14 h-14 rounded-full bg-white border-2 border-primary/40 shadow-lg shadow-primary/10 flex items-center justify-center hover:border-primary hover:shadow-primary/25 hover:scale-110 transition-all duration-300 cursor-default z-10">
+                      <div className="absolute inset-0 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors" />
+                      <item.icon className="w-5 h-5 text-primary relative z-10" />
                     </div>
 
-                    {/* Label below node */}
+                    {/* Label below (even steps) */}
                     {!item.isTop && (
-                      <div className="text-center w-52 mt-5">
+                      <div className="text-center w-48 mt-4">
                         <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
                         <h3 className="text-sm font-bold text-slate-900 mt-1.5 mb-1 leading-snug">{item.title}</h3>
                         <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
