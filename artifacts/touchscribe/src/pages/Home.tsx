@@ -82,7 +82,6 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors hidden md:block">Log in</a>
             <Button className="rounded-full px-6 hidden md:inline-flex">Book a Demo</Button>
             {/* Mobile hamburger */}
             <button
@@ -116,10 +115,7 @@ export default function Home() {
                     {label}
                   </a>
                 ))}
-                <div className="pt-3 mt-1 border-t border-slate-100 flex flex-col gap-2">
-                  <a href="#" onClick={handleNavClick} className="text-sm font-medium text-slate-600 hover:text-primary px-3 py-2 transition-colors">
-                    Log in
-                  </a>
+                <div className="pt-3 mt-1 border-t border-slate-100">
                   <Button className="rounded-full w-full" onClick={handleNavClick}>Book a Demo</Button>
                 </div>
               </nav>
