@@ -71,7 +71,6 @@ export default function Home() {
           </div>
         </div>
       </header>
-
       <main className="flex-1">
         {/* 1. Hero Section */}
         <section className="relative pt-20 pb-32 overflow-hidden">
@@ -676,7 +675,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-center text-slate-400 text-sm mt-10 italic tracking-wide"
+              className="text-center text-slate-400 text-sm italic tracking-wide pl-[1px] pr-[1px] pt-[0px] pb-[0px] mb-[0px] mt-[90px]"
             >
               TouchScribe works as an extension of your practice — not just a service provider.
             </motion.p>
@@ -1140,7 +1139,6 @@ export default function Home() {
           </motion.div>
         </section>
       </main>
-
       {/* 11. Footer CTA Strip — quick trust */}
       <section className="bg-slate-900 text-white py-12">
         <div className="container mx-auto px-4">
@@ -1174,7 +1172,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
         <div className="container mx-auto px-4">
