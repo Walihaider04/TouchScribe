@@ -536,94 +536,51 @@ export default function Home() {
             </motion.div>
 
             {/* ── Desktop: Wave timeline ── */}
-            <div className="hidden md:block relative w-full" style={{ height: '420px' }}>
-
-              {/* SVG wave connector */}
-
-              {/* Step nodes */}
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
-                variants={staggerContainer}
-                className="absolute inset-0"
-              >
-                {[
-                  {
-                    icon: ClipboardList,
-                    title: "Workflow Setup",
-                    desc: "We analyze your specialty, EHR system, and workflow needs.",
-                    step: "01",
-                    left: "12.5%",
-                    top: "43%",
-                    isTop: true,
-                  },
-                  {
-                    icon: Users,
-                    title: "Team Integration",
-                    desc: "Our trained team integrates securely into your systems.",
-                    step: "02",
-                    left: "37.5%",
-                    top: "71%",
-                    isTop: false,
-                  },
-                  {
-                    icon: Zap,
-                    title: "Execution",
-                    desc: "We handle documentation, billing, and authorization with AI + human QA.",
-                    step: "03",
-                    left: "62.5%",
-                    top: "43%",
-                    isTop: true,
-                  },
-                  {
-                    icon: BarChart2,
-                    title: "Optimization & Delivery",
-                    desc: "We ensure quality, compliance, and continuous improvement.",
-                    step: "04",
-                    left: "87.5%",
-                    top: "71%",
-                    isTop: false,
-                  },
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    variants={fadeInUp}
-                    style={{
-                      position: "absolute",
-                      left: item.left,
-                      top: item.top,
-                      transform: "translate(-50%, -50%)",
-                    }}
-                    className="flex flex-col items-center"
-                  >
-                    {/* Label above node */}
-                    {item.isTop && (
-                      <div className="text-center w-52 mb-5">
-                        <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
-                        <h3 className="text-sm font-bold text-slate-900 mt-1.5 mb-1 leading-snug">{item.title}</h3>
-                        <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
-                      </div>
-                    )}
-
-                    {/* Node */}
-                    <div className="group relative w-16 h-16 rounded-full bg-white border-2 border-primary/40 shadow-lg shadow-primary/10 flex items-center justify-center hover:border-primary hover:shadow-primary/30 hover:scale-110 transition-all duration-300 cursor-default z-10">
-                      <div className="absolute inset-0 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300" />
-                      <item.icon className="w-6 h-6 text-primary relative z-10" />
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={staggerContainer}
+              className="hidden md:flex justify-around items-stretch"
+              style={{ height: '420px' }}
+            >
+              {[
+                { icon: ClipboardList, step: "01", title: "Workflow Setup",         desc: "We analyze your specialty, EHR system, and workflow needs.",                       isTop: true  },
+                { icon: Users,         step: "02", title: "Team Integration",        desc: "Our trained team integrates securely into your systems.",                         isTop: false },
+                { icon: Zap,           step: "03", title: "Execution",               desc: "We handle documentation, billing, and authorization with AI + human QA.",        isTop: true  },
+                { icon: BarChart2,     step: "04", title: "Optimization & Delivery", desc: "We ensure quality, compliance, and continuous improvement.",                      isTop: false },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeInUp}
+                  className={`flex flex-col items-center w-1/4 ${item.isTop ? 'justify-end pb-16' : 'justify-start pt-16'}`}
+                >
+                  {/* Label above node (steps 1 & 3) */}
+                  {item.isTop && (
+                    <div className="text-center px-3 mb-5">
+                      <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
+                      <h3 className="text-sm font-bold text-slate-900 mt-1.5 mb-1 leading-snug">{item.title}</h3>
+                      <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
                     </div>
+                  )}
 
-                    {/* Label below node */}
-                    {!item.isTop && (
-                      <div className="text-center w-52 mt-5">
-                        <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
-                        <h3 className="text-sm font-bold text-slate-900 mt-1.5 mb-1 leading-snug">{item.title}</h3>
-                        <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
-                      </div>
-                    )}
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
+                  {/* Node */}
+                  <div className="group relative w-16 h-16 rounded-full bg-white border-2 border-primary/40 shadow-lg shadow-primary/10 flex items-center justify-center hover:border-primary hover:shadow-primary/30 hover:scale-110 transition-all duration-300 cursor-default shrink-0">
+                    <div className="absolute inset-0 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300" />
+                    <item.icon className="w-6 h-6 text-primary relative z-10" />
+                  </div>
+
+                  {/* Label below node (steps 2 & 4) */}
+                  {!item.isTop && (
+                    <div className="text-center px-3 mt-5">
+                      <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
+                      <h3 className="text-sm font-bold text-slate-900 mt-1.5 mb-1 leading-snug">{item.title}</h3>
+                      <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </motion.div>
 
             {/* ── Mobile: vertical timeline ── */}
             <motion.div
