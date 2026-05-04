@@ -99,7 +99,7 @@ export default function Home() {
                   variants={fadeInUp}
                   className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15] mb-4"
                 >
-                  Less burnout.<br />Give time back to your patients.
+                  Less burnout.<br /><span className="text-primary">Give time back to your patients.</span>
                 </motion.h1>
 
                 <motion.p
