@@ -1,0 +1,183 @@
+Apply the following structure to my existing homepage.
+
+STRICT RULES:
+
+Do NOT create new content
+Do NOT rewrite or paraphrase text
+ONLY trim, organize, and place correctly
+Keep all wording exactly as provided below
+Do NOT touch sections not mentioned
+Keep styling consistent with current design
+
+Design Guidelines:
+
+Clean, minimal, premium
+White + light grey background
+Blue/green accents
+Proper spacing between sections
+No overcrowding
+Fully responsive
+1. HERO SECTION
+
+Heading:
+Less burnout. Give time back to your patients.
+
+Accurate documentation and stronger revenue — handled by experts who work alongside your team.
+
+Subheading:
+We take EHR documentation off your plate, so you spend less time on charting and focus on patient care. From accurate scribing to billing and compliance, everything works together to keep your practice running smoothly.
+
+Buttons:
+Primary: Book a Free Demo
+Secondary: See How It Works
+
+2. PROBLEM → SOLUTION SECTION
+
+Title:
+Where Practices Lose Time & Revenue — And How We Fix It
+
+Display as 4 clean cards (short, no long paragraphs):
+
+1
+Charting taking too much time—and still leading to errors?
+→ AI-Assisted Virtual Scribing + Human QA
+Accurate, compliant notes completed in real time, so physicians can stay focused on patients—not paperwork.
+
+2
+Your EHR slowing your team down instead of helping them?
+→ Structured EHR Documentation Optimization
+Cleaner workflows that reduce clicks, save time, and bring consistency across every record.
+
+3
+Prior authorizations delaying care and disrupting operations?
+→ Prior Authorization (RFA) Management
+Complete, compliant submissions that speed up approvals and reduce back-and-forth.
+
+4
+Revenue slipping through the cracks due to billing errors or denials?
+→ Medical Billing & Revenue Cycle Management
+End-to-end billing support that reduces denials and keeps your cash flow predictable.
+
+CTA under section:
+Schedule a Free Consultation
+Learn How It Works
+
+3. SERVICES (SHORT OVERVIEW ONLY)
+
+Show 4 simple cards (title + one line only):
+
+Virtual Medical Scribing
+Real-time charting with AI support and human QA to reduce physician workload.
+
+EHR Documentation
+Structured, accurate documentation aligned with your workflow.
+
+Prior Authorization
+Complete, compliant submissions that improve approval speed.
+
+Medical Billing & Revenue Cycle
+Clean claims, reduced denials, and predictable cash flow.
+
+Button:
+Explore Services
+
+4. WHY CHOOSE TOUCHSCRIBE
+
+Title:
+Why Healthcare Providers Trust TouchScribe
+
+Use 2x2 grid (keep concise):
+
+AI Scribing + Human QA
+✔ Real-time AI-assisted scribing
+✔ Human QA for accuracy and context
+✔ Reduced after-hours charting
+👉 Outcome: Faster documentation, fewer errors, more patient time
+
+EHR Documentation
+✔ Experience across major EHR platforms
+✔ Specialty-aligned standards
+✔ Clean, structured records
+👉 Outcome: Consistent, audit-ready documentation
+
+Prior Authorization / RFA
+✔ Accurate medical necessity documentation
+✔ End-to-end authorization handling
+✔ Reduced denials
+👉 Outcome: Faster approvals, smoother workflows
+
+Medical Billing / Revenue Cycle
+✔ Clean coding and claim submission
+✔ Denial management
+✔ Revenue optimization
+👉 Outcome: Faster reimbursements and stable cash flow
+
+5. HOW IT WORKS (LINEAR FLOW)
+
+Title:
+From Setup to Full Workflow Optimization — Built to Reduce Operational Burden
+
+Display as horizontal flow (connected steps with arrows/icons):
+
+01 — Workflow Setup
+We identify where time, revenue, and efficiency are being lost and design a custom plan.
+
+02 — Team Assignment + Integration
+Trained specialists integrate into your systems without disruption.
+
+03 — Execution
+We handle documentation, EHR workflows, prior authorizations, and billing together.
+
+04 — Optimization
+We continuously improve accuracy, compliance, and performance.
+
+Final line below:
+From the first consultation to full-scale support, TouchScribe works as an extension of your practice — not just another service provider.
+
+6. PROOF / RESULTS
+
+Title:
+Real Clinical Impact. Measurable Outcomes.
+
+Metrics:
+50–70% reduction in documentation time
+20–30% increase in patient throughput
+Faster reimbursements
+Reduced administrative burden
+
+Mini Case:
+US-based Internal Medicine Practice
+Before: Providers spending 3–4 hours daily on documentation
+After: Reduced to under 1.5 hours
+
+Outcome:
+✔ Improved provider efficiency
+✔ Faster chart completion
+✔ Reduced burnout
+
+Testimonial:
+“TouchScribe significantly reduced our documentation load and improved turnaround time. The combination of human expertise and AI QA made a noticeable difference.”
+— Practice Administrator, US-based Practice
+
+7. FINAL CTA
+
+Headline:
+Ready to Reduce Burnout and Improve Efficiency?
+
+Subheading:
+See how TouchScribe fits into your workflow—before making any commitment.
+
+Buttons:
+Book a Free Demo
+Get a Custom Workflow Plan
+
+Support line:
+No obligation. No pressure. Just a clear understanding of what works best for your practice.
+
+⚠️ FINAL INSTRUCTION TO REPLIT
+Do NOT modify existing sections outside this structure
+Do NOT duplicate content
+Do NOT change wording
+Only reorganize homepage layout
+Keep everything responsive and clean
+Preserve current styling system
