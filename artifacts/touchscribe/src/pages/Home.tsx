@@ -229,27 +229,32 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 2. Trust Bar */}
-        <section className="py-10 border-y border-slate-100 bg-white">
+        {/* 2. Mini Trust Strip */}
+        <section className="py-8 border-y border-slate-100" style={{ background: "#F7FAFF" }}>
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-5 md:gap-4 max-w-6xl mx-auto">
               {[
-                { icon: <ShieldCheck className="w-5 h-5 text-primary" />, label: "HIPAA-Compliant Operations" },
-                { icon: <CheckCircle2 className="w-5 h-5 text-primary" />, label: "99%+ Documentation Accuracy" },
-                { icon: <Zap className="w-5 h-5 text-primary" />, label: "Real-Time EHR Integration" },
-                { icon: <Clock className="w-5 h-5 text-primary" />, label: "24–48 Hour Turnaround" },
-                { icon: <TrendingDown className="w-5 h-5 text-primary" />, label: "Cost Savings up to 70%" },
+                { icon: <ShieldCheck className="w-4 h-4 text-primary" />, label: "HIPAA-Compliant Operations" },
+                { icon: <CheckCircle2 className="w-4 h-4 text-primary" />, label: "99%+ Documentation Accuracy" },
+                { icon: <Zap className="w-4 h-4 text-primary" />, label: "Real-Time EHR Integration" },
+                { icon: <Clock className="w-4 h-4 text-primary" />, label: "24–48 Hour Turnaround" },
+                { icon: <TrendingDown className="w-4 h-4 text-primary" />, label: "Cost Savings up to 70%" },
               ].map(({ icon, label }) => (
-                <div key={label} className="flex flex-col items-center text-center gap-2 px-2">
-                  <div className="w-10 h-10 rounded-full bg-primary/8 flex items-center justify-center shrink-0">
-                    {icon}
-                  </div>
-                  <span className="text-sm font-medium text-slate-700 leading-snug">{label}</span>
+                <div key={label} className="flex items-center justify-center gap-2 px-2 text-center">
+                  <span className="shrink-0">{icon}</span>
+                  <span className="text-xs md:text-sm font-medium text-slate-700 leading-snug">{label}</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        {/* 2b. Micro Proof Line */}
+        <div className="bg-white py-6 text-center border-b border-slate-100">
+          <p className="text-sm md:text-base text-slate-500 font-medium">
+            <span className="text-primary font-semibold">Reducing documentation time by up to 70%</span> for healthcare providers across 20+ specialties.
+          </p>
+        </div>
 
         {/* 3. Problem Section */}
         <section id="problem" className="py-24 bg-slate-50">
@@ -333,6 +338,32 @@ export default function Home() {
                 </motion.div>
               ))}
             </motion.div>
+
+            {/* CTA after Problem */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
+            >
+              <Button
+                size="lg"
+                className="rounded-full h-13 px-8 shadow-md shadow-primary/20 font-semibold"
+                onClick={goToDemo}
+              >
+                Book a Free Demo
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full h-13 px-8 bg-white border-slate-300 text-slate-700 hover:text-primary hover:border-primary"
+                onClick={() => navigate("/how-it-works")}
+              >
+                Learn How It Works
+              </Button>
+            </motion.div>
           </div>
         </section>
 
@@ -399,30 +430,70 @@ export default function Home() {
                 },
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeInUp} className="group">
-                  <Card className="h-full border border-slate-200 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300 bg-white">
-                    <CardContent className="p-8 flex flex-col h-full">
-                      {/* Icon */}
-                      <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center mb-6`}>
-                        <item.icon className={`w-7 h-7 ${item.iconColor}`} />
-                      </div>
+                  <button
+                    type="button"
+                    onClick={() => navigate("/how-it-works")}
+                    className="text-left w-full h-full"
+                  >
+                    <Card className="h-full border border-slate-200 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1 group-hover:border-primary/30 transition-all duration-300 bg-white cursor-pointer">
+                      <CardContent className="p-8 flex flex-col h-full">
+                        {/* Icon */}
+                        <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center mb-6`}>
+                          <item.icon className={`w-7 h-7 ${item.iconColor}`} />
+                        </div>
 
-                      {/* Title + desc */}
-                      <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                      <p className="text-slate-500 leading-relaxed mb-6">{item.desc}</p>
+                        {/* Title + desc */}
+                        <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                        <p className="text-slate-500 leading-relaxed mb-6">{item.desc}</p>
 
-                      {/* Feature list */}
-                      <ul className="mt-auto space-y-2">
-                        {item.highlights.map((h) => (
-                          <li key={h} className="flex items-center gap-2 text-sm text-slate-600">
-                            <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                            {h}
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
+                        {/* Feature list */}
+                        <ul className="space-y-2 mb-6">
+                          {item.highlights.map((h) => (
+                            <li key={h} className="flex items-center gap-2 text-sm text-slate-600">
+                              <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                              {h}
+                            </li>
+                          ))}
+                        </ul>
+
+                        {/* Learn More */}
+                        <div className="mt-auto pt-4 border-t border-slate-100">
+                          <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                            Learn More
+                            <ArrowRight className="w-4 h-4" />
+                          </span>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </button>
                 </motion.div>
               ))}
+            </motion.div>
+
+            {/* CTA after Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center mt-14"
+            >
+              <Button
+                size="lg"
+                className="rounded-full h-13 px-8 shadow-md shadow-primary/20 font-semibold"
+                onClick={() => navigate("/how-it-works")}
+              >
+                Explore Services
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full h-13 px-8 bg-white border-slate-300 text-slate-700 hover:text-primary hover:border-primary"
+                onClick={goToDemo}
+              >
+                Book a Free Demo
+              </Button>
             </motion.div>
           </div>
         </section>
@@ -835,296 +906,6 @@ export default function Home() {
                 </CardContent>
               </Card>
             </motion.div>
-
-          </div>
-        </section>
-
-        {/* 7b. Industries */}
-        <section className="py-24 bg-white border-t border-slate-100">
-          <div className="container mx-auto px-4">
-
-            {/* Header */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              variants={staggerContainer}
-              className="text-center max-w-2xl mx-auto mb-16"
-            >
-              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
-                Who We Serve
-              </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Experience Built Inside Real Clinical Workflows
-              </motion.h2>
-              <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
-                We've built our workflows from the ground up inside real clinical environments — so we understand your specialty's needs.
-              </motion.p>
-            </motion.div>
-
-            {/* Industries grid */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12"
-            >
-              {[
-                {
-                  icon: Stethoscope,
-                  title: "Internal Medicine",
-                  desc: "Streamline complex documentation and reduce charting burden for internists.",
-                  accent: "text-emerald-600",
-                  accentBg: "bg-emerald-50",
-                },
-                {
-                  icon: HeartPulse,
-                  title: "Family Medicine",
-                  desc: "High-volume, multi-concern visits handled with accuracy and speed.",
-                  accent: "text-blue-600",
-                  accentBg: "bg-blue-50",
-                },
-                {
-                  icon: Zap,
-                  title: "Urgent Care",
-                  desc: "Fast, accurate documentation for urgent care's fast-paced environment.",
-                  accent: "text-violet-600",
-                  accentBg: "bg-violet-50",
-                },
-                {
-                  icon: Building2,
-                  title: "Multi-provider Groups",
-                  desc: "Scalable support across multiple providers, locations, and specialties.",
-                  accent: "text-rose-600",
-                  accentBg: "bg-rose-50",
-                },
-              ].map((item, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <CardContent className="p-7">
-                      <div className={`w-12 h-12 rounded-2xl ${item.accentBg} flex items-center justify-center mb-5`}>
-                        <item.icon className={`w-6 h-6 ${item.accent}`} />
-                      </div>
-                      <h3 className="text-lg font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
-                      <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center"
-            >
-              <Button size="lg" className="rounded-full text-base h-14 px-8 shadow-lg shadow-primary/20 group">
-                Get Started Today
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </motion.div>
-
-          </div>
-        </section>
-
-        {/* 8. Trust / Credibility */}
-        <section className="py-24 bg-slate-50">
-          <div className="container mx-auto px-4">
-
-            {/* Header */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              variants={staggerContainer}
-              className="text-center max-w-2xl mx-auto mb-16"
-            >
-              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
-                Built on Trust
-              </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Built for Healthcare. Designed for Trust.
-              </motion.h2>
-              <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
-                From data security to clinical accuracy, every part of TouchScribe is built to meet the standards healthcare demands.
-              </motion.p>
-            </motion.div>
-
-            {/* Trust grid */}
-            {(() => {
-              const trustItems = [
-                {
-                  icon: ShieldCheck,
-                  title: "HIPAA-Aligned Workflows",
-                  desc: "Every workflow, from intake to delivery, is designed to meet HIPAA standards end-to-end.",
-                  accent: "text-emerald-600",
-                  accentBg: "bg-emerald-50",
-                },
-                {
-                  icon: Lock,
-                  title: "Secure Data Handling",
-                  desc: "Encrypted in transit and at rest, with strict access controls and full audit logging.",
-                  accent: "text-blue-600",
-                  accentBg: "bg-blue-50",
-                },
-                {
-                  icon: Users,
-                  title: "Trained Specialists",
-                  desc: "Certified medical scribes, coders, and QA reviewers — vetted, trained, and US-based oversight.",
-                  accent: "text-violet-600",
-                  accentBg: "bg-violet-50",
-                },
-                {
-                  icon: CheckCircle2,
-                  title: "AI + Human QA",
-                  desc: "Every note passes AI checks plus human review before reaching your EHR — zero shortcuts.",
-                  accent: "text-rose-600",
-                  accentBg: "bg-rose-50",
-                },
-                {
-                  icon: FileText,
-                  title: "EHR Compatibility",
-                  desc: "Native integrations with Epic, Cerner, Athena, eClinicalWorks, and 50+ other platforms.",
-                  accent: "text-amber-600",
-                  accentBg: "bg-amber-50",
-                },
-              ];
-              const TrustCard = ({ item }: { item: typeof trustItems[0] }) => (
-                <Card className="group h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                  <CardContent className="p-7 flex items-start gap-5">
-                    <div className={`w-12 h-12 rounded-2xl ${item.accentBg} flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110`}>
-                      <item.icon className={`w-6 h-6 ${item.accent}`} />
-                    </div>
-                    <div>
-                      <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
-                      <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-              return (
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-60px" }}
-                  variants={staggerContainer}
-                  className="max-w-6xl mx-auto space-y-6"
-                >
-                  {/* Top row: 3 cards */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {trustItems.slice(0, 3).map((item, i) => (
-                      <motion.div key={i} variants={fadeInUp}>
-                        <TrustCard item={item} />
-                      </motion.div>
-                    ))}
-                  </div>
-                  {/* Bottom row: 2 cards centered */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:w-2/3 lg:mx-auto">
-                    {trustItems.slice(3).map((item, i) => (
-                      <motion.div key={i} variants={fadeInUp}>
-                        <TrustCard item={item} />
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              );
-            })()}
-
-          </div>
-        </section>
-
-        {/* 9. Risk Reversal */}
-        <section className="py-24 bg-white border-t border-slate-100">
-          <div className="container mx-auto px-4">
-
-            {/* Header */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              variants={staggerContainer}
-              className="text-center max-w-2xl mx-auto mb-16"
-            >
-              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
-                Our Commitment
-              </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
-                Zero Risk. Full Flexibility.
-              </motion.h2>
-              <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
-                We earn your business every month. No lock-ins, no surprises — just results you can measure.
-              </motion.p>
-            </motion.div>
-
-            {/* 4-up grid */}
-            {(() => {
-              const riskItems = [
-                {
-                  icon: FileText,
-                  title: "No Long-Term Contracts",
-                  desc: "Month-to-month engagements. Stay because it works — not because you're stuck.",
-                },
-                {
-                  icon: Users,
-                  title: "Flexible Engagement Models",
-                  desc: "Scale up or down based on patient volume, specialty needs, or seasonal demand.",
-                },
-                {
-                  icon: ClipboardList,
-                  title: "Guided Onboarding",
-                  desc: "Dedicated success team gets you live in 48 hours with hands-on training and support.",
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Performance-Driven Approach",
-                  desc: "Transparent KPIs and monthly reviews. We measure what matters, then improve it.",
-                },
-                {
-                  icon: Activity,
-                  title: "7-Day Free Pilot Trial",
-                  desc: "Try TouchScribe risk-free for 7 days. See real results before you commit.",
-                },
-              ];
-              const RiskCard = ({ item }: { item: typeof riskItems[0] }) => (
-                <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                  <CardContent className="p-7 text-center">
-                    <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-5">
-                      <item.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                  </CardContent>
-                </Card>
-              );
-              return (
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-60px" }}
-                  variants={staggerContainer}
-                  className="max-w-6xl mx-auto space-y-6"
-                >
-                  {/* Top row: 4 cards */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {riskItems.slice(0, 4).map((item, i) => (
-                      <motion.div key={i} variants={fadeInUp}>
-                        <RiskCard item={item} />
-                      </motion.div>
-                    ))}
-                  </div>
-                  {/* Bottom row: 1 card centered */}
-                  <div className="lg:w-1/4 lg:mx-auto">
-                    <motion.div variants={fadeInUp}>
-                      <RiskCard item={riskItems[4]} />
-                    </motion.div>
-                  </div>
-                </motion.div>
-              );
-            })()}
 
           </div>
         </section>
