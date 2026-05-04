@@ -954,14 +954,8 @@ export default function Home() {
             </motion.div>
 
             {/* Trust grid */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
-            >
-              {[
+            {(() => {
+              const trustItems = [
                 {
                   icon: ShieldCheck,
                   title: "HIPAA-Aligned Workflows",
@@ -997,22 +991,47 @@ export default function Home() {
                   accent: "text-amber-600",
                   accentBg: "bg-amber-50",
                 },
-              ].map((item, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <Card className="group h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <CardContent className="p-7 flex items-start gap-5">
-                      <div className={`w-12 h-12 rounded-2xl ${item.accentBg} flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110`}>
-                        <item.icon className={`w-6 h-6 ${item.accent}`} />
-                      </div>
-                      <div>
-                        <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
+              ];
+              const TrustCard = ({ item }: { item: typeof trustItems[0] }) => (
+                <Card className="group h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <CardContent className="p-7 flex items-start gap-5">
+                    <div className={`w-12 h-12 rounded-2xl ${item.accentBg} flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110`}>
+                      <item.icon className={`w-6 h-6 ${item.accent}`} />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
+                      <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+              return (
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-60px" }}
+                  variants={staggerContainer}
+                  className="max-w-6xl mx-auto space-y-6"
+                >
+                  {/* Top row: 3 cards */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {trustItems.slice(0, 3).map((item, i) => (
+                      <motion.div key={i} variants={fadeInUp}>
+                        <TrustCard item={item} />
+                      </motion.div>
+                    ))}
+                  </div>
+                  {/* Bottom row: 2 cards centered */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:w-2/3 lg:mx-auto">
+                    {trustItems.slice(3).map((item, i) => (
+                      <motion.div key={i} variants={fadeInUp}>
+                        <TrustCard item={item} />
+                      </motion.div>
+                    ))}
+                  </div>
                 </motion.div>
-              ))}
-            </motion.div>
+              );
+            })()}
 
           </div>
         </section>
