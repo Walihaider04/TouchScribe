@@ -539,22 +539,6 @@ export default function Home() {
             <div className="hidden md:block relative w-full" style={{ height: '420px' }}>
 
               {/* SVG wave connector */}
-              <svg
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                viewBox="0 0 1200 420"
-                preserveAspectRatio="none"
-              >
-                {/* Glow */}
-                <path
-                  d="M 150 180 C 300 180 300 300 450 300 C 600 300 600 180 750 180 C 900 180 900 300 1050 300"
-                  fill="none" stroke="#10b981" strokeWidth="14" opacity="0.07"
-                />
-                {/* Dashed path */}
-                <path
-                  d="M 150 180 C 300 180 300 300 450 300 C 600 300 600 180 750 180 C 900 180 900 300 1050 300"
-                  fill="none" stroke="#10b981" strokeWidth="2.5" strokeDasharray="12 8" opacity="0.5"
-                />
-              </svg>
 
               {/* Step nodes */}
               <motion.div
