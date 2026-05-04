@@ -199,9 +199,7 @@ export default function Home() {
               <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
                 Problem → Solution
               </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">
-                Where Practices Lose Time & Revenue — And How We Fix It
-              </motion.h2>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">Where Practices Lose Time & Revenue  And How We Fix It</motion.h2>
             </motion.div>
 
             <motion.div
