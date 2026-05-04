@@ -1,0 +1,214 @@
+UPDATE EXISTING TOUCHSCRIBE WEBSITE CONTENT — DO NOT REBUILD OR CHANGE STRUCTURE
+
+You are working on an already built TouchScribe website.
+DO NOT recreate components, layouts, styling, responsiveness, or sections.
+
+STRICT INSTRUCTIONS:
+- Only update TEXT CONTENT where changes are provided below
+- DO NOT touch sections that are unchanged
+- DO NOT change CSS, layout, spacing, or responsiveness
+- DO NOT rename components or restructure pages
+- Keep all existing animations, grids, and UI intact
+- Preserve mobile responsiveness exactly as is
+
+-----------------------------------
+🔷 HOMEPAGE CONTENT UPDATES
+-----------------------------------
+
+1. HERO SECTION (REPLACE TEXT ONLY)
+
+Heading:
+"Less burnout. Give time back to your patients."
+
+Subheading:
+"Accurate documentation and stronger revenue — handled by experts who work alongside your team."
+
+Paragraph:
+"We take EHR documentation off your plate, so you spend less time on charting and focus on patient care. From accurate scribing to billing and compliance, everything works together to keep your practice running smoothly."
+
+CTA Buttons:
+Primary: "Book a Free Demo"
+Secondary: "See How It Works"
+
+Sticky CTA:
+Top-right persistent button:
+"Book a Demo" (visible on scroll desktop + mobile)
+
+-----------------------------------
+
+2. PROBLEM → SOLUTION SECTION (UPDATE TEXT)
+
+Update heading to:
+"Where Practices Lose Time & Revenue — And How We Fix It"
+
+Keep existing structure but replace descriptions with:
+
+- Charting Issue → AI-Assisted Virtual Scribing + Human QA
+- EHR Issue → Structured EHR Documentation Optimization
+- Prior Auth Issue → Prior Authorization (RFA) Management
+- Billing Issue → Medical Billing & Revenue Cycle Management
+
+CTA (add if missing):
+"Schedule a Free Consultation"
+"Learn How It Works"
+
+-----------------------------------
+
+3. ADD NEW SECTION: CREDIBILITY STRIP (IF NOT PRESENT)
+
+Place BELOW Hero or Services
+
+Heading:
+"Built For Clinical Accuracy. Designed For Real Practice Workflows."
+
+Points:
+- Secure, HIPAA-compliant processes
+- Multi-specialty experience
+- AI + human QA workflows
+- Seamless EHR integration
+- Reliable turnaround times
+- End-to-end workflow support
+- Cost-efficient operations
+
+-----------------------------------
+
+4. TRUST SECTION (ENSURE SEPARATE FROM CREDIBILITY)
+
+Heading:
+"Built For Healthcare. Designed For Trust."
+
+Replace content with updated trust paragraphs:
+- HIPAA-aligned workflows
+- Secure environments
+- Trained healthcare specialists
+- Multi-layer QA
+- EHR compatibility
+
+-----------------------------------
+
+5. SERVICES SECTION (NO STRUCTURE CHANGE)
+
+Ensure only these 4 are listed:
+- Virtual Medical Scribing
+- EHR Documentation Support
+- Prior Authorization and RFA
+- Medical Billing & Invoicing
+
+CTA:
+"Explore Services"
+"Book Demo"
+
+-----------------------------------
+
+6. WHY CHOOSE US (TEXT REFINEMENT ONLY)
+
+Update headings and descriptions to:
+- AI Scribing + Human QA
+- EHR Documentation Expertise
+- Prior Authorization Accuracy
+- Revenue Cycle Optimization
+
+DO NOT change card layout
+
+-----------------------------------
+
+7. HOW IT WORKS (KEEP EXISTING DESIGN)
+
+Update step headings only:
+
+Step 1:
+"Discovery & Workflow Setup"
+
+Step 2:
+"Team Assignment + System Integration"
+
+Step 3:
+"Execution Across All 4 Pillars"
+
+Step 4:
+"QA, Optimization & Scaling"
+
+Update final line:
+"From the first consultation to full-scale support, TouchScribe works as an extension of your practice — not just another service provider."
+
+-----------------------------------
+
+8. PROOF / RESULTS SECTION (UPDATE NUMBERS + TEXT)
+
+Ensure metrics are:
+
+- 50–70% reduction in documentation time
+- 20–30% increase in patient throughput
+- Faster reimbursements
+- Reduced admin burden
+
+Update case study wording to new version
+
+-----------------------------------
+
+9. ADD EXPERIENCE LAYER (NEW SECTION)
+
+Heading:
+"Experience Built Inside Real Clinical Workflows"
+
+Include:
+- Internal Medicine
+- Family Medicine
+- Urgent Care
+- Multi-provider groups
+
+-----------------------------------
+
+10. TESTIMONIAL / PROOF CARDS SECTION (ADD IF NOT EXISTS)
+
+Add 4 cards:
+- Family Medicine
+- Urgent Care
+- Specialty Practice
+- Revenue Cycle
+
+Each includes:
+Challenge → Solution → Outcome
+
+-----------------------------------
+
+11. RISK REVERSAL (UPDATE TEXT)
+
+Add:
+- No long-term contracts
+- Flexible engagement
+- Guided onboarding
+- Performance-driven model
+- 7-day free pilot trial
+
+-----------------------------------
+
+12. FINAL CTA (REPLACE TEXT)
+
+Heading:
+"Ready to Reduce Burnout and Improve Efficiency?"
+
+Buttons:
+"Book a Free Demo"
+"Get a Custom Workflow Plan"
+
+Support line:
+"No obligation. No pressure."
+
+-----------------------------------
+
+13. DO NOT TOUCH:
+- Layout
+- Responsiveness
+- Navigation
+- Styling
+- Animations
+- Existing sections not listed above
+
+-----------------------------------
+
+FINAL CHECK:
+- Ensure no section duplication
+- Ensure consistent typography
+- Ensure spacing remains unchanged
+- Ensure mobile responsiveness is preserved

@@ -67,7 +67,7 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-4">
             <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors hidden md:block">Log in</a>
-            <Button className="rounded-full px-6">Start Free Trial</Button>
+            <Button className="rounded-full px-6">Book a Demo</Button>
           </div>
         </div>
       </header>
@@ -104,9 +104,16 @@ export default function Home() {
 
                 <motion.p
                   variants={fadeInUp}
-                  className="text-[20px] text-slate-600 mb-10 leading-relaxed max-w-xl"
+                  className="text-[20px] text-slate-600 mb-4 leading-relaxed max-w-xl"
                 >
                   Accurate documentation and stronger revenue — handled by experts who work alongside your team.
+                </motion.p>
+
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-base text-slate-500 mb-10 leading-relaxed max-w-xl"
+                >
+                  We take EHR documentation off your plate, so you spend less time on charting and focus on patient care. From accurate scribing to billing and compliance, everything works together to keep your practice running smoothly.
                 </motion.p>
 
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
@@ -114,7 +121,7 @@ export default function Home() {
                     size="lg"
                     className="rounded-full text-base h-14 px-8 shadow-lg shadow-primary/20 font-semibold"
                   >
-                    Schedule a Free Consultation
+                    Book a Free Demo
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                   <Button
@@ -123,7 +130,7 @@ export default function Home() {
                     className="rounded-full text-base h-14 px-8 bg-white/80 hover:bg-white border-slate-200 text-slate-700 hover:text-primary group"
                   >
                     <PlayCircle className="mr-2 w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
-                    Learn How It Works
+                    See How It Works
                   </Button>
                 </motion.div>
 
@@ -314,7 +321,7 @@ export default function Home() {
                   icon: FileText,
                   color: "bg-blue-50",
                   iconColor: "text-blue-600",
-                  title: "EHR Documentation",
+                  title: "EHR Documentation Support",
                   desc: "Structured, accurate, and fully integrated clinical documentation.",
                   highlights: ["Epic, Cerner & 50+ EHRs", "QA-reviewed records", "Real-time sync"],
                 },
@@ -322,7 +329,7 @@ export default function Home() {
                   icon: ShieldCheck,
                   color: "bg-amber-50",
                   iconColor: "text-amber-600",
-                  title: "Prior Authorization",
+                  title: "Prior Authorization and RFA",
                   desc: "Faster approvals with complete and compliant submissions.",
                   highlights: ["End-to-end submissions", "Real-time tracking", "Appeals support"],
                 },
@@ -330,7 +337,7 @@ export default function Home() {
                   icon: Receipt,
                   color: "bg-violet-50",
                   iconColor: "text-violet-600",
-                  title: "Medical Billing",
+                  title: "Medical Billing & Invoicing",
                   desc: "Streamlined billing to reduce denials and improve revenue.",
                   highlights: ["Denial management", "Claims automation", "Revenue recovery"],
                 },
@@ -406,7 +413,7 @@ export default function Home() {
                   icon: FileText,
                   accent: "text-blue-600",
                   accentBg: "bg-blue-50",
-                  title: "EHR Documentation",
+                  title: "EHR Documentation Expertise",
                   bullets: [
                     "Multi-system expertise",
                     "Structured notes",
@@ -418,7 +425,7 @@ export default function Home() {
                   icon: ShieldCheck,
                   accent: "text-violet-600",
                   accentBg: "bg-violet-50",
-                  title: "Prior Authorization",
+                  title: "Prior Authorization Accuracy",
                   bullets: [
                     "Accurate submissions",
                     "End-to-end handling",
@@ -430,7 +437,7 @@ export default function Home() {
                   icon: Receipt,
                   accent: "text-rose-600",
                   accentBg: "bg-rose-50",
-                  title: "Billing / RCM",
+                  title: "Revenue Cycle Optimization",
                   bullets: [
                     "Clean claims",
                     "Denial management",
@@ -531,10 +538,10 @@ export default function Home() {
               style={{ height: '420px' }}
             >
               {[
-                { icon: ClipboardList, step: "01", title: "Workflow Setup",         desc: "We analyze your specialty, EHR system, and workflow needs.",                       isTop: true  },
-                { icon: Users,         step: "02", title: "Team Integration",        desc: "Our trained team integrates securely into your systems.",                         isTop: false },
-                { icon: Zap,           step: "03", title: "Execution",               desc: "We handle documentation, billing, and authorization with AI + human QA.",        isTop: true  },
-                { icon: BarChart2,     step: "04", title: "Optimization & Delivery", desc: "We ensure quality, compliance, and continuous improvement.",                      isTop: false },
+                { icon: ClipboardList, step: "01", title: "Discovery & Workflow Setup",           desc: "We analyze your specialty, EHR system, and workflow needs.",                       isTop: true  },
+                { icon: Users,         step: "02", title: "Team Assignment + System Integration", desc: "Our trained team integrates securely into your systems.",                         isTop: false },
+                { icon: Zap,           step: "03", title: "Execution Across All 4 Pillars",      desc: "We handle documentation, billing, and authorization with AI + human QA.",        isTop: true  },
+                { icon: BarChart2,     step: "04", title: "QA, Optimization & Scaling",          desc: "We ensure quality, compliance, and continuous improvement.",                      isTop: false },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -578,10 +585,10 @@ export default function Home() {
             >
               <div className="absolute left-5 top-2 bottom-2 w-px border-l-2 border-dashed border-primary/30" />
               {[
-                { icon: ClipboardList, step: "01", title: "Workflow Setup",         desc: "We analyze your specialty, EHR system, and workflow needs." },
-                { icon: Users,         step: "02", title: "Team Integration",        desc: "Our trained team integrates securely into your systems." },
-                { icon: Zap,           step: "03", title: "Execution",               desc: "We handle documentation, billing, and authorization with AI + human QA." },
-                { icon: BarChart2,     step: "04", title: "Optimization & Delivery", desc: "We ensure quality, compliance, and continuous improvement." },
+                { icon: ClipboardList, step: "01", title: "Discovery & Workflow Setup",           desc: "We analyze your specialty, EHR system, and workflow needs." },
+                { icon: Users,         step: "02", title: "Team Assignment + System Integration", desc: "Our trained team integrates securely into your systems." },
+                { icon: Zap,           step: "03", title: "Execution Across All 4 Pillars",      desc: "We handle documentation, billing, and authorization with AI + human QA." },
+                { icon: BarChart2,     step: "04", title: "QA, Optimization & Scaling",          desc: "We ensure quality, compliance, and continuous improvement." },
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeInUp} className="relative flex items-start gap-5 mb-10 last:mb-0">
                   <div className="absolute -left-9 top-0 w-11 h-11 rounded-full bg-white border-2 border-primary/50 shadow-md flex items-center justify-center shrink-0">
@@ -604,7 +611,7 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-center text-slate-400 text-sm italic tracking-wide pl-[1px] pr-[1px] pt-[0px] pb-[0px] mb-[0px] mt-[90px]"
             >
-              TouchScribe works as an extension of your practice — not just a service provider.
+              From the first consultation to full-scale support, TouchScribe works as an extension of your practice — not just another service provider.
             </motion.p>
 
           </div>
@@ -652,7 +659,7 @@ export default function Home() {
                 },
                 {
                   icon: Users,
-                  metric: "+30%",
+                  metric: "20–30%",
                   label: "Increased Patient Throughput",
                   desc: "More appointments without longer hours.",
                   accent: "text-blue-600",
@@ -792,10 +799,10 @@ export default function Home() {
                 Who We Serve
               </motion.p>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Built for every kind of healthcare practice
+                Experience Built Inside Real Clinical Workflows
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
-                From single-provider clinics to multi-site hospital systems — we adapt to your workflow, not the other way around.
+                We've built our workflows from the ground up inside real clinical environments — so we understand your specialty's needs.
               </motion.p>
             </motion.div>
 
@@ -810,29 +817,29 @@ export default function Home() {
               {[
                 {
                   icon: Stethoscope,
-                  title: "Clinics",
-                  desc: "Streamline documentation and reduce staff burden across your team.",
+                  title: "Internal Medicine",
+                  desc: "Streamline complex documentation and reduce charting burden for internists.",
                   accent: "text-emerald-600",
                   accentBg: "bg-emerald-50",
                 },
                 {
-                  icon: Building2,
-                  title: "Hospitals",
-                  desc: "Structured workflows and scalable support across departments and locations.",
+                  icon: HeartPulse,
+                  title: "Family Medicine",
+                  desc: "High-volume, multi-concern visits handled with accuracy and speed.",
                   accent: "text-blue-600",
                   accentBg: "bg-blue-50",
                 },
                 {
-                  icon: Video,
-                  title: "Telehealth",
-                  desc: "Real-time documentation and seamless backend for virtual care delivery.",
+                  icon: Zap,
+                  title: "Urgent Care",
+                  desc: "Fast, accurate documentation for urgent care's fast-paced environment.",
                   accent: "text-violet-600",
                   accentBg: "bg-violet-50",
                 },
                 {
-                  icon: Briefcase,
-                  title: "Private Practices",
-                  desc: "Reduce admin load and improve revenue with end-to-end operational support.",
+                  icon: Building2,
+                  title: "Multi-provider Groups",
+                  desc: "Scalable support across multiple providers, locations, and specialties.",
                   accent: "text-rose-600",
                   accentBg: "bg-rose-50",
                 },
@@ -1006,6 +1013,11 @@ export default function Home() {
                   icon: TrendingUp,
                   title: "Performance-Driven Approach",
                   desc: "Transparent KPIs and monthly reviews. We measure what matters, then improve it.",
+                },
+                {
+                  icon: Activity,
+                  title: "7-Day Free Pilot Trial",
+                  desc: "Try TouchScribe risk-free for 7 days. See real results before you commit.",
                 },
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeInUp}>
