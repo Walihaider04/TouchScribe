@@ -8,6 +8,7 @@ import BookDemo from "@/pages/BookDemo";
 import HowItWorks from "@/pages/HowItWorks";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
+import About from "@/pages/About";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
+      <Route path="/about" component={About} />
       <Route component={NotFound} />
     </Switch>
   );

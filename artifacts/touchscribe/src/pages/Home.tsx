@@ -56,7 +56,7 @@ const NAV_LINKS = [
   { href: "#services",    label: "Services" },
   { href: "#how-it-works",label: "How It Works" },
   { href: "#proof",       label: "Results" },
-  { href: "#about",       label: "About" },
+  { href: "/about",        label: "About" },
 ];
 
 export default function Home() {
@@ -1126,97 +1126,6 @@ export default function Home() {
               );
             })()}
 
-          </div>
-        </section>
-
-        {/* About */}
-        <section id="about" className="py-24 bg-white border-t border-slate-100">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-              {/* Left */}
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-80px" }}
-                variants={staggerContainer}
-              >
-                <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
-                  About Us
-                </motion.p>
-                <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-5 leading-tight">
-                  We built TouchScribe to give clinicians their time back.
-                </motion.h2>
-                <motion.p variants={fadeInUp} className="text-slate-600 leading-relaxed mb-5">
-                  TouchScribe was founded by healthcare professionals who experienced firsthand how administrative burden was eroding the patient-provider relationship. Physicians were spending more time on documentation than on the people in front of them.
-                </motion.p>
-                <motion.p variants={fadeInUp} className="text-slate-600 leading-relaxed mb-8">
-                  We combined AI-assisted scribing with dedicated human specialists to build a service that actually works inside real clinical environments — not just in demos. Today, we support practices across 20+ specialties, handling documentation, EHR workflows, prior authorizations, and billing so care teams can do what they trained to do.
-                </motion.p>
-                <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
-                  {[
-                    { value: "20+", label: "Specialties Served" },
-                    { value: "98.7%", label: "Documentation Accuracy" },
-                    { value: "48 hrs", label: "Average Go-Live Time" },
-                    { value: "70%", label: "Workload Reduction" },
-                  ].map(({ value, label }) => (
-                    <div key={label} className="bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-center min-w-[110px]">
-                      <div className="text-2xl font-bold text-primary leading-none mb-1">{value}</div>
-                      <div className="text-xs text-slate-500 font-medium leading-snug">{label}</div>
-                    </div>
-                  ))}
-                </motion.div>
-              </motion.div>
-
-              {/* Right */}
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
-                variants={staggerContainer}
-                className="space-y-5"
-              >
-                {[
-                  {
-                    icon: HeartPulse,
-                    color: "bg-emerald-50",
-                    iconColor: "text-emerald-600",
-                    title: "Built by healthcare professionals",
-                    desc: "Our founding team includes physicians, clinical coders, and practice managers who understood the problem before building the solution.",
-                  },
-                  {
-                    icon: ShieldCheck,
-                    color: "bg-blue-50",
-                    iconColor: "text-blue-600",
-                    title: "HIPAA-first from day one",
-                    desc: "Every workflow, system, and team member operates under strict HIPAA compliance. We sign a BAA with every practice we work with.",
-                  },
-                  {
-                    icon: Users,
-                    color: "bg-violet-50",
-                    iconColor: "text-violet-600",
-                    title: "Human + AI, not AI alone",
-                    desc: "We believe AI is a force multiplier, not a replacement. Every note is reviewed by a trained human before it reaches your EHR.",
-                  },
-                  {
-                    icon: Globe,
-                    color: "bg-amber-50",
-                    iconColor: "text-amber-600",
-                    title: "US healthcare expertise",
-                    desc: "Deep familiarity with US billing codes, payer rules, and documentation standards across primary care and specialty practices.",
-                  },
-                ].map((item, i) => (
-                  <motion.div key={i} variants={fadeInUp} className="flex items-start gap-4">
-                    <div className={`w-11 h-11 rounded-xl ${item.color} flex items-center justify-center shrink-0`}>
-                      <item.icon className={`w-5 h-5 ${item.iconColor}`} />
-                    </div>
-                    <div>
-                      <h3 className="text-base font-bold text-slate-900 mb-1">{item.title}</h3>
-                      <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
           </div>
         </section>
 
