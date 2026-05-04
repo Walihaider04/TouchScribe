@@ -97,9 +97,9 @@ export default function Home() {
 
                 <motion.h1
                   variants={fadeInUp}
-                  className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-4 whitespace-nowrap"
+                  className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15] mb-4"
                 >
-                  Less burnout. Give time back to your patients.
+                  Less burnout.<br />Give time back to your patients.
                 </motion.h1>
 
                 <motion.p
