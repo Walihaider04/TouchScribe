@@ -546,12 +546,12 @@ export default function Home() {
               >
                 {/* Glow */}
                 <path
-                  d="M 150 180 C 290 180 290 300 450 300 C 610 300 610 180 750 180 C 910 180 910 300 1050 300"
+                  d="M 30 180 C 180 180 180 300 330 300 C 480 300 480 180 630 180 C 780 180 780 300 930 300"
                   fill="none" stroke="#10b981" strokeWidth="14" opacity="0.07"
                 />
                 {/* Dashed path */}
                 <path
-                  d="M 150 180 C 290 180 290 300 450 300 C 610 300 610 180 750 180 C 910 180 910 300 1050 300"
+                  d="M 30 180 C 180 180 180 300 330 300 C 480 300 480 180 630 180 C 780 180 780 300 930 300"
                   fill="none" stroke="#10b981" strokeWidth="2.5" strokeDasharray="12 8" opacity="0.5"
                 />
               </svg>
@@ -570,7 +570,7 @@ export default function Home() {
                     title: "Workflow Setup",
                     desc: "We analyze your specialty, EHR system, and workflow needs.",
                     step: "01",
-                    left: "12.5%",
+                    left: "2.5%",
                     top: "43%",
                     isTop: true,
                   },
@@ -579,7 +579,7 @@ export default function Home() {
                     title: "Team Integration",
                     desc: "Our trained team integrates securely into your systems.",
                     step: "02",
-                    left: "37.5%",
+                    left: "27.5%",
                     top: "71%",
                     isTop: false,
                   },
@@ -588,7 +588,7 @@ export default function Home() {
                     title: "Execution",
                     desc: "We handle documentation, billing, and authorization with AI + human QA.",
                     step: "03",
-                    left: "62.5%",
+                    left: "52.5%",
                     top: "43%",
                     isTop: true,
                   },
@@ -597,7 +597,7 @@ export default function Home() {
                     title: "Optimization & Delivery",
                     desc: "We ensure quality, compliance, and continuous improvement.",
                     step: "04",
-                    left: "87.5%",
+                    left: "77.5%",
                     top: "71%",
                     isTop: false,
                   },
