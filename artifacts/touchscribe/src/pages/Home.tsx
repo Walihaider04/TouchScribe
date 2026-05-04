@@ -1060,14 +1060,8 @@ export default function Home() {
             </motion.div>
 
             {/* 4-up grid */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
-            >
-              {[
+            {(() => {
+              const riskItems = [
                 {
                   icon: FileText,
                   title: "No Long-Term Contracts",
@@ -1093,20 +1087,43 @@ export default function Home() {
                   title: "7-Day Free Pilot Trial",
                   desc: "Try TouchScribe risk-free for 7 days. See real results before you commit.",
                 },
-              ].map((item, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <CardContent className="p-7 text-center">
-                      <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-5">
-                        <item.icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
-                      <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                    </CardContent>
-                  </Card>
+              ];
+              const RiskCard = ({ item }: { item: typeof riskItems[0] }) => (
+                <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <CardContent className="p-7 text-center">
+                    <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-5">
+                      <item.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                  </CardContent>
+                </Card>
+              );
+              return (
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-60px" }}
+                  variants={staggerContainer}
+                  className="max-w-6xl mx-auto space-y-6"
+                >
+                  {/* Top row: 4 cards */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {riskItems.slice(0, 4).map((item, i) => (
+                      <motion.div key={i} variants={fadeInUp}>
+                        <RiskCard item={item} />
+                      </motion.div>
+                    ))}
+                  </div>
+                  {/* Bottom row: 1 card centered */}
+                  <div className="lg:w-1/4 lg:mx-auto">
+                    <motion.div variants={fadeInUp}>
+                      <RiskCard item={riskItems[4]} />
+                    </motion.div>
+                  </div>
                 </motion.div>
-              ))}
-            </motion.div>
+              );
+            })()}
 
           </div>
         </section>
