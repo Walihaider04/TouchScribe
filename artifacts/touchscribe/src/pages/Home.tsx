@@ -151,7 +151,7 @@ export default function Home() {
                 <img
                   src={heroImg}
                   alt="Physician using TouchScribe AI scribing"
-                  className="rounded-[2rem] shadow-2xl object-cover w-full max-w-lg aspect-[4/5] lg:aspect-[3/4] mt-[0px] mb-[0px] ml-[100px] mr-[100px] pl-[0px] pr-[0px]"
+                  className="rounded-[2rem] shadow-2xl object-cover w-full max-w-lg aspect-[4/5] lg:aspect-[3/4] mt-[0px] mb-[0px] pl-[0px] pr-[0px] ml-[70px] mr-[70px]"
                 />
 
                 {/* Floating badge: accuracy */}
