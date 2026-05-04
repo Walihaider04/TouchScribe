@@ -104,7 +104,7 @@ export default function Home() {
 
                 <motion.p
                   variants={fadeInUp}
-                  className="text-[20px] text-slate-600 mb-4 leading-relaxed max-w-xl"
+                  className="text-slate-600 mb-4 max-w-xl text-[26px] font-semibold"
                 >
                   Accurate documentation and stronger revenue — handled by experts who work alongside your team.
                 </motion.p>
