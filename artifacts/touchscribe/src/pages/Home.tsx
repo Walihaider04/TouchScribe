@@ -513,7 +513,7 @@ export default function Home() {
         </section>
 
         {/* 6. How It Works */}
-        <section id="how-it-works" className="py-20 bg-white overflow-hidden">
+        <section id="how-it-works" className="py-20 bg-white overflow-hidden ml-[70px] mr-[70px] mt-[0px] mb-[0px] pl-[0px] pr-[0px] pt-[40px] pb-[40px]">
           <div className="container mx-auto px-4">
 
             {/* Header */}
