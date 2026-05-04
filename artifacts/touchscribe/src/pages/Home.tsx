@@ -77,6 +77,13 @@ export default function Home() {
           {/* Soft green/blue gradient background */}
           <div className="absolute inset-0 -z-10" style={{background: "linear-gradient(135deg, #f0fdf4 0%, #eff6ff 50%, #f0fdf4 100%)"}}></div>
           <div className="absolute top-0 right-0 w-[600px] h-[600px] -z-10 rounded-full opacity-30 blur-3xl" style={{background: "radial-gradient(circle, #bbf7d0 0%, #bfdbfe 100%)"}}></div>
+
+          {/* Mobile background image */}
+          <div className="absolute inset-0 lg:hidden">
+            <img src={heroImg} alt="" className="w-full h-full object-cover object-center" />
+            <div className="absolute inset-0" style={{background: "linear-gradient(to bottom, rgba(240,253,244,0.85) 0%, rgba(239,246,255,0.80) 60%, rgba(240,253,244,0.92) 100%)"}} />
+          </div>
+
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ml-[0px] mr-[0px] mt-[0px] mb-[0px] pl-[30px] pr-[30px]">
               {/* Left: Text Content */}
@@ -84,7 +91,7 @@ export default function Home() {
                 initial="hidden"
                 animate="visible"
                 variants={staggerContainer}
-                className="max-w-2xl"
+                className="max-w-2xl relative z-10"
               >
                 <motion.div variants={fadeInUp}>
                   <Badge variant="outline" className="mb-6 px-3 py-1 rounded-full border-primary/20 text-primary bg-primary/5">
@@ -140,12 +147,12 @@ export default function Home() {
                 </motion.div>
               </motion.div>
 
-              {/* Right: Healthcare Illustration */}
+              {/* Right: Healthcare Illustration — desktop only */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, x: 20 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative lg:ml-auto"
+                className="relative lg:ml-auto hidden lg:block"
               >
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-[2.5rem] transform rotate-2 scale-105 -z-10 blur-2xl"></div>
                 <img
