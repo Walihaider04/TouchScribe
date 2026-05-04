@@ -1,0 +1,104 @@
+You are updating my existing website.
+
+CRITICAL INSTRUCTION:
+This task is ONLY about TEXT ACCURACY and CONTENT COMPLETENESS.
+DO NOT redesign UI.
+DO NOT change layout.
+DO NOT rewrite, summarize, or improve wording.
+DO NOT shorten or paraphrase anything.
+
+Your job is to STRICTLY MATCH the provided master content word-for-word.
+
+--------------------------------------------------
+
+STEP 1: TEXT COMPARISON
+Compare every section of my current website with the provided master content.
+
+For each section:
+- If ANY text is missing → ADD it
+- If ANY text is different → REPLACE it EXACTLY
+- If ANY text is shortened → RESTORE full version
+- If formatting breaks meaning → FIX formatting but KEEP exact wording
+
+--------------------------------------------------
+
+STEP 2: SECTION VALIDATION
+
+Ensure ALL of the following sections EXIST and contain FULL TEXT:
+
+HOMEPAGE:
+- Hero Section (both lines + subheading + CTAs)
+- Sticky CTA ("Book a Demo")
+- Problem/Solution Section (4 problem blocks)
+- CTA after problem section
+- Credibility Strip (NOT merged with trust bar)
+- Trust Bar (separate section)
+
+SERVICES PAGE:
+- All 4 services listed:
+  - Virtual Medical Scribing
+  - EHR Documentation Support
+  - Prior Authorization and RFA
+  - Medical Billing & Invoicing
+
+SERVICE DETAIL SECTIONS (VERY IMPORTANT):
+Each must include FULL long-form content:
+- Virtual Medical Scribing (complete narrative + comparison + CTA)
+- EHR Documentation
+- Prior Authorization
+- Medical Billing & RCM
+
+Ensure:
+- "Without vs With TouchScribe" tables are present
+- CTA sections exist after each service
+
+--------------------------------------------------
+
+STEP 3: ADVANCED SECTIONS (DO NOT MISS)
+
+Ensure these sections are FULLY PRESENT with COMPLETE TEXT:
+
+- Why Providers Trust TouchScribe
+- Industries We Serve
+- How It Works (4 Steps)
+- About Page (FULL content)
+- Experience Layer
+- Proof Section (metrics + case study)
+- Testimonial Section (4 cards + micro-proof strip)
+- Risk Reversal Section
+- Pricing & Value Section (ALL 4 categories)
+- FAQ Section (ALL questions)
+- Final CTA Section
+- Blog Section
+- Contact Form
+- Book Demo Form
+
+--------------------------------------------------
+
+STEP 4: TEXT RULES (STRICT)
+
+- Keep ALL wording EXACTLY as provided
+- Keep ALL headings EXACT
+- Keep ALL bullet points EXACT
+- Keep ALL CTAs EXACT
+- DO NOT remove repetition (it is intentional)
+- DO NOT simplify language
+- DO NOT convert to shorter copy
+
+--------------------------------------------------
+
+STEP 5: FINAL CHECK
+
+After updating:
+- Scan entire site
+- Ensure ZERO missing paragraphs
+- Ensure ZERO altered sentences
+- Ensure ALL sections are complete
+
+--------------------------------------------------
+
+OUTPUT:
+Apply all fixes directly to the existing site code.
+Do NOT explain changes.
+Do NOT summarize.
+Just implement.
