@@ -1182,27 +1182,27 @@ export default function Home() {
             <div>
               <h4 className="text-white font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-primary transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">EHR Integrations</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Security</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Pricing</a></li>
+                <li><a href="#services" className="hover:text-primary transition-colors">Features</a></li>
+                <li><a href="#services" className="hover:text-primary transition-colors">EHR Integrations</a></li>
+                <li><button onClick={() => navigate("/how-it-works")} className="hover:text-primary transition-colors">Security</button></li>
+                <li><button onClick={() => goToDemo()} className="hover:text-primary transition-colors">Pricing</button></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+                <li><a href="#proof" className="hover:text-primary transition-colors">About Us</a></li>
+                <li><button onClick={() => goToDemo()} className="hover:text-primary transition-colors">Careers</button></li>
+                <li><button onClick={() => goToDemo()} className="hover:text-primary transition-colors">Contact</button></li>
+                <li><button onClick={() => navigate("/privacy")} className="hover:text-primary transition-colors">Privacy Policy</button></li>
               </ul>
             </div>
           </div>
           <div className="pt-8 border-t border-slate-800 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
             <p>&copy; {new Date().getFullYear()} TouchScribe Medical SaaS. All rights reserved.</p>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <button onClick={() => navigate("/terms")} className="hover:text-white transition-colors">Terms of Service</button>
+              <button onClick={() => navigate("/privacy")} className="hover:text-white transition-colors">Privacy Policy</button>
             </div>
           </div>
         </div>
