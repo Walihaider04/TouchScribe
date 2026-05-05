@@ -338,8 +338,14 @@ export default function Home() {
               <motion.h2 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Where Practices Lose Time & Revenue  And How We Fix It</motion.h2>
             </motion.div>
 
-            {(() => {
-              const problemItems = [
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-2 gap-4 sm:gap-6"
+            >
+              {[
                 {
                   icon: FileText,
                   problem: "Charting taking too much time—and still leading to errors?",
@@ -364,76 +370,40 @@ export default function Home() {
                   solutionTitle: "Medical Billing & Revenue Cycle Management",
                   desc: "End-to-end billing support that reduces denials and keeps your cash flow predictable.",
                 },
-              ];
-              const renderCard = (item: typeof problemItems[number]) => (
-                <Card className="h-full border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white overflow-hidden">
-                  <CardContent className="p-0">
-                    <div className="px-5 sm:px-7 pt-5 sm:pt-7 pb-4 sm:pb-5 border-b border-slate-100">
-                      <div className="flex items-start gap-3 sm:gap-4">
-                        <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center shrink-0 mt-0.5">
-                          <item.icon className="w-5 h-5 text-red-500" />
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeInUp}>
+                  <Card className="h-full border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white overflow-hidden">
+                    <CardContent className="p-0">
+                      {/* Problem row */}
+                      <div className="px-5 sm:px-7 pt-5 sm:pt-7 pb-4 sm:pb-5 border-b border-slate-100">
+                        <div className="flex items-start gap-3 sm:gap-4">
+                          <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center shrink-0 mt-0.5">
+                            <item.icon className="w-5 h-5 text-red-500" />
+                          </div>
+                          <p className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                            {item.problem}
+                          </p>
                         </div>
-                        <p className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
-                          {item.problem}
-                        </p>
                       </div>
-                    </div>
-                    <div className="px-5 sm:px-7 py-5 flex items-start gap-3 sm:gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-5 h-5 text-primary" />
+                      {/* Solution row */}
+                      <div className="px-5 sm:px-7 py-5 flex items-start gap-3 sm:gap-4">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <CheckCircle2 className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold text-primary mb-1.5 leading-snug">
+                            {item.solutionTitle}
+                          </p>
+                          <p className="text-sm text-slate-600 leading-relaxed">
+                            {item.desc}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-sm font-bold text-primary mb-1.5 leading-snug">
-                          {item.solutionTitle}
-                        </p>
-                        <p className="text-sm text-slate-600 leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-              return (
-                <>
-                  {/* Mobile: slider */}
-                  <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-60px" }}
-                    variants={staggerContainer}
-                    className="md:hidden"
-                  >
-                    <CardSlider ariaLabel="Problem and Solution">
-                      {problemItems.map((item, i) => (
-                        <motion.div
-                          key={i}
-                          variants={fadeInUp}
-                          className="shrink-0 w-[88%]"
-                        >
-                          {renderCard(item)}
-                        </motion.div>
-                      ))}
-                    </CardSlider>
-                  </motion.div>
-
-                  {/* Tablet/Desktop: grid */}
-                  <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-60px" }}
-                    variants={staggerContainer}
-                    className="hidden md:grid md:grid-cols-2 gap-6"
-                  >
-                    {problemItems.map((item, i) => (
-                      <motion.div key={i} variants={fadeInUp}>
-                        {renderCard(item)}
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </>
-              );
-            })()}
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
 
             {/* CTA after Problem */}
             <motion.div
