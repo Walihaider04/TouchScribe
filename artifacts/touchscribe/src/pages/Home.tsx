@@ -92,12 +92,12 @@ function CardSlider({ children, ariaLabel }: { children: React.ReactNode; ariaLa
 
   return (
     <div className="relative" role="region" aria-label={ariaLabel}>
-      <div className="overflow-hidden -mx-4 px-4" ref={emblaRef}>
-        <div className="flex gap-6">{children}</div>
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex gap-4 sm:gap-6">{children}</div>
       </div>
 
       {scrollSnaps.length > 1 && (
-        <div className="flex justify-center gap-2 mt-6">
+        <div className="flex justify-center gap-2 mt-5 sm:mt-6">
           {scrollSnaps.map((_, i) => (
             <button
               key={i}
@@ -195,7 +195,7 @@ export default function Home() {
       </header>
       <main className="flex-1">
         {/* 1. Hero Section */}
-        <section className="relative pt-20 pb-32 overflow-hidden">
+        <section className="relative pt-12 pb-16 sm:pt-20 sm:pb-32 overflow-hidden">
           {/* Soft green/blue gradient background */}
           <div className="absolute inset-0 -z-10" style={{background: "linear-gradient(135deg, #f0fdf4 0%, #eff6ff 50%, #f0fdf4 100%)"}}></div>
           <div className="absolute top-0 right-0 w-[600px] h-[600px] -z-10 rounded-full opacity-30 blur-3xl" style={{background: "radial-gradient(circle, #bbf7d0 0%, #bfdbfe 100%)"}}></div>
@@ -207,7 +207,7 @@ export default function Home() {
           </div>
 
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ml-[0px] mr-[0px] mt-[0px] mb-[0px] pl-[30px] pr-[30px]">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center lg:pl-[30px] lg:pr-[30px]">
               {/* Left: Text Content */}
               <motion.div
                 initial="hidden"
@@ -226,22 +226,22 @@ export default function Home() {
 
                 <motion.h1
                   variants={fadeInUp}
-                  className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15] mb-4"
+                  className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.2] sm:leading-[1.15] mb-4"
                 >
                   Less burnout.<br /><span className="text-primary">Give time back to your patients.</span>
                 </motion.h1>
 
                 <motion.p
                   variants={fadeInUp}
-                  className="text-slate-600 mb-4 max-w-xl text-[26px] font-semibold"
+                  className="text-slate-600 mb-6 max-w-xl text-base sm:text-lg md:text-[22px] lg:text-[26px] font-semibold leading-relaxed"
                 >
                   Accurate documentation and stronger revenue — handled by experts who work alongside your team.
                 </motion.p>
 
-                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Button
                     size="lg"
-                    className="rounded-full text-base h-14 px-8 shadow-lg shadow-primary/20 font-semibold"
+                    className="rounded-full text-base h-13 sm:h-14 px-8 shadow-lg shadow-primary/20 font-semibold w-full sm:w-auto"
                     onClick={goToDemo}
                   >
                     Book a Free Demo
@@ -250,7 +250,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="rounded-full text-base h-14 px-8 bg-white/80 hover:bg-white border-slate-200 text-slate-700 hover:text-primary group"
+                    className="rounded-full text-base h-13 sm:h-14 px-8 bg-white/80 hover:bg-white border-slate-200 text-slate-700 hover:text-primary group w-full sm:w-auto"
                     onClick={() => navigate("/how-it-works")}
                   >
                     <PlayCircle className="mr-2 w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
@@ -258,7 +258,7 @@ export default function Home() {
                   </Button>
                 </motion.div>
 
-                <motion.div variants={fadeInUp} className="mt-10 flex flex-wrap items-center gap-6 text-sm text-slate-500">
+                <motion.div variants={fadeInUp} className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-slate-500">
                   {[
                     { icon: <ShieldCheck className="w-4 h-4 text-primary" />, label: "HIPAA Certified" },
                     { icon: <CheckCircle2 className="w-4 h-4 text-primary" />, label: "No Long-Term Contracts" },
@@ -323,7 +323,7 @@ export default function Home() {
         </div>
 
         {/* 3. Problem Section */}
-        <section id="problem" className="py-24 bg-slate-50">
+        <section id="problem" className="py-12 sm:py-16 md:py-24 bg-slate-50">
           <div className="container mx-auto px-4">
             <motion.div
               initial="hidden"
@@ -335,7 +335,7 @@ export default function Home() {
               <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
                 Problem → Solution
               </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">Where Practices Lose Time & Revenue  And How We Fix It</motion.h2>
+              <motion.h2 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Where Practices Lose Time & Revenue  And How We Fix It</motion.h2>
             </motion.div>
 
             <motion.div
@@ -343,7 +343,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={staggerContainer}
-              className="grid md:grid-cols-2 gap-6"
+              className="grid md:grid-cols-2 gap-4 sm:gap-6"
             >
               {[
                 {
@@ -375,18 +375,18 @@ export default function Home() {
                   <Card className="h-full border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white overflow-hidden">
                     <CardContent className="p-0">
                       {/* Problem row */}
-                      <div className="px-7 pt-7 pb-5 border-b border-slate-100">
-                        <div className="flex items-start gap-4">
+                      <div className="px-5 sm:px-7 pt-5 sm:pt-7 pb-4 sm:pb-5 border-b border-slate-100">
+                        <div className="flex items-start gap-3 sm:gap-4">
                           <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center shrink-0 mt-0.5">
                             <item.icon className="w-5 h-5 text-red-500" />
                           </div>
-                          <p className="text-base font-bold text-slate-900 leading-snug">
+                          <p className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
                             {item.problem}
                           </p>
                         </div>
                       </div>
                       {/* Solution row */}
-                      <div className="px-7 py-5 flex items-start gap-4">
+                      <div className="px-5 sm:px-7 py-5 flex items-start gap-3 sm:gap-4">
                         <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                           <CheckCircle2 className="w-5 h-5 text-primary" />
                         </div>
@@ -411,11 +411,11 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-10 sm:mt-12"
             >
               <Button
                 size="lg"
-                className="rounded-full h-13 px-8 shadow-md shadow-primary/20 font-semibold"
+                className="rounded-full h-13 px-8 shadow-md shadow-primary/20 font-semibold w-full sm:w-auto"
                 onClick={goToDemo}
               >
                 Book a Free Demo
@@ -424,7 +424,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full h-13 px-8 bg-white border-slate-300 text-slate-700 hover:text-primary hover:border-primary"
+                className="rounded-full h-13 px-8 bg-white border-slate-300 text-slate-700 hover:text-primary hover:border-primary w-full sm:w-auto"
                 onClick={() => navigate("/how-it-works")}
               >
                 Learn How It Works
@@ -434,7 +434,7 @@ export default function Home() {
         </section>
 
         {/* 4. Services Overview */}
-        <section id="services" className="py-24 bg-white">
+        <section id="services" className="py-12 sm:py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <motion.div
               initial="hidden"
@@ -446,10 +446,10 @@ export default function Home() {
               <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
                 Our Services
               </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              <motion.h2 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
                 Everything your practice needs, in one platform
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-lg text-slate-500">
+              <motion.p variants={fadeInUp} className="text-base sm:text-lg text-slate-500 leading-relaxed">
                 From documentation to billing, we handle the operational side so you can focus on what matters.
               </motion.p>
             </motion.div>
@@ -459,7 +459,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={staggerContainer}
-              className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
             >
               {[
                 {
@@ -502,15 +502,15 @@ export default function Home() {
                     className="text-left w-full h-full"
                   >
                     <Card className="h-full border border-slate-200 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1 group-hover:border-primary/30 transition-all duration-300 bg-white cursor-pointer">
-                      <CardContent className="p-8 flex flex-col h-full">
+                      <CardContent className="p-5 sm:p-7 md:p-8 flex flex-col h-full">
                         {/* Icon */}
-                        <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center mb-6`}>
-                          <item.icon className={`w-7 h-7 ${item.iconColor}`} />
+                        <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl ${item.color} flex items-center justify-center mb-5 sm:mb-6`}>
+                          <item.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${item.iconColor}`} />
                         </div>
 
                         {/* Title + desc */}
-                        <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                        <p className="text-slate-500 leading-relaxed mb-6">{item.desc}</p>
+                        <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                        <p className="text-sm sm:text-base text-slate-500 leading-relaxed mb-6">{item.desc}</p>
 
                         {/* Feature list */}
                         <ul className="space-y-2 mb-6">
@@ -542,11 +542,11 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mt-14"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-10 sm:mt-14"
             >
               <Button
                 size="lg"
-                className="rounded-full h-13 px-8 shadow-md shadow-primary/20 font-semibold"
+                className="rounded-full h-13 px-8 shadow-md shadow-primary/20 font-semibold w-full sm:w-auto"
                 onClick={() => navigate("/how-it-works")}
               >
                 Explore Services
@@ -555,7 +555,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full h-13 px-8 bg-white border-slate-300 text-slate-700 hover:text-primary hover:border-primary"
+                className="rounded-full h-13 px-8 bg-white border-slate-300 text-slate-700 hover:text-primary hover:border-primary w-full sm:w-auto"
                 onClick={goToDemo}
               >
                 Book a Free Demo
@@ -565,7 +565,7 @@ export default function Home() {
         </section>
 
         {/* 5. Why Choose TouchScribe */}
-        <section className="py-24 bg-slate-50">
+        <section className="py-12 sm:py-16 md:py-24 bg-slate-50">
           <div className="container mx-auto px-4">
             <motion.div
               initial="hidden"
@@ -577,7 +577,7 @@ export default function Home() {
               <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
                 Why Choose Us
               </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">
+              <motion.h2 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
                 Why Healthcare Providers Trust TouchScribe
               </motion.h2>
             </motion.div>
@@ -642,16 +642,16 @@ export default function Home() {
                 <motion.div
                   key={i}
                   variants={fadeInUp}
-                  className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] hover:scale-[1.02] transition-transform duration-300"
+                  className="shrink-0 w-[88%] sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-16px)] hover:scale-[1.02] transition-transform duration-300"
                 >
                   <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
-                    <CardContent className="p-8 flex flex-col h-full">
+                    <CardContent className="p-5 sm:p-7 md:p-8 flex flex-col h-full">
                       {/* Header */}
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className={`w-12 h-12 rounded-2xl ${item.accentBg} flex items-center justify-center shrink-0`}>
-                          <item.icon className={`w-6 h-6 ${item.accent}`} />
+                      <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
+                        <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-2xl ${item.accentBg} flex items-center justify-center shrink-0`}>
+                          <item.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${item.accent}`} />
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
+                        <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">{item.title}</h3>
                       </div>
 
                       {/* Bullets */}
@@ -704,7 +704,7 @@ export default function Home() {
         </section>
 
         {/* 6. How It Works */}
-        <section id="how-it-works" className="py-20 bg-white overflow-hidden ml-[70px] mr-[70px] mt-[0px] mb-[0px] pl-[0px] pr-[0px] pt-[40px] pb-[40px]">
+        <section id="how-it-works" className="py-12 sm:py-16 md:py-24 bg-white overflow-hidden">
           <div className="container mx-auto px-4">
 
             {/* Header */}
@@ -718,10 +718,10 @@ export default function Home() {
               <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
                 Our Process
               </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              <motion.h2 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
                 How TouchScribe Works
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
+              <motion.p variants={fadeInUp} className="text-slate-500 text-base sm:text-lg leading-relaxed">
                 From Setup to Full Workflow Optimization — Built to Reduce Operational Burden
               </motion.p>
             </motion.div>
@@ -816,7 +816,7 @@ export default function Home() {
         </section>
 
         {/* 7. Proof / Results */}
-        <section id="proof" className="py-24 bg-slate-50">
+        <section id="proof" className="py-12 sm:py-16 md:py-24 bg-slate-50">
           <div className="container mx-auto px-4">
 
             {/* Header */}
@@ -830,10 +830,10 @@ export default function Home() {
               <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
                 Proven Results
               </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              <motion.h2 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
                 Real Clinical Impact. Measurable Outcomes.
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-slate-500 text-lg leading-relaxed">
+              <motion.p variants={fadeInUp} className="text-slate-500 text-base sm:text-lg leading-relaxed">
                 Measurable improvements across documentation, throughput, and revenue — backed by data from practices we serve.
               </motion.p>
             </motion.div>
@@ -884,14 +884,14 @@ export default function Home() {
                 <motion.div
                   key={i}
                   variants={fadeInUp}
-                  className="snap-start shrink-0 w-[80%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] hover:scale-[1.02] transition-transform duration-300"
+                  className="shrink-0 w-[82%] sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-16px)] hover:scale-[1.02] transition-transform duration-300"
                 >
                   <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <CardContent className="p-7">
+                    <CardContent className="p-5 sm:p-7">
                       <div className={`w-11 h-11 rounded-xl ${m.accentBg} flex items-center justify-center mb-5`}>
                         <m.icon className={`w-5 h-5 ${m.accent}`} />
                       </div>
-                      <div className={`text-4xl md:text-5xl font-extrabold ${m.accent} mb-2 tracking-tight`}>
+                      <div className={`text-3xl sm:text-4xl md:text-5xl font-extrabold ${m.accent} mb-2 tracking-tight`}>
                         {m.metric}
                       </div>
                       <div className="text-sm font-bold text-slate-900 mb-1.5 leading-snug">{m.label}</div>
@@ -912,28 +912,28 @@ export default function Home() {
               className="max-w-5xl mx-auto"
             >
               <Card className="bg-white border border-slate-200 shadow-md overflow-hidden">
-                <CardContent className="p-8 md:p-12">
+                <CardContent className="p-5 sm:p-8 md:p-12">
 
                   {/* Case study label */}
-                  <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center gap-3 mb-5 sm:mb-6">
                     <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Case Study</span>
                     <span className="h-px flex-1 bg-slate-200" />
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-3 leading-tight">
                     US-based Internal Medicine Practice
                   </h3>
-                  <p className="text-slate-500 mb-10 max-w-2xl">
+                  <p className="text-sm sm:text-base text-slate-500 mb-8 sm:mb-10 max-w-2xl leading-relaxed">
                     Before: Providers spending 3–4 hours daily on documentation. After: Reduced to under 1.5 hours.
                   </p>
 
                   {/* Before vs After comparison */}
-                  <div className="grid md:grid-cols-[1fr_auto_1fr] items-center gap-6 md:gap-8">
+                  <div className="grid md:grid-cols-[1fr_auto_1fr] items-center gap-4 sm:gap-6 md:gap-8">
 
                     {/* Before */}
-                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-7 text-center">
+                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-7 text-center">
                       <span className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-3">Before</span>
-                      <div className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-2 tracking-tight">3.2 hrs</div>
+                      <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 mb-2 tracking-tight">3.2 hrs</div>
                       <div className="text-sm text-slate-500">spent on documentation per day</div>
                       {/* Bar */}
                       <div className="mt-6 h-2 bg-slate-200 rounded-full overflow-hidden">
@@ -947,9 +947,9 @@ export default function Home() {
                     </div>
 
                     {/* After */}
-                    <div className="rounded-2xl border-2 border-primary/30 bg-primary/5 p-7 text-center relative">
+                    <div className="rounded-2xl border-2 border-primary/30 bg-primary/5 p-5 sm:p-7 text-center relative">
                       <span className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3">After</span>
-                      <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 tracking-tight">1.0 hr</div>
+                      <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-primary mb-2 tracking-tight">1.0 hr</div>
                       <div className="text-sm text-slate-600">spent on documentation per day</div>
                       {/* Bar */}
                       <div className="mt-6 h-2 bg-primary/20 rounded-full overflow-hidden">
@@ -988,7 +988,7 @@ export default function Home() {
         </section>
 
         {/* 10. Final CTA */}
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-12 sm:py-16 md:py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-primary/5 -z-10"></div>
           {/* Decorative gradient blobs */}
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />
@@ -1006,19 +1006,19 @@ export default function Home() {
             </motion.p>
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-5 sm:mb-6 tracking-tight leading-tight"
             >
               Ready to Reduce Burnout and Improve Efficiency?
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-xl text-slate-600 mb-10 leading-relaxed">
+            <motion.p variants={fadeInUp} className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 sm:mb-10 leading-relaxed">
               See how TouchScribe fits into your workflow—before making any commitment.
             </motion.p>
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-              <Button size="lg" className="rounded-full text-base md:text-lg h-14 md:h-16 px-8 md:px-10 shadow-xl shadow-primary/25 group" onClick={goToDemo}>
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6">
+              <Button size="lg" className="rounded-full text-base md:text-lg h-13 sm:h-14 md:h-16 px-8 md:px-10 shadow-xl shadow-primary/25 group w-full sm:w-auto" onClick={goToDemo}>
                 Book a Free Demo
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full text-base md:text-lg h-14 md:h-16 px-8 md:px-10 bg-white border-slate-300 hover:border-primary hover:text-primary">
+              <Button size="lg" variant="outline" className="rounded-full text-base md:text-lg h-13 sm:h-14 md:h-16 px-8 md:px-10 bg-white border-slate-300 hover:border-primary hover:text-primary w-full sm:w-auto">
                 Get a Custom Workflow Plan
               </Button>
             </motion.div>

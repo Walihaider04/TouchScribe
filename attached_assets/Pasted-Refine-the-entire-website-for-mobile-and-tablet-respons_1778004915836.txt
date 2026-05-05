@@ -1,0 +1,91 @@
+Refine the entire website for mobile and tablet responsiveness. Focus on spacing, typography, layout clarity, and clean UI. Do NOT change any text content—only improve layout and responsiveness.
+
+1. GLOBAL MOBILE SPACING SYSTEM
+Add consistent vertical spacing between all sections
+Each section should have:
+padding-top: 48px
+padding-bottom: 48px
+Add horizontal padding:
+padding-left: 16px
+padding-right: 16px
+2. RESPONSIVE TYPOGRAPHY
+
+Adjust font sizes for mobile:
+
+Hero Heading:
+
+Desktop: keep as is
+Mobile: 28px–32px
+Line height: 1.2
+
+Section Headings:
+
+Mobile: 20px–24px
+
+Body Text:
+
+Mobile: 14px–16px
+Line height: 1.6–1.8
+
+Reduce text density:
+
+Add margin-bottom: 12px–16px for paragraphs
+3. CARD LAYOUT FIX
+
+For all cards (services, trust, problem-solution, proof):
+
+On mobile:
+display: flex
+flex-direction: column
+gap: 16px
+Card styling:
+padding: 16px
+border-radius: 12px
+margin-bottom: 12px
+Ensure cards take full width:
+width: 100%
+4. SLIDER MOBILE IMPROVEMENTS
+Add side padding so cards don’t touch screen edges:
+padding-left: 16px
+padding-right: 16px
+Ensure only ONE card is fully visible on mobile
+Add spacing between cards:
+gap: 12px
+Move dots slightly below:
+margin-top: 12px
+5. CTA BUTTON FIX
+Buttons should be full-width on mobile:
+width: 100%
+Add spacing between buttons:
+gap: 12px
+Add margin-top: 16px above CTAs
+Sticky "Book a Demo" button:
+Reduce size slightly on mobile
+Ensure it does NOT overlap content
+6. TEXT BLOCK READABILITY
+Break long paragraphs into smaller chunks
+Add spacing between text sections:
+margin-bottom: 16px–20px
+Max width for readability:
+max-width: 100%
+7. GRID → STACK FIX
+
+For all 2x2 or 4-column layouts:
+
+Tablet: 2 columns
+Mobile: 1 column
+
+Use:
+grid-template-columns: 1fr
+
+8. SECTION ALIGNMENT
+Ensure all sections are center-aligned or consistently left-aligned
+Fix any uneven margins or misaligned elements
+9. FIX OVERFLOW ISSUES
+Prevent horizontal scrolling
+Ensure no element exceeds screen width
+10. FINAL CHECK
+Smooth scrolling
+Clean spacing between every section
+No cramped UI
+No overlapping elements
