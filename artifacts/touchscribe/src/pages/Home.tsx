@@ -63,13 +63,8 @@ function CardSlider({ children, ariaLabel }: { children: React.ReactNode; ariaLa
     {
       loop: true,
       align: "start",
-      dragFree: false,
-      containScroll: false,
-      duration: 32,
-      skipSnaps: false,
       slidesToScroll: 1,
-      watchDrag: true,
-      startIndex: 0,
+      duration: 28,
     },
     [autoplay.current]
   );

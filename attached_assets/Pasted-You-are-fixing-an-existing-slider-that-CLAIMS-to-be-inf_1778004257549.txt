@@ -1,0 +1,106 @@
+You are fixing an existing slider that CLAIMS to be infinite but is NOT behaving like a true loop.
+
+PROBLEM:
+- Slider stops at last slide OR
+- It jumps back visibly OR
+- It does not loop seamlessly when swiping/auto-sliding
+
+GOAL:
+Make the slider behave like a TRUE INFINITE CIRCULAR LOOP (like a clock).
+
+--------------------------------------------------
+
+MANDATORY FIX:
+
+1. VERIFY CLONES EXIST
+- Ensure slides are cloned:
+  - Clone FIRST N slides → append to end
+  - Clone LAST N slides → prepend to start
+- N = number of visible slides
+
+IF clones are missing → IMPLEMENT THEM
+
+--------------------------------------------------
+
+2. FORCE START POSITION
+- Slider must NOT start at index 0
+- It must start at FIRST REAL SLIDE (after prepended clones)
+
+--------------------------------------------------
+
+3. CRITICAL LOOP FIX (MAIN ISSUE)
+
+ADD EVENT LISTENER:
+
+On transition end:
+
+IF current index reaches cloned slides at END:
+→ Instantly jump to corresponding REAL slide
+→ WITHOUT animation (disable transition temporarily)
+
+IF current index reaches cloned slides at START:
+→ Instantly jump to REAL slide at end
+→ WITHOUT animation
+
+THEN:
+→ Re-enable transition immediately
+
+--------------------------------------------------
+
+4. REMOVE HARD LIMITS
+
+- REMOVE any logic like:
+  if (index === lastSlide) stop;
+  if (index === firstSlide) stop;
+
+- Slider must NEVER stop
+
+--------------------------------------------------
+
+5. AUTOPLAY CONTINUITY
+
+- Autoplay must:
+  → Continue sliding forward infinitely
+  → NOT reset index to 0 directly
+  → Follow loop logic
+
+--------------------------------------------------
+
+6. SWIPE FIX
+
+- On swipe left/right:
+  → Must continue looping
+  → No snapping back to first slide
+
+--------------------------------------------------
+
+7. DOTS CORRECTION
+
+- Dots must track ONLY REAL slides
+- When on cloned slides:
+  → Map index back to correct real slide
+- Active dot must ALWAYS be correct
+
+--------------------------------------------------
+
+8. DEBUG CHECK (IMPORTANT)
+
+After implementation, verify:
+✔ Can scroll right forever (no stop)
+✔ Can scroll left forever (no stop)
+✔ No visible jump
+✔ No flicker
+✔ No snap-back behavior
+
+--------------------------------------------------
+
+IF CURRENT IMPLEMENTATION IS BROKEN:
+- REWRITE ONLY THE SLIDER LOGIC (not UI)
+- Keep HTML and CSS intact
+
+--------------------------------------------------
+
+OUTPUT:
+Fix the slider to behave as a TRUE infinite loop.
+Do NOT explain anything.
+Just implement the fix.
