@@ -1,5 +1,7 @@
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -54,24 +56,44 @@ const staggerContainer = {
 };
 
 function CardSlider({ children, ariaLabel }: { children: React.ReactNode; ariaLabel: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const scroll = (dir: "left" | "right") => {
-    const el = ref.current;
-    if (!el) return;
-    const amount = el.clientWidth * 0.9 * (dir === "left" ? -1 : 1);
-    el.scrollBy({ left: amount, behavior: "smooth" });
-  };
+  const autoplay = useRef(
+    Autoplay({ delay: 4500, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "start", dragFree: false, containScroll: false },
+    [autoplay.current]
+  );
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollTo = useCallback(
+    (i: number) => emblaApi?.scrollTo(i),
+    [emblaApi]
+  );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", () => {
+      setScrollSnaps(emblaApi.scrollSnapList());
+      onSelect();
+    });
+    onSelect();
+  }, [emblaApi]);
+
   return (
     <div className="relative" role="region" aria-label={ariaLabel}>
-      <div
-        ref={ref}
-        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2 -mx-4 px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-      >
-        {children}
+      <div className="overflow-hidden -mx-4 px-4" ref={emblaRef}>
+        <div className="flex gap-6">{children}</div>
       </div>
+
       <button
         type="button"
-        onClick={() => scroll("left")}
+        onClick={scrollPrev}
         aria-label="Previous"
         className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-md items-center justify-center text-slate-600 hover:text-primary hover:border-primary hover:scale-105 transition z-10"
       >
@@ -79,12 +101,30 @@ function CardSlider({ children, ariaLabel }: { children: React.ReactNode; ariaLa
       </button>
       <button
         type="button"
-        onClick={() => scroll("right")}
+        onClick={scrollNext}
         aria-label="Next"
         className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-md items-center justify-center text-slate-600 hover:text-primary hover:border-primary hover:scale-105 transition z-10"
       >
         <ChevronRight className="w-5 h-5" />
       </button>
+
+      {scrollSnaps.length > 1 && (
+        <div className="flex justify-center gap-2 mt-6">
+          {scrollSnaps.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => scrollTo(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === selectedIndex
+                  ? "w-6 bg-primary"
+                  : "w-2 bg-slate-300 hover:bg-slate-400"
+              }`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

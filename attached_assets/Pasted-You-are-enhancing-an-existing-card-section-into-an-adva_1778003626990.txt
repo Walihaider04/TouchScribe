@@ -1,0 +1,112 @@
+You are enhancing an existing card section into an advanced slider (carousel).
+
+IMPORTANT:
+- DO NOT change any text
+- DO NOT remove or rewrite content
+- DO NOT redesign cards
+- ONLY improve layout and functionality
+
+--------------------------------------------------
+
+TARGET:
+Convert the selected card section into a fully functional SLIDER with advanced UX.
+
+--------------------------------------------------
+
+CORE FEATURES TO IMPLEMENT:
+
+1. HORIZONTAL SLIDER
+- Cards in a single horizontal row
+- Responsive layout:
+  - Desktop: 3 cards visible
+  - Tablet: 2 cards visible
+  - Mobile: 1 card visible
+
+--------------------------------------------------
+
+2. INFINITE LOOP (VERY IMPORTANT)
+- Slider must behave like a LOOP (circular)
+- When user reaches last slide → continues to first smoothly
+- When sliding backwards → loops to last
+- No hard stops
+
+--------------------------------------------------
+
+3. AUTO SLIDESHOW
+- Enable auto-slide
+- Slide interval: 4–5 seconds
+- Smooth transition (ease-in-out)
+
+- ADD:
+  - Pause on hover (desktop)
+  - Pause on user interaction (drag/click)
+  - Resume after inactivity
+
+--------------------------------------------------
+
+4. NAVIGATION ARROWS
+- Add left and right arrows
+- Always visible on desktop
+- Subtle but clickable
+- Positioned inside slider (left/right center)
+
+--------------------------------------------------
+
+5. PAGINATION DOTS (REQUIRED)
+- Add dots BELOW the slider
+- Each dot represents one slide group
+
+FUNCTIONALITY:
+- Active dot should be highlighted
+- Clicking a dot navigates to that slide
+- Dots update automatically during auto-slide
+- Smooth transition on click
+
+--------------------------------------------------
+
+6. TOUCH + DRAG SUPPORT
+- Enable swipe gestures on mobile
+- Mouse drag support on desktop (optional but preferred)
+
+--------------------------------------------------
+
+7. DESIGN RULES
+- Keep ALL existing card styles:
+  - Colors
+  - Fonts
+  - Icons
+  - Shadows
+- Maintain spacing and alignment
+- Add subtle hover effect (scale slightly or shadow increase)
+
+--------------------------------------------------
+
+8. PERFORMANCE (IMPORTANT)
+- Use lightweight implementation:
+  - Prefer CSS scroll-snap + minimal JS
+  OR
+  - Simple vanilla JS slider
+
+- DO NOT use heavy libraries unless already included
+
+--------------------------------------------------
+
+9. FINAL CHECKLIST
+
+Ensure:
+✔ No text/content changed
+✔ All cards still present
+✔ Smooth infinite loop working
+✔ Auto-slide working correctly
+✔ Dots clickable + synced
+✔ No layout breaking on mobile
+✔ No overflow outside screen
+✔ Clean spacing and alignment
+
+--------------------------------------------------
+
+OUTPUT:
+Apply changes directly to the existing section.
+Do NOT explain anything.
+Do NOT summarize.
+Just implement the slider.
