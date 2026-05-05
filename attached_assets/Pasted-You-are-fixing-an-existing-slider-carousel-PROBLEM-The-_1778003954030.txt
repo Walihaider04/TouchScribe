@@ -1,0 +1,92 @@
+You are fixing an existing slider (carousel).
+
+PROBLEM:
+The slider infinite loop is causing a visible jump/glitch when moving from last slide to first (or vice versa).
+
+GOAL:
+Make the loop COMPLETELY SEAMLESS with NO visual jump.
+
+--------------------------------------------------
+
+ROOT FIX (IMPORTANT):
+
+Implement CLONE-BASED LOOPING:
+
+1. CLONE SLIDES
+- Clone first few slides and append them to the end
+- Clone last few slides and prepend them to the beginning
+- Number of clones = number of visible cards (e.g., 3 for desktop)
+
+--------------------------------------------------
+
+2. INITIAL POSITION
+- Start slider at the FIRST REAL SLIDE (not cloned ones)
+- Set initial translateX accordingly
+
+--------------------------------------------------
+
+3. TRANSITION LOGIC
+
+WHEN MOVING FORWARD:
+- When reaching cloned slides at the end:
+  → Instantly jump back to original slides (WITHOUT animation)
+  → Then continue sliding normally
+
+WHEN MOVING BACKWARD:
+- When reaching cloned slides at the start:
+  → Instantly jump to corresponding real slides
+  → Then continue smoothly
+
+IMPORTANT:
+- Disable transition during the instant jump
+- Re-enable transition immediately after
+
+--------------------------------------------------
+
+4. SMOOTH TRANSITIONS
+- Use consistent easing (ease-in-out)
+- Duration: ~0.4s–0.6s
+- No sudden speed changes
+
+--------------------------------------------------
+
+5. DOT SYNC FIX
+- Pagination dots should map ONLY to real slides
+- Ignore cloned slides in dot indexing
+- Active dot must remain correct during looping
+
+--------------------------------------------------
+
+6. AUTOPLAY FIX
+- Ensure autoplay continues smoothly across loop
+- No reset glitch
+- Maintain timing consistency
+
+--------------------------------------------------
+
+7. EDGE CASES
+- No flicker during reset
+- No layout shift
+- No duplicate visible cards during jump
+
+--------------------------------------------------
+
+8. PERFORMANCE
+- Use transform: translateX (NOT left/margin)
+- Enable hardware acceleration if possible
+
+--------------------------------------------------
+
+FINAL CHECK:
+✔ Loop is continuous like a circle
+✔ No visible jump at edges
+✔ Dots remain accurate
+✔ Autoplay smooth
+✔ Works on mobile swipe
+
+--------------------------------------------------
+
+OUTPUT:
+Fix the existing slider logic only.
+Do NOT change design or content.
+Do NOT explain—just implement.
