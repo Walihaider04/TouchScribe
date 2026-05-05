@@ -779,26 +779,46 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
-              className="md:hidden relative pl-14"
+              className="md:hidden max-w-md mx-auto"
             >
-              <div className="absolute left-5 top-2 bottom-2 w-px border-l-2 border-dashed border-primary/30" />
               {[
                 { icon: ClipboardList, step: "01", title: "Workflow Setup",               desc: "We identify where time, revenue, and efficiency are being lost and design a custom plan." },
                 { icon: Users,         step: "02", title: "Team Assignment + Integration", desc: "Trained specialists integrate into your systems without disruption." },
                 { icon: Zap,           step: "03", title: "Execution",                    desc: "We handle documentation, EHR workflows, prior authorizations, and billing together." },
                 { icon: BarChart2,     step: "04", title: "Optimization",                 desc: "We continuously improve accuracy, compliance, and performance." },
-              ].map((item, i) => (
-                <motion.div key={i} variants={fadeInUp} className="relative flex items-start gap-5 mb-10 last:mb-0">
-                  <div className="absolute -left-9 top-0 w-11 h-11 rounded-full bg-white border-2 border-primary/50 shadow-md flex items-center justify-center shrink-0">
-                    <item.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{item.step}</span>
-                    <h3 className="text-base font-bold text-slate-900 mt-1 mb-1">{item.title}</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+              ].map((item, i, arr) => {
+                const isLast = i === arr.length - 1;
+                return (
+                  <motion.div key={i} variants={fadeInUp} className="relative flex gap-4 sm:gap-5">
+                    {/* Rail column: dot + connector */}
+                    <div className="relative flex flex-col items-center shrink-0">
+                      {/* Dot */}
+                      <div className="relative w-12 h-12 rounded-full bg-white border-2 border-primary shadow-md shadow-primary/20 flex items-center justify-center z-10">
+                        <div className="absolute inset-0 rounded-full bg-primary/5" />
+                        <item.icon className="w-5 h-5 text-primary relative z-10" />
+                      </div>
+                      {/* Connector line to next dot */}
+                      {!isLast && (
+                        <div className="flex-1 w-0.5 bg-gradient-to-b from-primary/40 to-primary/15 mt-1 mb-1" />
+                      )}
+                    </div>
+
+                    {/* Content card */}
+                    <div className={`flex-1 min-w-0 pt-1 ${isLast ? 'pb-0' : 'pb-8'}`}>
+                      <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 shadow-sm">
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <span className="inline-flex items-center justify-center min-w-[28px] h-5 px-1.5 rounded-full bg-primary/10 text-[10px] font-bold text-primary tracking-[0.15em]">
+                            {item.step}
+                          </span>
+                          <span className="h-px flex-1 bg-slate-100" />
+                        </div>
+                        <h3 className="text-base font-bold text-slate-900 mb-1.5 leading-snug">{item.title}</h3>
+                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
 
             {/* Tagline */}
