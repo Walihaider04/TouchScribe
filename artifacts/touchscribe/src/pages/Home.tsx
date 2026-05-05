@@ -60,7 +60,15 @@ function CardSlider({ children, ariaLabel }: { children: React.ReactNode; ariaLa
     Autoplay({ delay: 4500, stopOnInteraction: false, stopOnMouseEnter: true })
   );
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "start", dragFree: false, containScroll: false },
+    {
+      loop: true,
+      align: "start",
+      dragFree: false,
+      containScroll: false,
+      duration: 38,
+      skipSnaps: false,
+      inViewThreshold: 0.6,
+    },
     [autoplay.current]
   );
   const [selectedIndex, setSelectedIndex] = useState(0);
