@@ -130,7 +130,8 @@ export default function Home() {
   const [, navigate] = useLocation();
 
   const handleNavClick = () => setMobileOpen(false);
-  const goToDemo = () => navigate("/book-demo");
+  const goToDemo = () => navigate("/book-demo?type=demo");
+  const goToService = () => navigate("/book-demo?type=service");
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -152,7 +153,7 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Button className="rounded-full px-6 hidden md:inline-flex" onClick={goToDemo}>Book a Demo</Button>
+            <Button className="rounded-full px-6 hidden md:inline-flex" onClick={goToDemo}>Book a Free Demo</Button>
             {/* Mobile hamburger */}
             <button
               className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition-colors"
@@ -186,7 +187,7 @@ export default function Home() {
                   </a>
                 ))}
                 <div className="pt-3 mt-1 border-t border-slate-100">
-                  <Button className="rounded-full w-full" onClick={() => { handleNavClick(); goToDemo(); }}>Book a Demo</Button>
+                  <Button className="rounded-full w-full" onClick={() => { handleNavClick(); goToDemo(); }}>Book a Free Demo</Button>
                 </div>
               </nav>
             </motion.div>
@@ -416,9 +417,9 @@ export default function Home() {
               <Button
                 size="lg"
                 className="rounded-full h-13 px-8 shadow-md shadow-primary/20 font-semibold w-full sm:w-auto"
-                onClick={goToDemo}
+                onClick={goToService}
               >
-                Book a Free Demo
+                Book Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button
@@ -556,9 +557,9 @@ export default function Home() {
                 size="lg"
                 variant="outline"
                 className="rounded-full h-13 px-8 bg-white border-slate-300 text-slate-700 hover:text-primary hover:border-primary w-full sm:w-auto"
-                onClick={goToDemo}
+                onClick={goToService}
               >
-                Book a Free Demo
+                Book Now
               </Button>
             </motion.div>
           </div>
@@ -1034,8 +1035,8 @@ export default function Home() {
               See how TouchScribe fits into your workflow—before making any commitment.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6">
-              <Button size="lg" className="rounded-full text-base md:text-lg h-13 sm:h-14 md:h-16 px-8 md:px-10 shadow-xl shadow-primary/25 group w-full sm:w-auto" onClick={goToDemo}>
-                Book a Free Demo
+              <Button size="lg" className="rounded-full text-base md:text-lg h-13 sm:h-14 md:h-16 px-8 md:px-10 shadow-xl shadow-primary/25 group w-full sm:w-auto" onClick={goToService}>
+                Book Now
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button size="lg" variant="outline" className="rounded-full text-base md:text-lg h-13 sm:h-14 md:h-16 px-8 md:px-10 bg-white border-slate-300 hover:border-primary hover:text-primary w-full sm:w-auto">
@@ -1100,15 +1101,15 @@ export default function Home() {
                 <li><a href="#services" className="hover:text-primary transition-colors">Features</a></li>
                 <li><a href="#services" className="hover:text-primary transition-colors">EHR Integrations</a></li>
                 <li><button onClick={() => navigate("/how-it-works")} className="hover:text-primary transition-colors">Security</button></li>
-                <li><button onClick={() => goToDemo()} className="hover:text-primary transition-colors">Pricing</button></li>
+                <li><button onClick={() => goToService()} className="hover:text-primary transition-colors">Pricing</button></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#proof" className="hover:text-primary transition-colors">About Us</a></li>
-                <li><button onClick={() => goToDemo()} className="hover:text-primary transition-colors">Careers</button></li>
-                <li><button onClick={() => goToDemo()} className="hover:text-primary transition-colors">Contact</button></li>
+                <li><button onClick={() => goToService()} className="hover:text-primary transition-colors">Careers</button></li>
+                <li><button onClick={() => goToService()} className="hover:text-primary transition-colors">Contact</button></li>
                 <li><button onClick={() => navigate("/privacy")} className="hover:text-primary transition-colors">Privacy Policy</button></li>
               </ul>
             </div>

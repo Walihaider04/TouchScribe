@@ -128,8 +128,8 @@ export default function Privacy() {
           </div>
 
           <div className="mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row gap-4">
-            <Button className="rounded-full px-8" onClick={() => navigate("/book-demo")}>
-              Book a Free Demo
+            <Button className="rounded-full px-8" onClick={() => navigate("/book-demo?type=service")}>
+              Book Now
             </Button>
             <Button variant="outline" className="rounded-full px-8" onClick={() => navigate("/")}>
               <ArrowLeft className="mr-2 w-4 h-4" />

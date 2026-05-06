@@ -117,7 +117,7 @@ export default function About() {
               <ArrowLeft className="w-4 h-4" />
               Back to Home
             </button>
-            <Button className="rounded-full px-6" onClick={() => navigate("/book-demo")}>
+            <Button className="rounded-full px-6" onClick={() => navigate("/book-demo?type=demo")}>
               Book a Free Demo
             </Button>
           </div>
@@ -362,9 +362,9 @@ export default function About() {
               <Button
                 size="lg"
                 className="rounded-full h-14 px-10 text-base font-semibold shadow-lg shadow-primary/30"
-                onClick={() => navigate("/book-demo")}
+                onClick={() => navigate("/book-demo?type=service")}
               >
-                Book a Free Demo
+                Book Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button

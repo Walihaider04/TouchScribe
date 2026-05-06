@@ -26,10 +26,18 @@ export default function BookDemo() {
     practice: "",
     specialty: "",
     size: "",
+    booking_type: "",
     message: "",
   });
 
   const nextInputRef = useRef<HTMLInputElement>(null);
+  const intentRef = useRef<HTMLInputElement>(null);
+
+  const urlType = new URLSearchParams(window.location.search).get("type");
+  const isService = urlType === "service";
+  const formHeading = isService ? "Requesting Service" : "Book a Free Demo";
+  const intentValue = isService ? "Service Request" : "Demo Request";
+  const defaultBookingType = isService ? "Service" : "Demo";
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -42,6 +50,10 @@ export default function BookDemo() {
     if (nextInputRef.current) {
       nextInputRef.current.value = `${window.location.origin}/book-demo?success=true`;
     }
+    if (intentRef.current) {
+      intentRef.current.value = intentValue;
+    }
+    setForm(prev => ({ ...prev, booking_type: defaultBookingType }));
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -82,7 +94,7 @@ export default function BookDemo() {
               transition={{ duration: 0.4 }}
               className="text-sm font-semibold text-primary uppercase tracking-widest mb-3"
             >
-              Free Demo
+              {isService ? "Book a Service" : "Free Demo"}
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 14 }}
@@ -90,7 +102,7 @@ export default function BookDemo() {
               transition={{ duration: 0.5, delay: 0.05 }}
               className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight"
             >
-              See TouchScribe in Action
+              {formHeading}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 14 }}
@@ -123,6 +135,22 @@ export default function BookDemo() {
                   <input type="hidden" name="_captcha" value="true" />
                   <input type="hidden" name="_replyto" value="email" />
                   <input type="hidden" name="_next" ref={nextInputRef} />
+                  <input type="hidden" name="intent" ref={intentRef} />
+                  {/* Booking type dropdown */}
+                  <motion.div variants={fadeInUp}>
+                    <label className="block text-sm font-semibold text-slate-700 mb-1.5">Booking Type <span className="text-red-400">*</span></label>
+                    <select
+                      name="booking_type"
+                      value={form.booking_type}
+                      onChange={handleChange}
+                      required
+                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all appearance-none"
+                    >
+                      <option value="">Select Booking Type</option>
+                      <option value="Demo">Free Demo</option>
+                      <option value="Service">Paid Service</option>
+                    </select>
+                  </motion.div>
                   {/* Name row */}
                   <motion.div variants={fadeInUp} className="grid sm:grid-cols-2 gap-4">
                     <div>

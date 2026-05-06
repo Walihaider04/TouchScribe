@@ -1,0 +1,120 @@
+You are modifying an existing website.
+
+GOAL:
+1) Update CTA button text across the site
+2) Use ONE shared form for both Demo and Paid Service
+3) Dynamically change form heading based on button clicked
+4) Send correct intent (Demo or Service) in email submission
+
+IMPORTANT:
+- DO NOT redesign UI
+- DO NOT change layout
+- DO NOT create new pages
+- ONLY update text, links, and light JS logic
+
+--------------------------------------------------
+
+STEP 1: UPDATE CTA BUTTON TEXT
+
+- Navbar button → KEEP as: "Book a Free Demo"
+- Hero section CTA → KEEP as: "Book a Free Demo"
+
+- ALL OTHER CTA buttons across the site:
+  CHANGE text to: "Book Now"
+
+--------------------------------------------------
+
+STEP 2: CTA LINK BEHAVIOR
+
+UPDATE links:
+
+- "Book a Free Demo" buttons should link to:
+  /book-demo?type=demo
+
+- "Book Now" buttons should link to:
+  /book-demo?type=service
+
+--------------------------------------------------
+
+STEP 3: DYNAMIC FORM HEADING
+
+On the form page (/book-demo):
+
+Add JavaScript to read URL parameter:
+
+If type=demo:
+  Show heading → "Book a Free Demo"
+
+If type=service:
+  Show heading → "Requesting Service"
+
+--------------------------------------------------
+
+STEP 4: ADD INTENT FIELD (HIDDEN)
+
+Inside the form, add:
+
+<input type="hidden" name="intent" id="intentField">
+
+Then using JavaScript:
+
+If type=demo → value = "Demo Request"
+If type=service → value = "Service Request"
+
+--------------------------------------------------
+
+STEP 5: OPTIONAL USER DROPDOWN (GOOD UX)
+
+Add a dropdown in the form:
+
+<select name="booking_type" required>
+  <option value="">Select Booking Type</option>
+  <option value="Demo">Free Demo</option>
+  <option value="Service">Paid Service</option>
+</select>
+
+Auto-select based on URL:
+- demo → Free Demo selected
+- service → Paid Service selected
+
+--------------------------------------------------
+
+STEP 6: KEEP FORMSUBMIT INTACT
+
+DO NOT change:
+- form action (FormSubmit)
+- hidden fields (_next, _subject, etc.)
+
+--------------------------------------------------
+
+STEP 7: EMAIL OUTPUT
+
+Ensure email includes:
+- intent (Demo Request / Service Request)
+- booking_type (dropdown value)
+- name, email, message
+
+--------------------------------------------------
+
+STEP 8: NO BACKEND
+
+DO NOT add:
+- APIs
+- database
+- server code
+
+--------------------------------------------------
+
+FINAL RESULT:
+
+✔ User clicks Demo → sees "Book a Free Demo"
+✔ User clicks Book Now → sees "Requesting Service"
+✔ Owner email clearly shows intent
+✔ Same form reused
+✔ Clean UX
+
+--------------------------------------------------
+
+OUTPUT:
+Apply changes directly.
+Do not explain anything.
