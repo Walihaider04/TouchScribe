@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -29,13 +29,23 @@ export default function BookDemo() {
     message: "",
   });
 
+  const nextInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("success") === "true") {
+      setSubmitted(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (nextInputRef.current) {
+      nextInputRef.current.value = `${window.location.origin}/book-demo?success=true`;
+    }
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
   };
 
   return (
@@ -103,7 +113,16 @@ export default function BookDemo() {
                 animate="visible"
                 variants={staggerContainer}
               >
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  action="https://formsubmit.co/nayeemkhattak@gmail.com"
+                  method="POST"
+                  className="space-y-6"
+                >
+                  <input type="hidden" name="_subject" value="New Demo Request - TouchScribe" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="true" />
+                  <input type="hidden" name="_replyto" value="email" />
+                  <input type="hidden" name="_next" ref={nextInputRef} />
                   {/* Name row */}
                   <motion.div variants={fadeInUp} className="grid sm:grid-cols-2 gap-4">
                     <div>
