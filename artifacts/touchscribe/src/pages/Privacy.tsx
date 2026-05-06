@@ -51,7 +51,7 @@ const SECTIONS = [
   },
   {
     title: "11. Contact Us",
-    body: `If you have questions about this Privacy Policy or how we handle your information, please contact us at:\n\nTouchScribe\nEmail: privacy@touchscribe.com`,
+    body: `If you have questions about this Privacy Policy or how we handle your information, please contact us at:\n\nTouchScribe\nEmail: touchscribe@gmail.com`,
   },
 ];
 
