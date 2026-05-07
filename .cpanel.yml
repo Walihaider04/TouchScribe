@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - /bin/cp -rf artifacts/touchscribe/dist/public/. $HOME/public_html/
+    - /bin/cp -rf artifacts/touchscribe/dist/public/. .
