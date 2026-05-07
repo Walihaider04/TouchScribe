@@ -1039,7 +1039,7 @@ export default function Home() {
                 Book Now
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full text-base md:text-lg h-13 sm:h-14 md:h-16 px-8 md:px-10 bg-white border-slate-300 hover:border-primary hover:text-primary w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="rounded-full text-base md:text-lg h-13 sm:h-14 md:h-16 px-8 md:px-10 bg-white border-slate-300 hover:border-primary hover:text-primary w-full sm:w-auto" onClick={goToService}>
                 Get a Custom Workflow Plan
               </Button>
             </motion.div>
