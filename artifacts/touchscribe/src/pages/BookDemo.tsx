@@ -18,6 +18,8 @@ const staggerContainer = {
 export default function BookDemo() {
   const [, navigate] = useLocation();
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -30,34 +32,59 @@ export default function BookDemo() {
     message: "",
   });
 
-  const nextInputRef = useRef<HTMLInputElement>(null);
-  const intentRef = useRef<HTMLInputElement>(null);
-
   const urlType = new URLSearchParams(window.location.search).get("type");
   const isService = urlType === "service";
   const formHeading = isService ? "Requesting Service" : "Book a Free Demo";
   const intentValue = isService ? "Service Request" : "Demo Request";
+  const subjectLine = isService ? "New Service Request - TouchScribe" : "New Demo Request - TouchScribe";
   const defaultBookingType = isService ? "Service" : "Demo";
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("success") === "true") {
-      setSubmitted(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (nextInputRef.current) {
-      nextInputRef.current.value = `${window.location.origin}/book-demo?success=true`;
-    }
-    if (intentRef.current) {
-      intentRef.current.value = intentValue;
-    }
+    document.title = isService
+      ? "Book a Service — TouchScribe"
+      : "Book a Free Demo — TouchScribe";
     setForm(prev => ({ ...prev, booking_type: defaultBookingType }));
-  }, []);
+  }, [isService]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    const data = new FormData();
+    data.append("firstName", form.firstName);
+    data.append("lastName", form.lastName);
+    data.append("email", form.email);
+    data.append("phone", form.phone);
+    data.append("practice", form.practice);
+    data.append("specialty", form.specialty);
+    data.append("size", form.size);
+    data.append("booking_type", form.booking_type);
+    data.append("intent", intentValue);
+    data.append("message", form.message);
+    data.append("_subject", subjectLine);
+    data.append("_template", "table");
+    data.append("_captcha", "true");
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/nayeemkhattak@gmail.com", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success === "true" || json.success === true) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please try again or email us directly.");
+      }
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -126,16 +153,13 @@ export default function BookDemo() {
                 variants={staggerContainer}
               >
                 <form
-                  action="https://formsubmit.co/nayeemkhattak@gmail.com"
-                  method="POST"
+                  onSubmit={handleSubmit}
                   className="space-y-6"
+                  aria-label={formHeading}
+                  noValidate
                 >
-                  <input type="hidden" name="_subject" value="New Demo Request - TouchScribe" />
-                  <input type="hidden" name="_template" value="table" />
-                  <input type="hidden" name="_captcha" value="true" />
-                  <input type="hidden" name="_replyto" value="email" />
-                  <input type="hidden" name="_next" ref={nextInputRef} />
-                  <input type="hidden" name="intent" ref={intentRef} />
+                  {/* Honeypot — hidden from real users, catches bots */}
+                  <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" aria-hidden="true" />
                   {/* Booking type dropdown */}
                   <motion.div variants={fadeInUp}>
                     <label className="block text-sm font-semibold text-slate-700 mb-1.5">Booking Type <span className="text-red-400">*</span></label>
@@ -161,6 +185,8 @@ export default function BookDemo() {
                         onChange={handleChange}
                         required
                         placeholder="Jane"
+                        aria-label="First Name"
+                        autoComplete="given-name"
                         className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
                       />
                     </div>
@@ -172,6 +198,8 @@ export default function BookDemo() {
                         onChange={handleChange}
                         required
                         placeholder="Smith"
+                        aria-label="Last Name"
+                        autoComplete="family-name"
                         className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
                       />
                     </div>
@@ -188,6 +216,8 @@ export default function BookDemo() {
                         onChange={handleChange}
                         required
                         placeholder="jane@clinicname.com"
+                        aria-label="Work Email"
+                        autoComplete="email"
                         className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
                       />
                     </div>
@@ -199,6 +229,8 @@ export default function BookDemo() {
                         value={form.phone}
                         onChange={handleChange}
                         placeholder="+1 (555) 000-0000"
+                        aria-label="Phone Number"
+                        autoComplete="tel"
                         className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
                       />
                     </div>
@@ -213,6 +245,8 @@ export default function BookDemo() {
                       onChange={handleChange}
                       required
                       placeholder="e.g. Riverside Internal Medicine"
+                      aria-label="Practice or Organization Name"
+                      autoComplete="organization"
                       className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
                     />
                   </motion.div>
@@ -265,10 +299,39 @@ export default function BookDemo() {
                     />
                   </motion.div>
 
+                  {error && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+                      role="alert"
+                    >
+                      {error}
+                    </motion.div>
+                  )}
+
                   <motion.div variants={fadeInUp}>
-                    <Button type="submit" size="lg" className="w-full rounded-full h-14 text-base font-semibold shadow-lg shadow-primary/20">
-                      Book My Free Demo
-                      <Send className="ml-2 w-4 h-4" />
+                    <Button
+                      type="submit"
+                      size="lg"
+                      disabled={loading}
+                      aria-busy={loading}
+                      className="w-full rounded-full h-14 text-base font-semibold shadow-lg shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                      {loading ? (
+                        <>
+                          <svg className="animate-spin mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                          </svg>
+                          Sending…
+                        </>
+                      ) : (
+                        <>
+                          {isService ? "Request Service" : "Book My Free Demo"}
+                          <Send className="ml-2 w-4 h-4" />
+                        </>
+                      )}
                     </Button>
                     <p className="text-xs text-slate-400 text-center mt-3">No obligation. No pressure. We'll reach out within 1 business day.</p>
                   </motion.div>

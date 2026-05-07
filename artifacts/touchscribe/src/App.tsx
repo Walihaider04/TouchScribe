@@ -1,28 +1,32 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/not-found";
-import Home from "@/pages/Home";
-import BookDemo from "@/pages/BookDemo";
-import HowItWorks from "@/pages/HowItWorks";
-import Privacy from "@/pages/Privacy";
-import Terms from "@/pages/Terms";
-import About from "@/pages/About";
+
+const NotFound = lazy(() => import("@/pages/not-found"));
+const Home = lazy(() => import("@/pages/Home"));
+const BookDemo = lazy(() => import("@/pages/BookDemo"));
+const HowItWorks = lazy(() => import("@/pages/HowItWorks"));
+const Privacy = lazy(() => import("@/pages/Privacy"));
+const Terms = lazy(() => import("@/pages/Terms"));
+const About = lazy(() => import("@/pages/About"));
 
 const queryClient = new QueryClient();
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/book-demo" component={BookDemo} />
-      <Route path="/how-it-works" component={HowItWorks} />
-      <Route path="/privacy" component={Privacy} />
-      <Route path="/terms" component={Terms} />
-      <Route path="/about" component={About} />
-      <Route component={NotFound} />
-    </Switch>
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/book-demo" component={BookDemo} />
+        <Route path="/how-it-works" component={HowItWorks} />
+        <Route path="/privacy" component={Privacy} />
+        <Route path="/terms" component={Terms} />
+        <Route path="/about" component={About} />
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 

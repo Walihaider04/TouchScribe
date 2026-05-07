@@ -1,0 +1,89 @@
+You are ONLY improving production readiness and security for an already completed React/Vite healthcare website.
+
+IMPORTANT:
+
+* DO NOT redesign UI
+* DO NOT rewrite sections
+* DO NOT touch existing layout
+* DO NOT regenerate pages
+* ONLY implement the exact requested improvements
+* Keep token usage LOW
+* Modify only necessary files
+
+TASKS:
+
+1. FORM SECURITY
+
+* Improve existing FormSubmit.co integration
+* Add honeypot hidden field for spam protection
+* Add required validation to all fields
+* Prevent empty submissions
+* Disable submit button while sending
+* Show loading state during submit
+* Show success message after successful submission
+* Show error state if submission fails
+
+2. FORM UX
+
+* Preserve current UI
+
+* Keep existing demo/service logic
+
+* If form type = demo:
+  subject line should contain:
+  "New Demo Request"
+
+* If form type = service:
+  subject line should contain:
+  "New Service Request"
+
+3. SEO BASICS
+   ONLY add:
+
+* dynamic page titles
+* meta descriptions
+* Open Graph tags
+* favicon support
+* proper semantic heading structure if broken
+
+DO NOT add blogs or advanced SEO systems.
+
+4. PERFORMANCE
+
+* Lazy load heavy sections if possible
+* Optimize slider autoplay performance
+* Reduce unnecessary re-renders
+* Ensure mobile scrolling remains smooth
+
+5. SECURITY HEADERS
+   Add basic production-safe headers configuration:
+
+* X-Frame-Options
+* X-Content-Type-Options
+* Referrer-Policy
+
+ONLY if supported in current setup.
+
+6. ACCESSIBILITY
+
+* Add aria-labels to buttons/forms
+* Ensure form inputs have labels
+* Improve keyboard navigation
+
+7. MOBILE FIXES
+
+* Ensure sliders work correctly on mobile
+* Prevent overflow-x issues
+* Prevent layout shifting
+
+8. DO NOT:
+
+* install unnecessary packages
+* create backend
+* create database
+* create authentication
+* modify text content
+* modify styling unless required for fixes
+
+9. OUTPUT:
+   Implement changes directly with minimal edits and minimal AI credit usage.
