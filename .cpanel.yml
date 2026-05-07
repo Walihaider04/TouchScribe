@@ -1,8 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/$USER/public_html/
-    - npm install -g pnpm --silent
-    - pnpm install --frozen-lockfile
-    - BASE_PATH=/ pnpm --filter @workspace/touchscribe run build
-    - /bin/cp -r artifacts/touchscribe/dist/public/. $DEPLOYPATH
+    - npm install -g pnpm
+    - pnpm install --no-frozen-lockfile
+    - export BASE_PATH=/
+    - pnpm --filter @workspace/touchscribe run build
+    - /bin/cp -rf artifacts/touchscribe/dist/public/. $HOME/public_html/
