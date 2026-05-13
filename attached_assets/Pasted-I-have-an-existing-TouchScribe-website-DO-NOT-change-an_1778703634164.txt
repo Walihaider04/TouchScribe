@@ -1,0 +1,350 @@
+I have an existing TouchScribe website. DO NOT change any styling, theme, colors, layout, or structure of any pages. ONLY update the text content on the About page and Services page as specified below. Keep all existing sections and their visual structure — just replace or add the written text exactly as provided.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ABOUT PAGE — TEXT UPDATES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PAGE HEADLINE:
+"Built on Experience. Designed to Fix What's Slowing Healthcare Workflows Down."
+
+PAGE OPENING PARAGRAPH:
+"Healthcare providers didn't enter this field to spend hours finishing charts, chasing approvals, or dealing with billing issues — yet that's where a significant portion of their time goes. TouchScribe was built to change that. With over 20 years of combined experience in US healthcare documentation and revenue workflows, we understand the real pressure behind every incomplete chart, denied claim, and delayed authorization."
+
+MISSION SECTION:
+Section label: "Our Mission"
+Text: "Our mission is to reduce administrative burden for healthcare providers by delivering accurate, compliant, and intelligent clinical and revenue support. We help physicians spend more time with patients and less time on documentation — without compromising quality, compliance, or financial performance."
+
+VISION SECTION:
+Section label: "Our Vision"
+Text: "To become a leading global partner in AI-augmented healthcare operations, where documentation, billing, and authorization processes work seamlessly in the background — allowing providers to focus fully on patient care."
+
+EXPERTISE SECTION:
+Heading: "Deep Expertise That Goes Beyond Outsourcing"
+Paragraph: "We've worked across 30+ sub-specialties, supporting providers in fast-paced, high-precision clinical environments."
+Sub-heading: "What We've Mastered Over the Years"
+Intro line: "Our experience spans the full spectrum of clinical and administrative documentation:"
+Bullet points:
+- Office Visits & Follow-Up Notes
+- Operative Notes & Discharge Summaries
+- Letters of Recommendation & Clinical Reports
+- Research Papers & Academic Documentation
+- QME (Qualified Medical Evaluation) Work
+Closing line: "This is hands-on, real-world experience — delivered consistently at scale."
+
+FOUR CORE PILLARS SECTION:
+Heading: "Built Around 4 Core Pillars"
+Intro: "TouchScribe isn't a single service — it's a fully integrated extension of your practice, built on four essential pillars:"
+Pillar 1: "Virtual Medical Scribing + AI QA — Real-time documentation powered by AI speed and human precision"
+Pillar 2: "EHR Documentation — Structured, compliant, and specialty-specific charting within your workflow"
+Pillar 3: "Prior Authorization & RFA — Accurate, complete submissions that reduce delays and denials"
+Pillar 4: "Medical Billing & Revenue Cycle — Clean claims, faster reimbursements, and stronger cash flow control"
+Closing line: "Together, these pillars remove friction across your entire clinical and financial workflow."
+
+WHY PROVIDERS CHOOSE TOUCHSCRIBE SECTION:
+Heading: "Why Providers Choose TouchScribe"
+Intro: "Because we understand what's at stake. The challenges are real:"
+Challenge bullets:
+- Burnout from end-of-day charting
+- Revenue loss from denied or under-coded claims
+- Delays caused by incomplete authorizations
+Solution intro: "And we solve them with a system that is:"
+Solution bullets:
+- Accurate
+- Compliant
+- Scalable
+- Built specifically for US healthcare workflows
+
+LONG-TERM PARTNER SECTION:
+Heading: "More Than a Service — A Long-Term Partner"
+Paragraph: "We don't just support your operations — we take responsibility for them. From your first patient note to final reimbursement, TouchScribe works behind the scenes so you can:"
+Bullets:
+- Focus on patient care
+- Reduce administrative burden
+- Improve financial performance
+
+EXPERIENCE LAYER SECTION:
+Headline: "Experience Built Inside Real Clinical Workflows"
+Subheading: "Over the past 20+ years, our team has worked alongside physicians, clinics, and healthcare organizations — supporting documentation, billing, and day-to-day operations in real clinical environments."
+Experience list:
+- Internal Medicine Practices (US-based)
+- Family Medicine Clinics
+- Urgent Care Centers
+- Multi-provider Specialty Groups
+- Physicians affiliated with leading US hospitals
+
+CLOSING SECTION:
+Text: "If your workflow is slowing you down, it's time to fix what's behind it. TouchScribe brings the structure, expertise, and reliability your practice needs to move forward — without the overhead."
+CTA Button: "Schedule a Free Consultation"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SERVICES PAGE — TEXT UPDATES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE 1 — VIRTUAL MEDICAL SCRIBING
+
+Page headline: "Virtual Medical Scribing (AI + Human QA)"
+Subheadline: "Finish charts on time. Reduce burnout. Stay focused on patient care."
+
+Opening paragraphs:
+"Your day shouldn't continue long after your last patient leaves. But for many physicians, it does — through unfinished charts, compliance pressure, and hours of after-clinic work."
+"It usually starts small. 'Just a few charts left.' Then it builds. You're still in front of your screen — reviewing notes, fixing details, trying to recall patient interactions. The EHR feels slow. The work feels repetitive. And the pressure to stay compliant never really goes away."
+
+"Meanwhile:" (list)
+- Small documentation gaps quietly increase audit risk
+- Incomplete charts delay billing and reimbursements
+- Every correction adds more administrative load
+- Time meant for rest turns into more screen time
+- This is how burnout builds — gradually, but consistently.
+
+"Because in practice:" (list)
+- If it's not documented properly, it doesn't count
+- Errors don't just cost time — they impact revenue and compliance
+- Delayed charting slows down your entire workflow
+
+"Over time, this leads to:" (list)
+- Broken clinical focus
+- Poor work-life balance
+- Reduced overall efficiency
+
+SOLUTION BLOCK:
+Heading: "AI-Assisted Virtual Scribing + Human QA"
+Intro: "We combine the speed of AI with trained human oversight to deliver documentation that's accurate, complete, and ready in real time."
+"Here's how it works:"
+- Real-time charting — notes completed during patient visits, not after hours
+- AI-assisted drafting — fast, structured documentation aligned with your workflow
+- Human quality checks — every note reviewed for accuracy and compliance
+- EHR-ready delivery — clean, structured entries that fit directly into your system
+
+"What this means for your practice:"
+- You finish your day with charts already completed
+- Documentation errors are reduced without extra effort
+- Billing moves faster with complete, accurate records
+- You spend more time with patients — and less time on screens
+
+COMPARISON TABLE:
+Without Scribing Support | With TouchScribe Virtual Scribing
+Hours spent on after-clinic charting | Charts completed in real time
+High documentation fatigue | Reduced workload and burnout
+Inconsistent, error-prone notes | Accurate, structured documentation
+Delayed billing cycles | Faster, cleaner billing cycles
+Less time for patients | More focus on patient care
+
+Closing line: "Finish your day on time — without compromising accuracy."
+
+ACCURACY BLOCK:
+Heading: "Built for accuracy. Backed by human oversight."
+Intro: "Unlike fully automated tools, our approach ensures:"
+- AI speed without sacrificing clinical quality
+- Human review aligned with documentation and compliance standards
+- Consistency across every note — regardless of volume or complexity
+Closing: "Technology supports the process. Human experts ensure the outcome."
+
+PLATFORM ALIGNMENT:
+Heading: "Aligned with Leading AI Scribing Platforms"
+List: DeepScribe, Nuance DAX, Suki AI, Freed.ai, Abridge
+
+CTA: "Focus on care. We'll handle the documentation."
+CTA Button: "Book Your Free Demo"
+
+---
+
+SERVICE 2 — EHR DOCUMENTATION
+
+Headline: "EHR Documentation Services for Physicians"
+Subheadline: "Accurate, compliant, and efficient EHR support — without slowing your day down."
+
+Opening:
+"Your EHR was meant to make things easier. But in practice, it often does the opposite."
+"The patient visit ends — but the documentation doesn't. You move on to the next case while charts remain incomplete. Later, you come back to it. Switching between tabs. Working through repetitive fields. Pulling together fragmented information. What should take minutes starts taking much longer."
+"A discharge summary needs revision. A consultation note isn't structured properly. One small omission means going back again."
+
+"And over time:" (list)
+- Workflows get interrupted
+- Notes lose consistency
+- Time keeps getting absorbed inside the system
+
+"The impact builds:" (list)
+- Documentation quality starts to drop
+- Clinical continuity gets affected
+- Errors create coding issues
+- Reimbursements get delayed
+- Corrections become routine
+- Administrative fatigue increases
+
+Closing: "Eventually, the EHR stops feeling like a tool — and starts feeling like a bottleneck."
+
+SOLUTION BLOCK:
+Heading: "Structured EHR Documentation by Experts"
+Intro: "We handle your documentation in a way that aligns with your workflow — so your records stay accurate, complete, and easy to manage."
+- Consultation notes — structured, clear, and clinically aligned
+- Discharge summaries — complete and compliant
+- Medical reports — consistent and standardized
+- Workflow alignment — tailored to your EHR system
+
+"What this means for your practice:"
+- Less time spent inside the EHR
+- Fewer errors and less rework
+- Consistent, high-quality patient records
+- Better efficiency — without added pressure
+
+COMPARISON TABLE:
+Without Support | With TouchScribe EHR Documentation
+Charts spill into after-hours work | Documentation completed on time
+Inconsistent, unstructured notes | Clean, standardized records
+Frequent corrections and rework | Higher first-pass accuracy
+Delayed reimbursements | Faster, smoother billing flow
+EHR feels like a daily burden | A more streamlined, efficient workflow
+
+Closing line: "Less time fixing documentation. More time practicing medicine."
+
+EHR SYSTEMS LIST:
+Heading: "EHR Systems We Work With"
+Intro: "We integrate into your existing workflow — no disruption, no steep learning curve."
+List: Epic Systems, Cerner, Conexem, Athenahealth, eClinicalWorks, NextGen Healthcare, Allscripts
+Closing: "And other major platforms. If your system isn't listed, we adapt quickly to how your team already works."
+
+CTA: "Streamline your documentation — Get started with a free consultation"
+
+---
+
+SERVICE 3 — PRIOR AUTHORIZATION
+
+Headline: "Prior Authorization Services for US Healthcare"
+Subheadline: "Faster approvals. Fewer delays. Better patient care."
+
+Opening:
+"The treatment plan is ready — but care can't move forward without approval."
+"Everything is clinically aligned. The next step is clear. But prior authorization slows things down."
+"Forms need to be completed. Documentation must match payer requirements. Each insurer follows different criteria — and even small gaps can lead to rejection."
+"So the cycle begins: Submit → Wait → Follow up → Correct → Resubmit"
+
+"Meanwhile:" (list)
+- Staff spend hours tracking approvals
+- Patients are left waiting — often uncertain and frustrated
+- Care delivery slows, even when everything is medically ready
+- What should be a simple step becomes a repeated operational delay.
+
+"And the impact builds quickly:" (list)
+- Incomplete submissions lead to denials
+- Rework becomes routine
+- Treatment timelines get disrupted
+- Patient experience declines
+- Staff bandwidth is consumed by follow-ups
+- Non-revenue administrative work continues to grow
+- Slow approvals affect both workflow and revenue
+
+Closing: "Over time, prior authorization becomes a hidden bottleneck — impacting care delivery and cash flow."
+
+SOLUTION BLOCK:
+Heading: "End-to-End Prior Authorization (RFA) Management"
+Intro: "We manage the full authorization lifecycle — so submissions are complete, compliant, and processed faster."
+"Here's what we handle:"
+- Insurance verification — confirm coverage and requirements upfront
+- Accurate submissions — documentation aligned with payer criteria
+- Payer-specific compliance — reduce rejection risk with precise inputs
+- Proactive follow-ups — continuous tracking to prevent delays
+- Denial reduction — cleaner submissions with minimal rework
+
+"What this means for your practice:"
+- Faster approval turnaround
+- Fewer denials and resubmissions
+- Smoother patient flow and improved experience
+- Less administrative burden on your staff
+- More predictable day-to-day operations
+
+COMPARISON TABLE:
+Without RFA Support | With TouchScribe Authorization Management
+Slow, inconsistent approvals | Faster, more streamlined approvals
+Frequent rejections and resubmissions | Clean, compliant submissions
+Staff tied up in follow-ups | End-to-end management handled for you
+Delays in patient care | Timely and smoother treatment flow
+Operational inefficiencies | Better coordination across workflows
+
+Closing line: "Faster care delivery. Less administrative friction. Better operational flow."
+CTA: "Eliminate delays — Start your prior authorization support today"
+
+---
+
+SERVICE 4 — MEDICAL BILLING & RCM
+
+Headline: "Medical Billing & Revenue Cycle Management"
+Subheadline: "Recover lost revenue. Reduce denials. Stabilize cash flow."
+
+Opening:
+"You're delivering care every day — but are you receiving full payment for it?"
+"The work is done. The patients are seen. But revenue doesn't always follow as it should."
+"A claim goes out with a small coding error. Another is missing documentation. One gets delayed. One gets denied. Some never get followed up. Individually, they seem minor. Over time, they accumulate — quietly."
+
+"Meanwhile:" (list)
+- Payments take longer to arrive
+- Denials require repeated rework
+- Claims need resubmission
+- Staff are pulled into billing tasks alongside clinical support work
+- Visibility into revenue leakage becomes limited
+
+Closing: "Revenue doesn't drop suddenly — it leaks through gaps in the process."
+
+"And the impact builds:" (list)
+- Claim denials reduce overall collected revenue
+- Delayed submissions slow cash flow cycles
+- Under-coded or missed charges lead to lost income
+- Weak follow-up processes leave payments uncollected
+
+"Over time, this creates:" (list)
+- Unpredictable revenue flow
+- Operational strain
+- A persistent gap between work performed and revenue realized
+
+Closing: "This is not just a billing challenge — it's a revenue performance issue."
+
+SOLUTION BLOCK:
+Heading: "End-to-End Medical Billing & Revenue Cycle Management"
+Intro: "We manage your entire billing lifecycle to ensure claims are accurate, timely, and optimized for reimbursement."
+"What we handle:"
+- Charge capture & coding support — ensure services are fully and correctly billed
+- Claim submission — clean, compliant claims submitted without delay
+- Denial management — identify issues, correct, and resubmit claims
+- Payment posting & reconciliation — accurate tracking of incoming revenue
+- Accounts receivable follow-up — proactive recovery of outstanding payments
+- Revenue optimization — identify gaps and improve collection performance
+
+"What this means for your practice:"
+- Fewer claim denials and rejections
+- Faster, more predictable reimbursements
+- Higher revenue capture with fewer missed charges
+- Clear visibility into billing performance
+- Reduced administrative workload for internal teams
+
+COMPARISON TABLE:
+Without Billing Support | With TouchScribe RCM
+Frequent claim denials | Clean, high-acceptance claims
+Delayed reimbursements | Faster and more predictable cash flow
+Missed or under-coded charges | Full revenue capture with fewer leaks
+Limited follow-up on unpaid claims | Proactive accounts receivable management
+Low visibility into revenue flow | Transparent, trackable financial performance
+
+Closing line: "You don't just bill more — you collect what you've already earned."
+
+REVENUE LOSS BLOCK:
+Heading: "Where most practices lose revenue (without realizing it)"
+List:
+- Unsubmitted or delayed claims
+- Incorrect or incomplete coding
+- Lack of structured denial follow-up
+- Inefficient accounts receivable processes
+Closing: "We systematically identify and close these gaps."
+
+CTA: "Stop revenue leakage. Start capturing what you've earned."
+CTA Button: "Get Your Free Revenue Assessment"
+
+Page closing CTA: "Built for your practice — ready when you are."
+CTA Button: "Get Started Today"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IMPORTANT REMINDERS FOR REPLIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Do NOT change any colors, fonts, spacing, animations, or visual design
+- Do NOT restructure any existing layout or components
+- Only update the text content as specified above
+- Keep all existing CTA buttons, links, and navigation intact
+- All changes must visually match the existing site theme

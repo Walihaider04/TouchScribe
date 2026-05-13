@@ -28,9 +28,9 @@ const staggerContainer = {
 };
 
 const STATS = [
-  { value: "20+", label: "Specialties Served" },
+  { value: "30+", label: "Sub-specialties Served" },
   { value: "98.7%", label: "Documentation Accuracy" },
-  { value: "48 hrs", label: "Average Go-Live Time" },
+  { value: "20+", label: "Years of Experience" },
   { value: "70%", label: "Workload Reduction" },
 ];
 
@@ -39,52 +39,52 @@ const VALUES = [
     icon: HeartPulse,
     color: "bg-emerald-50",
     iconColor: "text-emerald-600",
-    title: "Built by healthcare professionals",
-    desc: "Our founding team includes physicians, clinical coders, and practice managers who understood the problem before building the solution.",
-  },
-  {
-    icon: ShieldCheck,
-    color: "bg-blue-50",
-    iconColor: "text-blue-600",
-    title: "HIPAA-first from day one",
-    desc: "Every workflow, system, and team member operates under strict HIPAA compliance. We sign a BAA with every practice we work with.",
-  },
-  {
-    icon: Users,
-    color: "bg-violet-50",
-    iconColor: "text-violet-600",
-    title: "Human + AI, not AI alone",
-    desc: "We believe AI is a force multiplier, not a replacement. Every note is reviewed by a trained human before it reaches your EHR.",
+    title: "Our Mission",
+    desc: "To reduce administrative burden for healthcare providers by delivering accurate, compliant, and intelligent clinical and revenue support — so physicians spend more time with patients and less time on documentation.",
   },
   {
     icon: Globe,
+    color: "bg-blue-50",
+    iconColor: "text-blue-600",
+    title: "Our Vision",
+    desc: "To become a leading global partner in AI-augmented healthcare operations, where documentation, billing, and authorization processes work seamlessly in the background — allowing providers to focus fully on patient care.",
+  },
+  {
+    icon: ShieldCheck,
+    color: "bg-violet-50",
+    iconColor: "text-violet-600",
+    title: "Deep Expertise Beyond Outsourcing",
+    desc: "We've worked across 30+ sub-specialties, supporting providers in fast-paced, high-precision clinical environments — from office visits and operative notes to QME work and academic documentation.",
+  },
+  {
+    icon: Users,
     color: "bg-amber-50",
     iconColor: "text-amber-600",
-    title: "US healthcare expertise",
-    desc: "Deep familiarity with US billing codes, payer rules, and documentation standards across primary care and specialty practices.",
+    title: "Human + AI, Not AI Alone",
+    desc: "We combine the speed of AI with trained human oversight. Every note is reviewed for accuracy and compliance before it reaches your EHR — technology supports the process, humans ensure the outcome.",
   },
 ];
 
 const TEAM_VALUES = [
   {
     icon: Award,
-    title: "Excellence in every note",
-    desc: "We hold ourselves to a 98%+ accuracy standard on every document that leaves our team — no exceptions.",
+    title: "Accurate",
+    desc: "Every note, claim, and submission is held to a 98%+ accuracy standard. We eliminate the small errors that quietly cost practices time and revenue.",
   },
   {
     icon: HeartPulse,
-    title: "Clinician wellbeing matters",
-    desc: "Physician burnout is a crisis. We measure our success by how much time we give back to care teams.",
+    title: "Compliant",
+    desc: "All workflows operate under strict HIPAA compliance and payer-specific documentation standards — reducing audit risk and denial rates.",
   },
   {
     icon: ShieldCheck,
-    title: "Trust through transparency",
-    desc: "Monthly KPI reviews, open communication, and no lock-in contracts — because we earn your business every month.",
+    title: "Scalable",
+    desc: "Whether you're a solo provider or a multi-location group, TouchScribe scales with your practice — no new implementation cycles needed.",
   },
   {
     icon: BarChart2,
-    title: "Continuous improvement",
-    desc: "We review every account monthly and retrain our teams constantly so performance only goes in one direction.",
+    title: "Built for US Healthcare",
+    desc: "Deep familiarity with US billing codes, payer rules, and documentation standards — built specifically for how American practices operate.",
   },
 ];
 
@@ -139,13 +139,13 @@ export default function About() {
               initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }}
               className="text-3xl md:text-5xl font-bold text-slate-900 mb-5 leading-tight"
             >
-              We built TouchScribe to give clinicians their time back.
+              Built on Experience. Designed to Fix What's Slowing Healthcare Workflows Down.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
               className="text-slate-500 text-lg leading-relaxed max-w-2xl mx-auto"
             >
-              Founded by healthcare professionals who lived the problem — and built a solution that actually works inside real clinical environments.
+              Healthcare providers didn't enter this field to spend hours finishing charts, chasing approvals, or dealing with billing issues — yet that's where a significant portion of their time goes. With over 20 years of combined experience in US healthcare documentation and revenue workflows, we built TouchScribe to change that.
             </motion.p>
           </div>
         </div>
@@ -184,16 +184,16 @@ export default function About() {
                   Our Story
                 </motion.p>
                 <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-slate-900 mb-5">
-                  Born out of frustration. Built for impact.
+                  Experience Built Inside Real Clinical Workflows
                 </motion.h2>
                 <motion.p variants={fadeInUp} className="text-slate-600 leading-relaxed mb-4">
-                  TouchScribe was founded by healthcare professionals who experienced firsthand how administrative burden was eroding the patient-provider relationship. Physicians were spending more time on documentation than on the people in front of them — leading to burnout, errors, and declining care quality.
+                  Over the past 20+ years, our team has worked alongside physicians, clinics, and healthcare organizations — supporting documentation, billing, and day-to-day operations in real clinical environments, not just in theory.
                 </motion.p>
                 <motion.p variants={fadeInUp} className="text-slate-600 leading-relaxed mb-4">
-                  We combined AI-assisted scribing with dedicated human specialists to build a service that actually works inside real clinical environments — not just in demos. Every workflow we design starts with the question: does this give time back to the clinician?
+                  We've supported Internal Medicine practices, Family Medicine clinics, Urgent Care centers, multi-provider specialty groups, and physicians affiliated with leading US hospitals. This is hands-on, real-world experience — delivered consistently at scale.
                 </motion.p>
                 <motion.p variants={fadeInUp} className="text-slate-600 leading-relaxed">
-                  Today, we support practices across 20+ specialties, handling documentation, EHR workflows, prior authorizations, and billing so care teams can do what they trained to do — care for patients.
+                  If your workflow is slowing you down, it's time to fix what's behind it. TouchScribe brings the structure, expertise, and reliability your practice needs to move forward — without the overhead.
                 </motion.p>
               </motion.div>
 
@@ -234,10 +234,10 @@ export default function About() {
                 What We Do
               </motion.p>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Four services. One integrated team.
+                Built Around 4 Core Pillars
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-slate-500 text-lg max-w-2xl mx-auto">
-                We don't just offer tools — we embed a trained team into your practice to run every aspect of clinical documentation.
+                TouchScribe isn't a single service — it's a fully integrated extension of your practice. Together, these four pillars remove friction across your entire clinical and financial workflow.
               </motion.p>
             </motion.div>
 
@@ -293,7 +293,7 @@ export default function About() {
                 Our Values
               </motion.p>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">
-                What guides everything we do
+                Why Providers Choose TouchScribe
               </motion.h2>
             </motion.div>
 
@@ -353,18 +353,18 @@ export default function About() {
             className="container mx-auto max-w-2xl"
           >
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold mb-4">
-              Want to see TouchScribe in action?
+              More Than a Service — A Long-Term Partner
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-slate-400 text-lg mb-8 leading-relaxed">
-              Book a free 30-minute demo tailored to your specialty and EHR.
+              We don't just support your operations — we take responsibility for them. From your first patient note to final reimbursement, TouchScribe works behind the scenes so you can focus on patient care, reduce administrative burden, and improve financial performance.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
                 className="rounded-full h-14 px-10 text-base font-semibold shadow-lg shadow-primary/30"
-                onClick={() => navigate("/book-demo?type=service")}
+                onClick={() => navigate("/book-demo?type=demo")}
               >
-                Book Now
+                Schedule a Free Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button
