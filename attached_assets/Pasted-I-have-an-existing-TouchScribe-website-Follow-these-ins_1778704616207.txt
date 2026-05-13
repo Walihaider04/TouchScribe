@@ -1,0 +1,297 @@
+I have an existing TouchScribe website. Follow these instructions STRICTLY and EXACTLY. 
+Do not add anything extra. Do not keep anything not listed below. 
+Do not change any colors, fonts, spacing, animations, or visual design.
+Every single word must match exactly what is written in this prompt.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ABOUT PAGE — STRICT TEXT CORRECTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PAGE HEADLINE — change to exactly:
+"Built on Experience. Designed to Fix What's Slowing Healthcare Workflows Down."
+
+OPENING PARAGRAPH — change to exactly:
+"Healthcare providers didn't enter this field to spend hours finishing charts, 
+chasing approvals, or dealing with billing issues — yet that's where a significant 
+portion of their time goes. TouchScribe was built to change that. With over 20 years 
+of combined experience in US healthcare documentation and revenue workflows, we 
+understand the real pressure behind every incomplete chart, denied claim, and 
+delayed authorization."
+
+STATS BAR — update all 4 stats to exactly:
+Stat 1: "20+" label: "Specialties Served"
+Stat 2: "98.7%" label: "Documentation Accuracy"
+Stat 3: "48 hrs" label: "Average Go-Live Time"
+Stat 4: "70%" label: "Workload Reduction"
+
+DELETE the entire "Our Story" section completely. Replace with:
+
+EXPERIENCE LAYER SECTION — add this as its own section:
+Headline: "Experience Built Inside Real Clinical Workflows"
+Subheading: "Over the past 20+ years, our team has worked alongside physicians, 
+clinics, and healthcare organizations — supporting documentation, billing, and 
+day-to-day operations in real clinical environments."
+List (5 separate bullet points, not a paragraph):
+- Internal Medicine Practices (US-based)
+- Family Medicine Clinics
+- Urgent Care Centers
+- Multi-provider Specialty Groups
+- Physicians affiliated with leading US hospitals
+
+MISSION SECTION — change text to exactly:
+Section label: "Our Mission"
+Text: "Our mission is to reduce administrative burden for healthcare providers by 
+delivering accurate, compliant, and intelligent clinical and revenue support. We help 
+physicians spend more time with patients and less time on documentation — without 
+compromising quality, compliance, or financial performance."
+
+VISION SECTION — keep exactly as is. No changes needed.
+
+EXPERTISE SECTION — replace entirely with exactly:
+Heading: "Deep Expertise That Goes Beyond Outsourcing"
+Paragraph: "We've worked across 30+ sub-specialties, supporting providers in 
+fast-paced, high-precision clinical environments."
+Sub-heading: "What We've Mastered Over the Years"
+Intro line: "Our experience spans the full spectrum of clinical and 
+administrative documentation:"
+Bullets (exactly these 5, as a proper list — not a paragraph):
+- Office Visits & Follow-Up Notes
+- Operative Notes & Discharge Summaries
+- Letters of Recommendation & Clinical Reports
+- Research Papers & Academic Documentation
+- QME (Qualified Medical Evaluation) Work
+Closing line: "This is hands-on, real-world experience — delivered consistently 
+at scale."
+
+DELETE the "Human + AI, Not AI Alone" section entirely.
+
+FOUR CORE PILLARS SECTION — replace text to exactly:
+Heading: "Built Around 4 Core Pillars"
+Intro: "TouchScribe isn't a single service — it's a fully integrated extension 
+of your practice, built on four essential pillars:"
+Pillar 1: "Virtual Medical Scribing + AI QA — Real-time documentation powered 
+by AI speed and human precision"
+Pillar 2: "EHR Documentation — Structured, compliant, and specialty-specific 
+charting within your workflow"
+Pillar 3: "Prior Authorization & RFA — Accurate, complete submissions that 
+reduce delays and denials"
+Pillar 4: "Medical Billing & Revenue Cycle — Clean claims, faster 
+reimbursements, and stronger cash flow control"
+Closing line (separate, below pillars): "Together, these pillars remove friction 
+across your entire clinical and financial workflow."
+
+WHY PROVIDERS CHOOSE TOUCHSCRIBE SECTION — replace entirely with exactly:
+Heading: "Why Providers Choose TouchScribe"
+Intro line: "Because we understand what's at stake. The challenges are real:"
+Challenge bullets:
+- Burnout from end-of-day charting
+- Revenue loss from denied or under-coded claims
+- Delays caused by incomplete authorizations
+Solution intro: "And we solve them with a system that is:"
+Solution bullets:
+- Accurate
+- Compliant
+- Scalable
+- Built specifically for US healthcare workflows
+NOTE: Delete the 4 expanded value cards currently on the site. Use only 
+the bullets above.
+
+DELETE the testimonial quote section entirely.
+
+LONG-TERM PARTNER SECTION — replace text to exactly:
+Heading: "More Than a Service — A Long-Term Partner"
+Paragraph: "We don't just support your operations — we take responsibility 
+for them. From your first patient note to final reimbursement, TouchScribe 
+works behind the scenes so you can:"
+Bullets (3 separate bullets, not a paragraph):
+- Focus on patient care
+- Reduce administrative burden
+- Improve financial performance
+
+CLOSING SECTION — must appear at the very bottom, above the CTA button:
+Text: "If your workflow is slowing you down, it's time to fix what's behind 
+it. TouchScribe brings the structure, expertise, and reliability your practice 
+needs to move forward — without the overhead."
+CTA Button: "Schedule a Free Consultation"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SERVICES PAGE — STRICT FULL UPDATE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FIRST — DELETE THESE ENTIRELY:
+❌ The paragraph under the page heading starting with "TouchScribe doesn't 
+just hand you a tool..."
+❌ The entire "The Four Pillars" section and all content inside it
+❌ The entire "Timeline" section ("What Your First 30 Days Look Like")
+❌ The closing line "No obligation. No pressure. Live in 48 hours."
+
+PAGE HEADING — change to exactly:
+"From Setup to Full Workflow Optimization — Built to Reduce Operational Burden"
+
+STEP 01 — replace all content with exactly:
+Heading: "Discovery & Workflow Setup"
+Sub-headline: "We Identify Where Time, Revenue, and Efficiency Are Being Lost"
+Body: "We start by understanding how your practice actually operates — your 
+specialty, your EHR, and your day-to-day workflow. This allows us to pinpoint 
+exactly where documentation delays, billing gaps, and authorization issues are 
+slowing you down."
+Bullets (exactly 3):
+- Specialty & EHR Assessment
+- Documentation, Revenue & Workflow Gap Analysis
+- Custom Support Plan Design
+Outcome line: "Outcome: A streamlined workflow that removes friction instead 
+of adding more steps."
+
+STEP 02 — replace all content with exactly:
+Heading: "Team Assignment + System Integration"
+Sub-headline: "Dedicated Experts who Fit Into Your Workflow"
+Body: "We assign trained specialists who plug directly into your existing 
+systems and processes — without disrupting how your team works."
+No bullets.
+Outcome line: "Outcome: A fully aligned support team — without the cost, 
+hiring effort, or operational disruption."
+
+STEP 03 — replace all content with exactly:
+Heading: "Execution Across All 4 Pillars"
+Sub-headline: "Full Operational Support Working Together"
+Body: "We handle documentation, EHR workflows, prior authorizations, and 
+billing as one connected system — so nothing falls through the cracks."
+Bullets (exactly 4):
+- AI-Powered Scribing + Human QA
+- Structured EHR Documentation
+- Prior Authorization & RFA Management
+- Billing & Revenue Cycle Optimization
+Outcome line: "Outcome: Fewer delays, fewer errors, and a workflow that runs 
+as one cohesive system."
+
+STEP 04 — replace all content with exactly:
+Heading: "QA, Optimization & Scaling"
+Sub-headline: "Continuous Improvement That Protects Revenue & Reduces Workload"
+Body: "We don't stop at execution. We continuously track performance, improve 
+accuracy, and refine workflows as your practice grows."
+Bullets (exactly 3):
+- Ongoing Quality Assurance
+- Compliance & Error Reduction Monitoring
+- Revenue & Workflow Performance Tracking
+No outcome line for this step.
+
+CLOSING QUOTE + CTA — add after Step 04:
+Quote: "From the first consultation to full-scale support, TouchScribe works 
+as an extension of your practice — not just another service provider."
+Line: "See how TouchScribe can remove operational burden and improve 
+revenue flow."
+CTA Button: "Start with a free consultation."
+
+FAQ SECTION — replace heading and all questions with exactly:
+Main heading: "Common Questions. Clear Answers. No Surprises."
+Subheading: "Everything you need to know before getting started with 
+TouchScribe — so you can move forward with clarity and confidence."
+
+Delete ALL current FAQ questions. Add exactly these in this order:
+
+SECTION LABEL: Workflow & Implementation
+Q: Will this disrupt my current workflow?
+A: No. TouchScribe is designed to fit into your existing workflow — not 
+replace it. We adapt to your EHR, documentation style, and clinical processes 
+to ensure a smooth transition with minimal disruption.
+
+Q: How long does onboarding take?
+A: Most practices are up and running within a few days to a couple of weeks, 
+depending on complexity. Our guided onboarding ensures everything is aligned 
+from day one.
+
+Q: Do I need to change my EHR system?
+A: No. We work within your existing EHR and adapt to your setup. Our approach 
+is workflow-aligned — not system-dependent.
+
+SECTION LABEL: Accuracy & Quality
+Q: How do you ensure documentation accuracy?
+A: Every output goes through a structured QA process, combining trained 
+healthcare professionals with AI-assisted validation — ensuring consistency, 
+completeness, and compliance.
+
+Q: What if there are errors?
+A: We maintain continuous QA checks and feedback loops. If any issues arise, 
+they are quickly corrected and used to further strengthen accuracy over time.
+
+Q: Are your team members trained in US healthcare?
+A: Yes. Our team is trained in US healthcare documentation standards, clinical 
+workflows, and compliance requirements across multiple specialties.
+
+SECTION LABEL: Data Security & Compliance
+Q: Is patient data secure?
+A: Yes. We follow strict, HIPAA-aligned workflows and secure data handling 
+protocols to protect patient information at all times.
+
+Q: How do you handle sensitive healthcare data?
+A: All processes operate within secure, access-controlled environments with 
+clearly defined data handling procedures.
+
+Q: Do you sign compliance agreements (e.g., BAA)?
+A: Yes. We support standard compliance requirements, including Business 
+Associate Agreements (BAA), when working with US healthcare providers.
+
+SECTION LABEL: Services & Flexibility
+Q: What services can I start with?
+A: You can start with a single service — such as virtual scribing, EHR 
+documentation, prior authorization (RFA), or medical billing — or combine 
+services based on your needs.
+
+Q: Can I scale services over time?
+A: Yes. Our model is designed to scale with your practice — whether you 
+support a single provider or a multi-location setup.
+
+Q: Do I have to commit to all services?
+A: No. You choose what fits your workflow. There is no requirement to bundle 
+services unless it benefits your operations.
+
+SECTION LABEL: Cost & ROI
+Q: How does this compare to hiring in-house staff?
+A: TouchScribe can significantly reduce operational costs while improving 
+efficiency and output quality — without the overhead of hiring, training, 
+and retention.
+
+Q: Will this actually improve revenue?
+A: Yes. Cleaner documentation and structured workflows support more accurate 
+billing, fewer claim issues, and faster reimbursement cycles.
+
+Q: Is there a minimum commitment?
+A: No long-term contracts are required. You can start small and scale based 
+on performance and results.
+
+SECTION LABEL: Performance & Results
+Q: How quickly will I see results?
+A: Many practices begin to see improvements in documentation turnaround and 
+workload reduction within the first few weeks.
+
+Q: What kind of results can I expect?
+A: Typical outcomes include: reduced documentation time, improved workflow 
+efficiency, faster billing cycles, and lower administrative burden.
+
+Q: Do you offer a trial or pilot?
+A: Yes. You can start with a limited engagement, including a 7-day free 
+trial, to evaluate performance before scaling further.
+
+SECTION LABEL: Final Decision
+Q: What happens if it is not the right fit?
+A: You can adjust, scale down, or discontinue at any time — without 
+long-term obligations. Our goal is to deliver measurable value, not lock 
+you into rigid contracts.
+
+Q: What is the next step to get started?
+A: Simply schedule a demo or request a custom workflow plan. We will assess 
+your needs and show you exactly how TouchScribe fits into your practice.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRICT RULES — MUST FOLLOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Do NOT add any text, sections, or bullets not listed above
+2. Do NOT keep any existing text not listed above
+3. Do NOT change colors, fonts, spacing, or visual design on any page
+4. Do NOT change any other pages
+5. Every word must match EXACTLY what is written in this prompt
+6. If a section says DELETE or REMOVE — remove it completely
+7. If a section says no bullets — do not add bullets
+8. If a section says no outcome line — do not add one
+9. Follow the exact order of sections as listed above
+10. Do not combine sections that are listed separately

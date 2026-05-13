@@ -10,13 +10,6 @@ import {
   Zap,
   BarChart2,
   CheckCircle2,
-  Mic,
-  FileText,
-  ShieldCheck,
-  Receipt,
-  Clock,
-  Activity,
-  HeartPulse,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -38,16 +31,15 @@ const STEPS = [
     iconColor: "text-emerald-600",
     borderColor: "border-emerald-200",
     title: "Discovery & Workflow Setup",
-    tagline: "We learn your practice inside out before touching anything.",
+    tagline: "We Identify Where Time, Revenue, and Efficiency Are Being Lost",
     description:
-      "Our onboarding team conducts a structured discovery session with your practice. We map your current documentation workflows, identify where time and revenue are being lost, and design a fully custom implementation plan tailored to your specialty and EHR.",
+      "We start by understanding how your practice actually operates — your specialty, your EHR, and your day-to-day workflow. This allows us to pinpoint exactly where documentation delays, billing gaps, and authorization issues are slowing you down.",
     details: [
-      "Specialty-specific workflow audit",
-      "EHR system compatibility review",
-      "Custom implementation plan created",
-      "HIPAA Business Associate Agreement signed",
-      "Go-live timeline confirmed (typically 48 hours)",
+      "Specialty & EHR Assessment",
+      "Documentation, Revenue & Workflow Gap Analysis",
+      "Custom Support Plan Design",
     ],
+    outcome: "Outcome: A streamlined workflow that removes friction instead of adding more steps.",
   },
   {
     icon: Users,
@@ -56,16 +48,11 @@ const STEPS = [
     iconColor: "text-blue-600",
     borderColor: "border-blue-200",
     title: "Team Assignment + System Integration",
-    tagline: "The right people, in the right systems, with zero disruption.",
+    tagline: "Dedicated Experts who Fit Into Your Workflow",
     description:
-      "We assign a dedicated team of trained clinical specialists to your practice. They integrate securely into your EHR and communication tools — no new software to install, no workflow disruption. Your team barely notices the transition.",
-    details: [
-      "Dedicated specialists assigned to your practice",
-      "Secure EHR access provisioned and tested",
-      "Staff introduction and workflow alignment",
-      "Real-time communication channels set up",
-      "Pilot period begins with close monitoring",
-    ],
+      "We assign trained specialists who plug directly into your existing systems and processes — without disrupting how your team works.",
+    details: [],
+    outcome: "Outcome: A fully aligned support team — without the cost, hiring effort, or operational disruption.",
   },
   {
     icon: Zap,
@@ -74,16 +61,16 @@ const STEPS = [
     iconColor: "text-violet-600",
     borderColor: "border-violet-200",
     title: "Execution Across All 4 Pillars",
-    tagline: "Documentation, EHR, prior auth, and billing — handled together.",
+    tagline: "Full Operational Support Working Together",
     description:
-      "This is where TouchScribe takes over. Our team handles all four pillars of clinical operations simultaneously: real-time virtual scribing, structured EHR documentation, prior authorization submissions, and medical billing. Everything runs in parallel so nothing falls through the cracks.",
+      "We handle documentation, EHR workflows, prior authorizations, and billing as one connected system — so nothing falls through the cracks.",
     details: [
-      "AI-assisted virtual scribing on every encounter",
-      "Structured SOAP and specialty-specific notes",
-      "Prior auth submissions within 24 hours",
-      "Clean claim generation and submission",
-      "Human QA review on every document",
+      "AI-Powered Scribing + Human QA",
+      "Structured EHR Documentation",
+      "Prior Authorization & RFA Management",
+      "Billing & Revenue Cycle Optimization",
     ],
+    outcome: "Outcome: Fewer delays, fewer errors, and a workflow that runs as one cohesive system.",
   },
   {
     icon: BarChart2,
@@ -92,74 +79,133 @@ const STEPS = [
     iconColor: "text-rose-600",
     borderColor: "border-rose-200",
     title: "QA, Optimization & Scaling",
-    tagline: "We don't set and forget — we continuously improve.",
+    tagline: "Continuous Improvement That Protects Revenue & Reduces Workload",
     description:
-      "TouchScribe runs monthly performance reviews with your team. We track documentation accuracy, turnaround times, denial rates, and provider satisfaction. As your practice grows, we scale with you — adding providers, locations, or services without a new implementation cycle.",
+      "We don't stop at execution. We continuously track performance, improve accuracy, and refine workflows as your practice grows.",
     details: [
-      "Monthly KPI and performance review",
-      "Denial rate tracking and appeals management",
-      "Continuous scribe and billing team training",
-      "Scalable to new providers or locations",
-      "Dedicated account manager available anytime",
+      "Ongoing Quality Assurance",
+      "Compliance & Error Reduction Monitoring",
+      "Revenue & Workflow Performance Tracking",
+    ],
+    outcome: "",
+  },
+];
+
+const FAQ_SECTIONS = [
+  {
+    label: "Workflow & Implementation",
+    faqs: [
+      {
+        q: "Will this disrupt my current workflow?",
+        a: "No. TouchScribe is designed to fit into your existing workflow — not replace it. We adapt to your EHR, documentation style, and clinical processes to ensure a smooth transition with minimal disruption.",
+      },
+      {
+        q: "How long does onboarding take?",
+        a: "Most practices are up and running within a few days to a couple of weeks, depending on complexity. Our guided onboarding ensures everything is aligned from day one.",
+      },
+      {
+        q: "Do I need to change my EHR system?",
+        a: "No. We work within your existing EHR and adapt to your setup. Our approach is workflow-aligned — not system-dependent.",
+      },
     ],
   },
-];
-
-const SERVICES = [
   {
-    icon: Mic,
-    color: "bg-emerald-50",
-    iconColor: "text-emerald-600",
-    title: "Virtual Medical Scribing (AI + Human QA)",
-    how: "We combine the speed of AI with trained human oversight to deliver documentation that's accurate, complete, and ready in real time. Notes are completed during patient visits — not after hours. AI drafts the note, a human reviewer checks every entry for accuracy and compliance, and clean, structured records are delivered directly into your EHR. You finish your day with charts already done.",
+    label: "Accuracy & Quality",
+    faqs: [
+      {
+        q: "How do you ensure documentation accuracy?",
+        a: "Every output goes through a structured QA process, combining trained healthcare professionals with AI-assisted validation — ensuring consistency, completeness, and compliance.",
+      },
+      {
+        q: "What if there are errors?",
+        a: "We maintain continuous QA checks and feedback loops. If any issues arise, they are quickly corrected and used to further strengthen accuracy over time.",
+      },
+      {
+        q: "Are your team members trained in US healthcare?",
+        a: "Yes. Our team is trained in US healthcare documentation standards, clinical workflows, and compliance requirements across multiple specialties.",
+      },
+    ],
   },
   {
-    icon: FileText,
-    color: "bg-blue-50",
-    iconColor: "text-blue-600",
-    title: "EHR Documentation",
-    how: "We handle your documentation in a way that aligns with your workflow — so your records stay accurate, complete, and easy to manage. Our team works inside your existing EHR (Epic, Cerner, Athenahealth, eClinicalWorks, NextGen, Allscripts, and more), producing structured consultation notes, discharge summaries, and medical reports tailored to your specialty. Less time in the EHR. Fewer corrections. Better first-pass accuracy.",
+    label: "Data Security & Compliance",
+    faqs: [
+      {
+        q: "Is patient data secure?",
+        a: "Yes. We follow strict, HIPAA-aligned workflows and secure data handling protocols to protect patient information at all times.",
+      },
+      {
+        q: "How do you handle sensitive healthcare data?",
+        a: "All processes operate within secure, access-controlled environments with clearly defined data handling procedures.",
+      },
+      {
+        q: "Do you sign compliance agreements (e.g., BAA)?",
+        a: "Yes. We support standard compliance requirements, including Business Associate Agreements (BAA), when working with US healthcare providers.",
+      },
+    ],
   },
   {
-    icon: ShieldCheck,
-    color: "bg-amber-50",
-    iconColor: "text-amber-600",
-    title: "Prior Authorization & RFA",
-    how: "We manage the full authorization lifecycle — so submissions are complete, compliant, and processed faster. Our team handles insurance verification, accurate submissions aligned with payer criteria, proactive follow-ups, and denial reduction. The result: faster approval turnaround, fewer resubmissions, smoother patient flow, and less administrative burden on your staff.",
+    label: "Services & Flexibility",
+    faqs: [
+      {
+        q: "What services can I start with?",
+        a: "You can start with a single service — such as virtual scribing, EHR documentation, prior authorization (RFA), or medical billing — or combine services based on your needs.",
+      },
+      {
+        q: "Can I scale services over time?",
+        a: "Yes. Our model is designed to scale with your practice — whether you support a single provider or a multi-location setup.",
+      },
+      {
+        q: "Do I have to commit to all services?",
+        a: "No. You choose what fits your workflow. There is no requirement to bundle services unless it benefits your operations.",
+      },
+    ],
   },
   {
-    icon: Receipt,
-    color: "bg-violet-50",
-    iconColor: "text-violet-600",
-    title: "Medical Billing & Revenue Cycle",
-    how: "We manage your entire billing lifecycle to ensure claims are accurate, timely, and optimized for reimbursement. From charge capture and coding support to denial management, payment posting, and accounts receivable follow-up — we close the gaps where most practices quietly lose revenue. Fewer denials, faster cash flow, and full visibility into billing performance.",
-  },
-];
-
-const FAQS = [
-  {
-    q: "How long does onboarding take?",
-    a: "Most practices are fully live within 48 hours of signing. Our team handles the EHR setup, team assignment, and workflow alignment so you don't have to do any of the heavy lifting.",
-  },
-  {
-    q: "Do I need to install any software?",
-    a: "No. TouchScribe works inside your existing EHR and uses your existing communication tools. There is nothing to download or configure on your end.",
-  },
-  {
-    q: "How does real-time scribing work for telehealth?",
-    a: "Our scribes can join any telehealth platform securely. They listen to the encounter, complete the note in your EHR, and have it ready for your review before the next patient.",
+    label: "Cost & ROI",
+    faqs: [
+      {
+        q: "How does this compare to hiring in-house staff?",
+        a: "TouchScribe can significantly reduce operational costs while improving efficiency and output quality — without the overhead of hiring, training, and retention.",
+      },
+      {
+        q: "Will this actually improve revenue?",
+        a: "Yes. Cleaner documentation and structured workflows support more accurate billing, fewer claim issues, and faster reimbursement cycles.",
+      },
+      {
+        q: "Is there a minimum commitment?",
+        a: "No long-term contracts are required. You can start small and scale based on performance and results.",
+      },
+    ],
   },
   {
-    q: "What EHR systems do you support?",
-    a: "We support 50+ EHR platforms including Epic, Cerner, Athena, eClinicalWorks, NextGen, Greenway, and more. If you use it, we can work in it.",
+    label: "Performance & Results",
+    faqs: [
+      {
+        q: "How quickly will I see results?",
+        a: "Many practices begin to see improvements in documentation turnaround and workload reduction within the first few weeks.",
+      },
+      {
+        q: "What kind of results can I expect?",
+        a: "Typical outcomes include: reduced documentation time, improved workflow efficiency, faster billing cycles, and lower administrative burden.",
+      },
+      {
+        q: "Do you offer a trial or pilot?",
+        a: "Yes. You can start with a limited engagement, including a 7-day free trial, to evaluate performance before scaling further.",
+      },
+    ],
   },
   {
-    q: "Is my patient data secure?",
-    a: "Yes. All operations are fully HIPAA compliant. We sign a Business Associate Agreement with every practice, use encrypted connections, and never store PHI outside of your approved systems.",
-  },
-  {
-    q: "What if I want to cancel?",
-    a: "There are no long-term contracts. You can scale up, scale down, or cancel with 30 days' notice. We earn your business every month.",
+    label: "Final Decision",
+    faqs: [
+      {
+        q: "What happens if it is not the right fit?",
+        a: "You can adjust, scale down, or discontinue at any time — without long-term obligations. Our goal is to deliver measurable value, not lock you into rigid contracts.",
+      },
+      {
+        q: "What is the next step to get started?",
+        a: "Simply schedule a demo or request a custom workflow plan. We will assess your needs and show you exactly how TouchScribe fits into your practice.",
+      },
+    ],
   },
 ];
 
@@ -207,14 +253,8 @@ export default function HowItWorks() {
               initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }}
               className="text-3xl md:text-5xl font-bold text-slate-900 mb-5 leading-tight"
             >
-              From Setup to Full Workflow Optimization
+              From Setup to Full Workflow Optimization — Built to Reduce Operational Burden
             </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-slate-500 text-lg leading-relaxed max-w-2xl mx-auto"
-            >
-              TouchScribe doesn't just hand you a tool — we embed a dedicated team into your practice and run every part of your clinical documentation operation, end to end.
-            </motion.p>
           </div>
         </div>
 
@@ -244,15 +284,22 @@ export default function HowItWorks() {
                         <div className="p-8">
                           <h2 className="text-xl font-bold text-slate-900 mb-1">{step.title}</h2>
                           <p className={`text-sm font-semibold mb-4 ${step.iconColor}`}>{step.tagline}</p>
-                          <p className="text-slate-600 leading-relaxed mb-6">{step.description}</p>
-                          <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
-                            {step.details.map((d) => (
-                              <li key={d} className="flex items-start gap-2 text-sm text-slate-600">
-                                <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                                {d}
-                              </li>
-                            ))}
-                          </ul>
+                          <p className="text-slate-600 leading-relaxed mb-4">{step.description}</p>
+                          {step.details.length > 0 && (
+                            <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 mb-4">
+                              {step.details.map((d) => (
+                                <li key={d} className="flex items-start gap-2 text-sm text-slate-600">
+                                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                                  {d}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                          {step.outcome && (
+                            <p className="text-sm font-semibold text-slate-700 border-t border-slate-100 pt-4 mt-2">
+                              {step.outcome}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </CardContent>
@@ -263,106 +310,38 @@ export default function HowItWorks() {
           </div>
         </section>
 
-        {/* How each service works */}
-        <section className="py-20 px-4 bg-slate-50">
-          <div className="container mx-auto max-w-5xl">
+        {/* Closing Quote + CTA */}
+        <section className="py-16 px-4 bg-slate-50 border-y border-slate-100">
+          <div className="container mx-auto max-w-3xl text-center">
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: true, margin: "-60px" }}
               variants={staggerContainer}
-              className="text-center max-w-2xl mx-auto mb-14"
             >
-              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
-                The Four Pillars
+              <motion.div variants={fadeInUp} className="text-5xl text-primary/20 font-serif leading-none mb-6">"</motion.div>
+              <motion.blockquote variants={fadeInUp} className="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed mb-6">
+                From the first consultation to full-scale support, TouchScribe works as an extension of your practice — not just another service provider.
+              </motion.blockquote>
+              <motion.p variants={fadeInUp} className="text-slate-500 text-base mb-8">
+                See how TouchScribe can remove operational burden and improve revenue flow.
               </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                How Each Service Actually Works
-              </motion.h2>
-              <motion.p variants={fadeInUp} className="text-slate-500 text-lg">
-                Behind every service is a trained team, a defined workflow, and a QA layer — not just software.
-              </motion.p>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-40px" }}
-              variants={staggerContainer}
-              className="grid md:grid-cols-2 gap-6"
-            >
-              {SERVICES.map((svc, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
-                    <CardContent className="p-8">
-                      <div className={`w-12 h-12 rounded-2xl ${svc.color} flex items-center justify-center mb-5`}>
-                        <svc.icon className={`w-6 h-6 ${svc.iconColor}`} />
-                      </div>
-                      <h3 className="text-lg font-bold text-slate-900 mb-3">{svc.title}</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">{svc.how}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Timeline visual */}
-        <section className="py-20 px-4 bg-white">
-          <div className="container mx-auto max-w-4xl">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              variants={staggerContainer}
-              className="text-center mb-14"
-            >
-              <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Timeline</motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">
-                What Your First 30 Days Look Like
-              </motion.h2>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-40px" }}
-              variants={staggerContainer}
-              className="relative"
-            >
-              <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/10 md:left-1/2" />
-              {[
-                { day: "Day 1", icon: ClipboardList, title: "Discovery Call", desc: "We map your workflow, specialty, and EHR setup." },
-                { day: "Day 2", icon: Users, title: "Team Assigned", desc: "Your dedicated specialist team is confirmed and briefed." },
-                { day: "Day 2–3", icon: Activity, title: "System Integration", desc: "Secure EHR access is provisioned and tested end-to-end." },
-                { day: "Day 3", icon: Zap, title: "Go Live", desc: "Your first encounters are scribed. Notes appear in your EHR same-day." },
-                { day: "Week 2", icon: HeartPulse, title: "Check-In Review", desc: "We review accuracy, timing, and any workflow adjustments needed." },
-                { day: "Day 30", icon: BarChart2, title: "First Performance Report", desc: "KPIs reviewed: documentation time saved, claim accuracy, PA turnaround." },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeInUp}
-                  className={`relative flex items-start gap-6 mb-10 last:mb-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse md:text-right'} pl-14 md:pl-0`}
+              <motion.div variants={fadeInUp}>
+                <Button
+                  size="lg"
+                  className="rounded-full h-14 px-10 text-base font-semibold shadow-lg shadow-primary/30"
+                  onClick={() => navigate("/book-demo?type=demo")}
                 >
-                  {/* Node */}
-                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 w-10 h-10 rounded-full bg-white border-2 border-primary shadow-md flex items-center justify-center shrink-0 z-10">
-                    <item.icon className="w-4 h-4 text-primary" />
-                  </div>
-                  {/* Content */}
-                  <div className={`md:w-[calc(50%-2rem)] ${i % 2 === 0 ? 'md:ml-auto md:pl-10' : 'md:mr-auto md:pr-10'}`}>
-                    <span className="text-xs font-bold text-primary uppercase tracking-widest">{item.day}</span>
-                    <h3 className="text-base font-bold text-slate-900 mt-0.5 mb-1">{item.title}</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+                  Start with a free consultation.
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </section>
 
         {/* FAQs */}
-        <section className="py-20 px-4 bg-slate-50">
+        <section className="py-20 px-4 bg-white">
           <div className="container mx-auto max-w-3xl">
             <motion.div
               initial="hidden"
@@ -372,9 +351,12 @@ export default function HowItWorks() {
               className="text-center mb-14"
             >
               <motion.p variants={fadeInUp} className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">FAQ</motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900">
-                Common Questions
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Common Questions. Clear Answers. No Surprises.
               </motion.h2>
+              <motion.p variants={fadeInUp} className="text-slate-500 text-lg">
+                Everything you need to know before getting started with TouchScribe — so you can move forward with clarity and confidence.
+              </motion.p>
             </motion.div>
 
             <motion.div
@@ -382,19 +364,26 @@ export default function HowItWorks() {
               whileInView="visible"
               viewport={{ once: true, margin: "-40px" }}
               variants={staggerContainer}
-              className="space-y-4"
+              className="space-y-10"
             >
-              {FAQS.map((faq, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <Card className="bg-white border border-slate-200 shadow-sm">
-                    <CardContent className="p-6">
-                      <h3 className="font-bold text-slate-900 mb-2 flex items-start gap-2">
-                        <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                        {faq.q}
-                      </h3>
-                      <p className="text-slate-600 text-sm leading-relaxed pl-7">{faq.a}</p>
-                    </CardContent>
-                  </Card>
+              {FAQ_SECTIONS.map((section, si) => (
+                <motion.div key={si} variants={fadeInUp}>
+                  <h3 className="text-sm font-bold text-primary uppercase tracking-widest mb-4 border-b border-slate-100 pb-2">
+                    {section.label}
+                  </h3>
+                  <div className="space-y-4">
+                    {section.faqs.map((faq, fi) => (
+                      <Card key={fi} className="bg-white border border-slate-200 shadow-sm">
+                        <CardContent className="p-6">
+                          <h4 className="font-bold text-slate-900 mb-2 flex items-start gap-2">
+                            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                            {faq.q}
+                          </h4>
+                          <p className="text-slate-600 text-sm leading-relaxed pl-7">{faq.a}</p>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -434,9 +423,6 @@ export default function HowItWorks() {
                 Back to Home
               </Button>
             </motion.div>
-            <motion.p variants={fadeInUp} className="text-slate-500 text-sm mt-6">
-              No obligation. No pressure. Live in 48 hours.
-            </motion.p>
           </motion.div>
         </section>
 
