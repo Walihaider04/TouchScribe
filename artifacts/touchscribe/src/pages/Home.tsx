@@ -123,6 +123,7 @@ const NAV_LINKS = [
   { href: "#how-it-works",label: "How It Works" },
   { href: "#proof",       label: "Results" },
   { href: "/about",        label: "About" },
+  { href: "/blog",         label: "Blog" },
 ];
 
 export default function Home() {

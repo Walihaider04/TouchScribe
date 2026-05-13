@@ -11,6 +11,7 @@ const HowItWorks = lazy(() => import("@/pages/HowItWorks"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
 const Terms = lazy(() => import("@/pages/Terms"));
 const About = lazy(() => import("@/pages/About"));
+const Blog = lazy(() => import("@/pages/Blog"));
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ function Router() {
         <Route path="/privacy" component={Privacy} />
         <Route path="/terms" component={Terms} />
         <Route path="/about" component={About} />
+        <Route path="/blog" component={Blog} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>

@@ -145,6 +145,12 @@ export default function About() {
               <ArrowLeft className="w-4 h-4" />
               Back to Home
             </button>
+            <button
+              onClick={() => navigate("/blog")}
+              className="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
+            >
+              Blog
+            </button>
             <Button className="rounded-full px-6" onClick={() => navigate("/book-demo?type=demo")}>
               Book a Free Demo
             </Button>
