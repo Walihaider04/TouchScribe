@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,6 +10,7 @@ import {
   Tag,
   ChevronLeft,
   ChevronRight,
+  Clock,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -21,6 +23,8 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
+
+const POSTS_PER_PAGE = 6;
 
 const POSTS = [
   {
@@ -51,6 +55,19 @@ const POSTS = [
 
 export default function Blog() {
   const [, navigate] = useLocation();
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(POSTS.length / POSTS_PER_PAGE);
+  const paginatedPosts = POSTS.slice(
+    (currentPage - 1) * POSTS_PER_PAGE,
+    currentPage * POSTS_PER_PAGE
+  );
+
+  const goToPage = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -120,7 +137,7 @@ export default function Blog() {
               variants={staggerContainer}
               className="grid grid-cols-1 md:grid-cols-3 gap-8"
             >
-              {POSTS.map((post, i) => (
+              {paginatedPosts.map((post, i) => (
                 <motion.div key={i} variants={fadeInUp}>
                   <Card className="h-full bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
                     {/* Thumbnail */}
@@ -152,53 +169,66 @@ export default function Blog() {
                           {post.date}
                         </span>
                         <span>·</span>
-                        <span>{post.readTime}</span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3.5 h-3.5" />
+                          {post.readTime}
+                        </span>
                       </div>
-                      {/* Read More */}
-                      <Button
-                        variant="outline"
-                        className="rounded-full w-full text-sm font-medium"
-                        onClick={() => navigate("/book-demo?type=demo")}
-                      >
-                        Read More
-                        <ArrowRight className="ml-2 w-4 h-4" />
-                      </Button>
+                      {/* Read More — placeholder, article not yet published */}
+                      <div className="rounded-full border border-slate-200 bg-slate-50 text-slate-400 text-sm font-medium flex items-center justify-center gap-2 h-10 px-4 select-none cursor-default">
+                        <span>Coming Soon</span>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
               ))}
             </motion.div>
 
-            {/* Pagination */}
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="flex items-center justify-center gap-2 mt-14"
-            >
-              <button
-                className="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-colors"
-                aria-label="Previous page"
+            {/* Pagination — only shown when there is more than one page */}
+            {totalPages > 1 && (
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="flex items-center justify-center gap-2 mt-14"
               >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button className="w-9 h-9 rounded-full bg-primary text-white text-sm font-semibold flex items-center justify-center shadow-sm">
-                1
-              </button>
-              <button className="w-9 h-9 rounded-full border border-slate-200 text-slate-500 text-sm font-medium hover:border-primary hover:text-primary transition-colors flex items-center justify-center">
-                2
-              </button>
-              <button className="w-9 h-9 rounded-full border border-slate-200 text-slate-500 text-sm font-medium hover:border-primary hover:text-primary transition-colors flex items-center justify-center">
-                3
-              </button>
-              <button
-                className="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-colors"
-                aria-label="Next page"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </motion.div>
+                {/* Prev */}
+                <button
+                  onClick={() => goToPage(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-slate-200 disabled:hover:text-slate-400"
+                  aria-label="Previous page"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+
+                {/* Page numbers */}
+                {Array.from({ length: totalPages }, (_, idx) => idx + 1).map((page) => (
+                  <button
+                    key={page}
+                    onClick={() => goToPage(page)}
+                    className={`w-9 h-9 rounded-full text-sm font-semibold flex items-center justify-center transition-colors ${
+                      page === currentPage
+                        ? "bg-primary text-white shadow-sm"
+                        : "border border-slate-200 text-slate-500 hover:border-primary hover:text-primary"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ))}
+
+                {/* Next */}
+                <button
+                  onClick={() => goToPage(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-slate-200 disabled:hover:text-slate-400"
+                  aria-label="Next page"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </motion.div>
+            )}
           </div>
         </section>
 
@@ -223,7 +253,7 @@ export default function Blog() {
                 className="rounded-full h-14 px-10 text-base font-semibold shadow-lg shadow-primary/30"
                 onClick={() => navigate("/book-demo?type=demo")}
               >
-                Explore Articles
+                Book a Free Demo
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
