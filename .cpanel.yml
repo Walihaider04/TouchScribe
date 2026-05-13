@@ -1,4 +1,5 @@
 ---
 deployment:
   tasks:
+    - /bin/rm -rf /home/touchscribe/public_html/assets
     - /bin/cp -rf artifacts/touchscribe/dist/public/. /home/touchscribe/public_html/
